@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  /* === Ocean Theme Colors === */
+  --color-ocean-deep: #0A1628;
+  --color-ocean-dark: #0C2D48;
+  --color-ocean: #1A5276;
+  --color-ocean-mid: #2E86AB;
+  --color-ocean-light: #87CEEB;
+  --color-ocean-pale: #B8E4F0;
+
+  --color-sand: #F5E6C8;
+  --color-sand-light: #FBF5EC;
+  --color-sand-pale: #FEFCF9;
+
+  --color-sunset: #E8724A;
+  --color-sunset-light: #F4A261;
+  --color-sunset-pale: #FDE8D8;
+
+  --color-lifesaving-red: #E63946;
+  --color-guard-yellow: #FFD700;
+
+  --color-text-dark: #1A1A2E;
+  --color-text-mid: #4A4A5A;
+  --color-text-light: #8B8B9B;
+
+  /* Fonts */
+  --font-serif-jp: "Noto Serif JP", serif;
+  --font-sans-jp: "Noto Sans JP", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-accent: "Cormorant Garamond", serif;
+}
+
+/* === Base Styles === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans-jp);
+  color: var(--color-text-dark);
+  background: var(--color-sand-pale);
+  overflow-x: hidden;
+}
+
+/* === Selection === */
+::selection {
+  background: var(--color-ocean-mid);
+  color: white;
+}
+
+/* === Custom Scrollbar === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sand-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ocean-mid);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ocean);
+}
+
+/* === Section Label (English accent) === */
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-ocean-mid);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-label::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: var(--color-ocean-mid);
+}
+
+/* === Section Title (Japanese) === */
+.section-title {
+  font-family: var(--font-serif-jp);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+/* === Gradient Overlays === */
+.gradient-ocean {
+  background: linear-gradient(135deg, #0A1628 0%, #0C2D48 40%, #1A5276 70%, #0C2D48 100%);
+}
+
+.gradient-ocean-bottom {
+  background: linear-gradient(to bottom, transparent 0%, #0A1628 100%);
+}
+
+/* === Wave Divider SVG === */
+.wave-divider {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+.wave-divider svg {
+  width: 100%;
+  height: auto;
+}
