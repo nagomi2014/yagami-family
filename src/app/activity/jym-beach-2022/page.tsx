@@ -5,13 +5,35 @@ import { AnimateIn } from "@/components/AnimateIn";
 
 const results = [
   {
-    name: "矢上 陽葉",
-    category: "小学5・6年生 女子",
+    name: "矢上 結月",
+    category: "小学6年生 女子 → 中学生",
     club: "館山SLSC",
     events: [
-      { event: "ビーチフラッグス", rank: 1, note: "優勝" },
+      { event: "ランスイムラン", rank: "決勝", note: "" },
+      { event: "サーフ", rank: "決勝19位", note: "" },
+      { event: "ニッパー", rank: "予選", note: "" },
       { event: "ビーチスプリント", rank: 7, note: "" },
-      { event: "ビーチラン 1km", rank: 8, note: "" },
+      { event: "ビーチフラッグス", rank: "予選", note: "" },
+    ],
+  },
+  {
+    name: "矢上 陽葉",
+    category: "小学5年生 女子",
+    club: "館山SLSC",
+    events: [
+      { event: "ウェーディング", rank: 8, note: "" },
+      { event: "ニッパー", rank: 3, note: "" },
+      { event: "ビーチスプリント", rank: "予選", note: "" },
+      { event: "ビーチフラッグス", rank: "予選", note: "" },
+    ],
+  },
+  {
+    name: "矢上 真吾",
+    category: "マスターズ",
+    club: "館山SLSC",
+    events: [
+      { event: "ビーチスプリント", rank: "予選最下位", note: "" },
+      { event: "ビーチフラッグス", rank: "予選2本目", note: "" },
     ],
   },
 ];
@@ -93,7 +115,7 @@ export default function JYMBeach2022Page() {
                   <span className="text-ocean-mid shrink-0">👥</span>
                   <div>
                     <p className="text-text-light text-xs">出場選手</p>
-                    <p className="text-text-dark font-medium">矢上 陽葉（小学5・6年生 女子）</p>
+                    <p className="text-text-dark font-medium">矢上 結月（小6）/ 矢上 陽葉（小5）/ 矢上 真吾（マスターズ）</p>
                   </div>
                 </div>
               </div>
@@ -154,7 +176,7 @@ export default function JYMBeach2022Page() {
                               ev.rank === 1 ? "text-guard-yellow" : "text-ocean-dark"
                             }`}
                           >
-                            {ev.rank}位
+                            {typeof ev.rank === "number" ? `${ev.rank}位` : ev.rank}
                           </span>
                           {ev.note && (
                             <span className="ml-2 text-xs bg-guard-yellow/20 text-guard-yellow px-2 py-0.5 rounded-full font-bold">
