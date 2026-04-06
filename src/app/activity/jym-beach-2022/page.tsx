@@ -6,7 +6,7 @@ import { AnimateIn } from "@/components/AnimateIn";
 const results = [
   {
     name: "矢上 結月",
-    category: "小学6年生 女子 → 中学生",
+    category: "中学1年生（U15）女子",
     club: "館山SLSC",
     events: [
       { event: "ランスイムラン", rank: "決勝", note: "" },
@@ -115,7 +115,7 @@ export default function JYMBeach2022Page() {
                   <span className="text-ocean-mid shrink-0">👥</span>
                   <div>
                     <p className="text-text-light text-xs">出場選手</p>
-                    <p className="text-text-dark font-medium">矢上 結月（小6）/ 矢上 陽葉（小5）/ 矢上 真吾（マスターズ）</p>
+                    <p className="text-text-dark font-medium">矢上 結月（中1）/ 矢上 陽葉（小5）/ 矢上 真吾（マスターズ）</p>
                   </div>
                 </div>
               </div>
