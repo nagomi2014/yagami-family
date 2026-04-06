@@ -1,67 +1,89 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
 
-const categories = ["全て", "大会", "トレーニング", "地域活動", "メディア"];
+const categories = ["全て", "大会", "大会レポート動画"];
 
-const posts = [
+type Post = {
+  slug: string;
+  date: string;
+  title: string;
+  category: string;
+  excerpt: string;
+  members: string[];
+  youtubeId?: string;
+};
+
+const posts: Post[] = [
   {
-    slug: "national-championship-2026",
-    date: "2026.03.09",
-    title: "全日本ライフセービング選手権 出場レポート",
+    slug: "jym-pool-2025",
+    date: "2025.01",
+    title: "全日本JYMプール大会 2025",
     category: "大会",
-    excerpt: "長女が見事3位入賞！全国の舞台で成長を見せました。家族全員で挑んだ全日本選手権の記録です。",
-    members: ["長女", "次女"],
+    excerpt:
+      "結月・陽葉が全5種目にエントリー。陽葉はマネキンキャリー50mで約5秒短縮、マネキンキャリーWF100mで完泳を達成。スーパーライフセーバー200mにも初挑戦。",
+    members: ["結月", "陽葉"],
   },
   {
-    slug: "winter-training-miyazaki",
-    date: "2026.02.15",
-    title: "冬季トレーニングキャンプ in 宮崎",
-    category: "トレーニング",
-    excerpt: "家族全員で宮崎の海で冬季トレーニングを実施。オフシーズンの地道な積み重ねが、来シーズンの結果につながる。",
-    members: ["長女", "次女", "長男"],
-  },
-  {
-    slug: "school-workshop-jan",
-    date: "2026.01.20",
-    title: "地元小学校でライフセービング体験授業",
-    category: "地域活動",
-    excerpt: "地域の子どもたちに海の安全と命の大切さを伝えました。「自分の命は自分で守る」をテーマに体験型の授業を実施。",
-    members: ["長女", "長男"],
-  },
-  {
-    slug: "tv-feature-dec",
-    date: "2025.12.10",
-    title: "地元テレビ局の特集に出演",
-    category: "メディア",
-    excerpt: "「ライフセーバー家族の挑戦」として地元テレビ局の夕方ニュースで特集されました。",
-    members: ["長女", "次女", "長男"],
-  },
-  {
-    slug: "kyushu-championship",
-    date: "2025.11.03",
-    title: "九州ライフセービング選手権",
+    slug: "jym-pool-2024",
+    date: "2024.01",
+    title: "全日本JYMプール大会 2024",
     category: "大会",
-    excerpt: "長女がビーチフラッグス2位、次女がボードレスキュー3位。きょうだいでのW入賞を達成！",
-    members: ["長女", "次女"],
+    excerpt:
+      "結月がU15カテゴリで初出場。陽葉と共に障害物スイム・マネキンキャリー・マネキントウの全種目にエントリー。",
+    members: ["結月", "陽葉"],
   },
   {
-    slug: "beach-cleanup",
-    date: "2025.10.15",
-    title: "秋のビーチクリーン活動",
-    category: "地域活動",
-    excerpt: "ホームビーチの清掃活動に参加。海を守ることもライフセーバーの大切な使命です。",
-    members: ["長女", "次女", "長男"],
+    slug: "jym-pool-2023",
+    date: "2023.02",
+    title: "全日本JYMプール大会 2023",
+    category: "大会",
+    excerpt:
+      "陽葉が2年連続出場。障害物スイム50mで36.57秒（前年比-2.94秒）と大幅にタイムを更新。チューブトウ100mも1:31.24。",
+    members: ["陽葉"],
+  },
+  {
+    slug: "jym-pool-2022",
+    date: "2022.02",
+    title: "全日本JYMプール大会 2022 初出場",
+    category: "大会",
+    excerpt:
+      "陽葉が小学5年生で全日本大会に初出場。障害物スイム50mで39.51秒（12位）。藤崎笑佳と共に館山SLSCチームでリレーにも出場。",
+    members: ["陽葉"],
+  },
+  {
+    slug: "jym-beach-2022-vol1",
+    date: "2022.09",
+    title: "2022年 全日本JYMビーチ大会 Vol.1",
+    category: "大会レポート動画",
+    excerpt: "2022年全日本ジュニア・ユース・マスターズ ビーチ大会の記録映像。真吾による撮影レポート。",
+    members: ["結月", "陽葉", "賢尚"],
+    youtubeId: "ljz5XNQQjS4",
+  },
+  {
+    slug: "jym-beach-2022-vol2",
+    date: "2022.09",
+    title: "2022年 全日本JYMビーチ大会 Vol.2",
+    category: "大会レポート動画",
+    excerpt: "ビーチ大会のレース映像と振り返り。子どもたちの成長が見える貴重な記録。",
+    members: ["結月", "陽葉", "賢尚"],
+    youtubeId: "xv7bZuQTH68",
+  },
+  {
+    slug: "jym-beach-2022-vol3",
+    date: "2022.09",
+    title: "2022年 全日本JYMビーチ大会 Vol.3",
+    category: "大会レポート動画",
+    excerpt: "大会の裏側、ウォーミングアップから本番まで。矢上家のライフセービングな1日。",
+    members: ["結月", "陽葉", "賢尚"],
+    youtubeId: "cGLJQRhuPVk",
   },
 ];
 
 const categoryColors: Record<string, string> = {
   大会: "bg-lifesaving-red/10 text-lifesaving-red border-lifesaving-red/20",
-  トレーニング: "bg-ocean-mid/10 text-ocean-mid border-ocean-mid/20",
-  地域活動: "bg-sunset/10 text-sunset border-sunset/20",
-  メディア: "bg-guard-yellow/10 text-guard-yellow border-guard-yellow/30",
+  大会レポート動画: "bg-ocean-mid/10 text-ocean-mid border-ocean-mid/20",
 };
 
 export default function ActivityPage() {
@@ -88,7 +110,10 @@ export default function ActivityPage() {
         </div>
         <div className="absolute bottom-0 left-0 right-0 wave-divider">
           <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="var(--color-sand-pale)" />
+            <path
+              d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z"
+              fill="var(--color-sand-pale)"
+            />
           </svg>
         </div>
       </section>
@@ -119,45 +144,56 @@ export default function ActivityPage() {
           <div className="space-y-6">
             {filtered.map((post, i) => (
               <AnimateIn key={post.slug} delay={i * 0.08}>
-                <Link href={`/activity`} className="group block">
-                  <article className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row">
-                    {/* Thumbnail placeholder */}
-                    <div className="md:w-64 h-48 md:h-auto bg-gradient-to-br from-ocean/70 to-ocean-dark shrink-0 relative">
-                      <div className="absolute inset-0 bg-ocean-deep/10 group-hover:bg-transparent transition-colors" />
+                <article className="bg-white rounded-xl overflow-hidden shadow-sm">
+                  {/* YouTube embed */}
+                  {post.youtubeId && (
+                    <div className="aspect-video w-full">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${post.youtubeId}`}
+                        title={post.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                      />
                     </div>
+                  )}
 
-                    <div className="p-6 flex-1">
-                      <div className="flex flex-wrap items-center gap-3 mb-3">
-                        <span
-                          className={`text-[10px] px-3 py-1 rounded-full font-medium border ${
-                            categoryColors[post.category] || ""
-                          }`}
-                        >
-                          {post.category}
-                        </span>
-                        <span className="text-text-light text-xs">
-                          {post.date}
-                        </span>
-                        <div className="flex gap-1">
-                          {post.members.map((m) => (
-                            <span
-                              key={m}
-                              className="text-[10px] bg-ocean/5 text-ocean px-2 py-0.5 rounded"
-                            >
-                              {m}
-                            </span>
-                          ))}
-                        </div>
+                  {/* Thumbnail placeholder for non-video posts */}
+                  {!post.youtubeId && (
+                    <div className="h-3 bg-gradient-to-r from-ocean-mid to-ocean-dark" />
+                  )}
+
+                  <div className="p-6">
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                      <span
+                        className={`text-[10px] px-3 py-1 rounded-full font-medium border ${
+                          categoryColors[post.category] || "bg-gray-50 text-gray-600 border-gray-200"
+                        }`}
+                      >
+                        {post.category}
+                      </span>
+                      <span className="text-text-light text-xs">
+                        {post.date}
+                      </span>
+                      <div className="flex gap-1">
+                        {post.members.map((m) => (
+                          <span
+                            key={m}
+                            className="text-[10px] bg-ocean/5 text-ocean px-2 py-0.5 rounded"
+                          >
+                            {m}
+                          </span>
+                        ))}
                       </div>
-                      <h2 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark group-hover:text-ocean-mid transition-colors text-lg leading-relaxed">
-                        {post.title}
-                      </h2>
-                      <p className="text-text-mid text-sm mt-3 leading-relaxed line-clamp-2">
-                        {post.excerpt}
-                      </p>
                     </div>
-                  </article>
-                </Link>
+                    <h2 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-lg leading-relaxed">
+                      {post.title}
+                    </h2>
+                    <p className="text-text-mid text-sm mt-3 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                </article>
               </AnimateIn>
             ))}
           </div>
