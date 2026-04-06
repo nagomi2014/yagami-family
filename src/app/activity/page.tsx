@@ -13,6 +13,7 @@ type Post = {
   excerpt: string;
   members: string[];
   youtubeId?: string;
+  link?: string;
 };
 
 const posts: Post[] = [
@@ -53,31 +54,13 @@ const posts: Post[] = [
     members: ["陽葉"],
   },
   {
-    slug: "jym-beach-2022-vol1",
-    date: "2022.09",
-    title: "2022年 全日本JYMビーチ大会 Vol.1",
-    category: "大会レポート動画",
-    excerpt: "2022年全日本ジュニア・ユース・マスターズ ビーチ大会の記録映像。真吾による撮影レポート。",
-    members: ["結月", "陽葉", "賢尚"],
-    youtubeId: "ljz5XNQQjS4",
-  },
-  {
-    slug: "jym-beach-2022-vol2",
-    date: "2022.09",
-    title: "2022年 全日本JYMビーチ大会 Vol.2",
-    category: "大会レポート動画",
-    excerpt: "ビーチ大会のレース映像と振り返り。子どもたちの成長が見える貴重な記録。",
-    members: ["結月", "陽葉", "賢尚"],
-    youtubeId: "xv7bZuQTH68",
-  },
-  {
-    slug: "jym-beach-2022-vol3",
-    date: "2022.09",
-    title: "2022年 全日本JYMビーチ大会 Vol.3",
-    category: "大会レポート動画",
-    excerpt: "大会の裏側、ウォーミングアップから本番まで。矢上家のライフセービングな1日。",
-    members: ["結月", "陽葉", "賢尚"],
-    youtubeId: "cGLJQRhuPVk",
+    slug: "jym-beach-2022",
+    date: "2022.06",
+    title: "2022年 全日本JYMビーチ大会",
+    category: "大会",
+    excerpt: "横浜海の公園で開催。陽葉が小学5・6年生女子ビーチフラッグスで優勝！ビーチスプリント7位、ビーチラン1km 8位。動画レポート3本付き。",
+    members: ["陽葉"],
+    link: "/activity/jym-beach-2022",
   },
 ];
 
@@ -144,7 +127,10 @@ export default function ActivityPage() {
           <div className="space-y-6">
             {filtered.map((post, i) => (
               <AnimateIn key={post.slug} delay={i * 0.08}>
-                <article className="bg-white rounded-xl overflow-hidden shadow-sm">
+                <article
+                  className={`bg-white rounded-xl overflow-hidden shadow-sm ${post.link ? "cursor-pointer hover:shadow-md transition-shadow" : ""}`}
+                  onClick={() => post.link && (window.location.href = post.link)}
+                >
                   {/* YouTube embed */}
                   {post.youtubeId && (
                     <div className="aspect-video w-full">
