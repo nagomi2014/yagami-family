@@ -42,3 +42,5 @@ next-env.d.ts
 *.mp4
 *.mov
 *.avi
+
+.vercel
