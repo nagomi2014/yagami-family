@@ -1,0 +1,21 @@
+{
+  "name": "矢上家のライフセービングな日常",
+  "short_name": "矢上家LS",
+  "description": "海を、命を、家族で守る。ライフセーバー一家・矢上家の活動記録",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0C2D48",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

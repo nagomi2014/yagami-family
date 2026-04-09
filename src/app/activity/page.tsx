@@ -76,6 +76,7 @@ const posts: Post[] = [
     category: "大会",
     excerpt: "陽葉が小1で初参加。ウェーディングレース U8で出場。結月はランスイムラン・ニッパー・ボードで決勝進出、ビーチフラッグスにも出場。",
     members: ["結月", "陽葉"],
+    link: "/activity/jym-2018",
   },
   {
     slug: "jym-2017",

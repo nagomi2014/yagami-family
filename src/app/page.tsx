@@ -1,30 +1,26 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimateIn } from "@/components/AnimateIn";
 
 /* ===== HERO ===== */
 function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 gradient-ocean" />
-      {/* Animated wave overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute bottom-0 left-0 right-0 h-64"
-          style={{
-            background:
-              "repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(135,206,235,0.1) 40px, rgba(135,206,235,0.1) 80px)",
-          }}
-        />
-      </div>
-      {/* Placeholder for hero image — replace with actual photo later */}
-      <div className="absolute inset-0 bg-[url('/hero-placeholder.jpg')] bg-cover bg-center opacity-30" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/40 via-transparent to-ocean-deep/90" />
+    <section className="relative h-[70vh] md:h-screen flex items-end justify-center overflow-hidden">
+      {/* Hero photo */}
+      <Image
+        src="/images/hero.jpg"
+        alt="ビーチでボードを持って走るライフセーバーたち"
+        fill
+        className="object-cover"
+        priority
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/70 via-ocean-deep/40 to-ocean-deep/85" />
 
-      <div className="relative z-10 text-center px-5 max-w-4xl">
+      <div className="relative z-10 text-center px-5 max-w-4xl mb-4 md:mb-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,9 +39,9 @@ function Hero() {
           className="font-[family-name:var(--font-serif-jp)] text-white font-bold leading-relaxed"
           style={{ fontSize: "clamp(2rem, 6vw, 4rem)" }}
         >
-          海を、命を、
+          砂浜が、
           <br />
-          家族で守る。
+          僕たちの教室だ。
         </motion.h1>
 
         <motion.p
@@ -54,7 +50,7 @@ function Hero() {
           transition={{ duration: 1, delay: 1.0 }}
           className="text-white/50 mt-6 text-sm font-light tracking-wider leading-loose"
         >
-          砂浜の向こう側に、僕たちの日常がある。
+          走って、泳いで、笑う。それが矢上家の日常。
         </motion.p>
 
         <motion.div
@@ -90,19 +86,19 @@ function WhoWeAre() {
       name: "矢上 結月",
       nameEn: "Yuzuki Yagami",
       event: "障害物スイム / マネキントウ / スーパーライフセーバー",
-      emoji: "🏊‍♀️",
+      photo: "/images/members/yuzuki.jpg",
     },
     {
       name: "矢上 陽葉",
       nameEn: "Kiyoha Yagami",
       event: "障害物スイム / マネキンキャリー / マネキントウ",
-      emoji: "🏄‍♀️",
+      photo: "/images/members/kiyoha.jpg",
     },
     {
       name: "矢上 賢尚",
       nameEn: "Kenshow Yagami",
       event: "障害物スイム / ビーチスプリント / 50m自由形",
-      emoji: "🏃‍♂️",
+      photo: "/images/members/kenshow.jpg",
     },
   ];
 
@@ -123,11 +119,16 @@ function WhoWeAre() {
           {athletes.map((member, i) => (
             <AnimateIn key={member.name} delay={i * 0.15}>
               <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                {/* Photo placeholder */}
                 <div className="aspect-[3/4] bg-gradient-to-br from-ocean-dark to-ocean relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-6xl opacity-30">{member.emoji}</span>
-                  </div>
+                  {member.photo && (
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  )}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ocean-deep/80 to-transparent p-6">
                     <p className="text-white/50 text-[10px] font-[family-name:var(--font-display)] tracking-[0.2em] uppercase">
                       {member.nameEn}
