@@ -269,44 +269,79 @@ function LatestActivity() {
   );
 }
 
-/* ===== GALLERY PREVIEW ===== */
-function GalleryPreview() {
+/* ===== RECORDS HIGHLIGHT ===== */
+function RecordsHighlight() {
+  const highlights = [
+    {
+      name: "矢上 結月",
+      nameEn: "Yuzuki",
+      best: [
+        { event: "障害物スイム 100m", time: "1:33.47", year: "2024" },
+        { event: "マネキントウWF 100m", time: "1:32.10", year: "2024" },
+      ],
+    },
+    {
+      name: "矢上 陽葉",
+      nameEn: "Kiyoha",
+      best: [
+        { event: "マネキンキャリー 50m", time: "48.97", year: "2025" },
+        { event: "スーパーライフセーバー 200m", time: "3:34.41", year: "2025" },
+      ],
+    },
+    {
+      name: "矢上 賢尚",
+      nameEn: "Kenshow",
+      best: [
+        { event: "50m自由形", time: "41.00", year: "2026" },
+        { event: "50m走", time: "9.40秒", year: "2026" },
+      ],
+    },
+  ];
+
   return (
     <section className="py-24 px-5 bg-sand-light">
       <div className="max-w-6xl mx-auto">
-        <AnimateIn className="text-center mb-16">
-          <p className="section-label justify-center">Gallery</p>
-          <h2 className="section-title mt-4 text-ocean-dark">思い出の記録</h2>
+        <AnimateIn className="mb-16">
+          <p className="section-label">Records</p>
+          <h2 className="section-title mt-4 text-ocean-dark">大会記録</h2>
         </AnimateIn>
 
-        <AnimateIn>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div
-                key={i}
-                className={`aspect-square rounded-lg overflow-hidden ${
-                  i % 5 === 0 ? "col-span-2 row-span-2" : ""
-                }`}
-              >
-                <div
-                  className="w-full h-full hover:scale-105 transition-transform duration-500 cursor-pointer"
-                  style={{
-                    background: `linear-gradient(${135 + i * 30}deg,
-                      hsl(${200 + i * 10}, 60%, ${30 + i * 3}%),
-                      hsl(${210 + i * 8}, 50%, ${45 + i * 3}%))`,
-                  }}
-                />
+        <div className="grid md:grid-cols-3 gap-6">
+          {highlights.map((athlete, i) => (
+            <AnimateIn key={athlete.name} delay={i * 0.12}>
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div className="gradient-ocean px-5 py-4">
+                  <p className="text-ocean-light/50 text-[10px] font-[family-name:var(--font-display)] tracking-[0.2em] uppercase">
+                    {athlete.nameEn}
+                  </p>
+                  <h3 className="text-white font-[family-name:var(--font-serif-jp)] font-bold text-lg">
+                    {athlete.name}
+                  </h3>
+                </div>
+                <div className="p-5 space-y-3">
+                  {athlete.best.map((record) => (
+                    <div key={record.event} className="flex items-center justify-between">
+                      <div>
+                        <p className="text-xs text-text-light">{record.event}</p>
+                        <p className="font-mono font-medium text-ocean-dark">{record.time}</p>
+                      </div>
+                      <span className="text-xs text-text-light bg-sand-pale px-2 py-1 rounded">
+                        {record.year}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </AnimateIn>
+            </AnimateIn>
+          ))}
+        </div>
 
-        <AnimateIn delay={0.2} className="text-center mt-12">
+        <AnimateIn delay={0.3} className="text-center mt-12">
           <Link
-            href="/gallery"
+            href="/records"
             className="inline-flex items-center gap-2 text-ocean-mid hover:text-ocean-dark text-sm font-[family-name:var(--font-display)] tracking-wider uppercase transition-colors group"
           >
-            View All Photos
+            View All Records
             <span className="group-hover:translate-x-1 transition-transform">
               →
             </span>
@@ -374,70 +409,6 @@ function SupportCTA() {
   );
 }
 
-/* ===== UPCOMING EVENTS ===== */
-function UpcomingEvents() {
-  const events = [
-    {
-      date: "2026.04.12",
-      title: "九州ライフセービング選手権",
-      location: "宮崎・青島ビーチ",
-      participants: "長女・次女・長男",
-    },
-    {
-      date: "2026.05.24",
-      title: "全日本ジュニア選手権",
-      location: "神奈川・片瀬西浜",
-      participants: "長男",
-    },
-  ];
-
-  return (
-    <section className="py-24 px-5 bg-sand-pale">
-      <div className="max-w-4xl mx-auto">
-        <AnimateIn>
-          <p className="section-label">Upcoming</p>
-          <h2 className="section-title mt-4 text-ocean-dark">今後の予定</h2>
-        </AnimateIn>
-
-        <div className="mt-12 space-y-4">
-          {events.map((event, i) => (
-            <AnimateIn key={event.title} delay={i * 0.1}>
-              <div className="bg-white rounded-xl p-6 flex flex-col sm:flex-row sm:items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
-                <div className="sm:w-32 shrink-0">
-                  <div className="text-xs text-ocean-mid font-[family-name:var(--font-display)] tracking-wider">
-                    📅 {event.date}
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark">
-                    {event.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-3 mt-2 text-xs text-text-mid">
-                    <span>📍 {event.location}</span>
-                    <span>👥 {event.participants}</span>
-                  </div>
-                </div>
-              </div>
-            </AnimateIn>
-          ))}
-        </div>
-
-        <AnimateIn delay={0.2} className="text-center mt-12">
-          <Link
-            href="/schedule"
-            className="inline-flex items-center gap-2 text-ocean-mid hover:text-ocean-dark text-sm font-[family-name:var(--font-display)] tracking-wider uppercase transition-colors group"
-          >
-            Full Schedule
-            <span className="group-hover:translate-x-1 transition-transform">
-              →
-            </span>
-          </Link>
-        </AnimateIn>
-      </div>
-    </section>
-  );
-}
-
 /* ===== PAGE ===== */
 export default function Home() {
   return (
@@ -445,9 +416,8 @@ export default function Home() {
       <Hero />
       <WhoWeAre />
       <LatestActivity />
-      <GalleryPreview />
+      <RecordsHighlight />
       <SupportCTA />
-      <UpcomingEvents />
     </>
   );
 }

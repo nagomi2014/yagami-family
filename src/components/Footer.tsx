@@ -42,11 +42,10 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               {[
-                { href: "/about", label: "About" },
-                { href: "/activity", label: "Activity" },
-                { href: "/gallery", label: "Gallery" },
-                { href: "/support", label: "Support" },
-                { href: "/schedule", label: "Schedule" },
+                { href: "/about", label: "私たちについて" },
+                { href: "/activity", label: "活動記録" },
+                { href: "/records", label: "大会記録" },
+                { href: "/support", label: "サポーター募集" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
