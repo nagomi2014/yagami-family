@@ -224,8 +224,7 @@ export default function SupportPage() {
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
                   { icon: "🌐", title: "Webサイト掲載", desc: "企業ロゴ・リンクをサポーターページに掲載" },
-                  { icon: "🏖️", title: "大会・イベント露出", desc: "応援バナー・テントへのロゴ掲載" },
-                  { icon: "👕", title: "ウェア・機材掲載", desc: "練習着・ウェットスーツ等へのロゴ掲載" },
+                  { icon: "📸", title: "SNS・動画での紹介", desc: "活動報告の投稿・動画内でスポンサー紹介" },
                   { icon: "📊", title: "活動レポート", desc: "四半期ごとの活動報告・SNS露出レポート" },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
