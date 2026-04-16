@@ -27,15 +27,15 @@ const posts: Post[] = [
   },
   {
     slug: "youth-20260412",
-    date: "2026.04.12",
+    date: "2026.04.12 AM",
     title: "ユーストレーニング",
     category: "トレーニング",
     excerpt: "",
     members: ["結月", "陽葉"],
   },
   {
-    slug: "heisaura-beach",
-    date: "2026.04",
+    slug: "heisaura-beach-20260412",
+    date: "2026.04.12 PM",
     title: "平砂浦 ビーチトレーニング",
     category: "トレーニング",
     excerpt: "",
