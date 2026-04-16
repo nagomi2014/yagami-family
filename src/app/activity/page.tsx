@@ -53,6 +53,16 @@ const posts: Post[] = [
     mediaType: "photo",
     link: "/activity/20260411-junior",
   },
+  {
+    slug: "hojo-20260408",
+    date: "2026.04.08",
+    title: "北条トレーニング",
+    excerpt: "",
+    members: ["結月", "陽葉", "賢尚"],
+    thumbnail: "/images/activity/20260408hojo/LINE_ALBUM_202648\u3000北条_260416_1.jpg",
+    mediaType: "photo",
+    link: "/activity/20260408-hojo",
+  },
 ];
 
 /* 月別にグループ化 */
