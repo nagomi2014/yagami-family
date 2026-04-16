@@ -14,7 +14,8 @@ function Hero() {
         src="/images/hero.jpg"
         alt="ビーチでボードを持って走るライフセーバーたち"
         fill
-        className="object-cover"
+        className="object-cover object-center"
+        sizes="100vw"
         priority
       />
       {/* Dark overlay for text readability */}
@@ -119,13 +120,13 @@ function WhoWeAre() {
           {athletes.map((member, i) => (
             <AnimateIn key={member.name} delay={i * 0.15}>
               <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-video bg-gradient-to-br from-ocean-dark to-ocean relative overflow-hidden">
+                <div className="aspect-[16/9] bg-gradient-to-br from-ocean-dark to-ocean relative overflow-hidden">
                   {member.photo && (
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-center"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   )}
