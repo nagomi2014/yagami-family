@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimateIn } from "@/components/AnimateIn";
 
-const categories = ["全て", "大会", "大会レポート動画"];
+const categories = ["全て", "トレーニング"];
 
 type Post = {
   slug: string;
@@ -18,96 +18,41 @@ type Post = {
 
 const posts: Post[] = [
   {
-    slug: "jym-pool-2025",
-    date: "2025.01",
-    title: "全日本JYMプール大会 2025",
-    category: "大会",
-    excerpt:
-      "結月・陽葉が全5種目にエントリー。陽葉はマネキンキャリー50mで約5秒短縮、マネキンキャリーWF100mで完泳を達成。スーパーライフセーバー200mにも初挑戦。",
+    slug: "chikura-20260415",
+    date: "2026.04.15",
+    title: "千倉トレーニング",
+    category: "トレーニング",
+    excerpt: "",
+    members: ["結月", "陽葉", "賢尚"],
+  },
+  {
+    slug: "youth-20260412",
+    date: "2026.04.12",
+    title: "ユーストレーニング",
+    category: "トレーニング",
+    excerpt: "",
     members: ["結月", "陽葉"],
   },
   {
-    slug: "jym-pool-2024",
-    date: "2024.01",
-    title: "全日本JYMプール大会 2024",
-    category: "大会",
-    excerpt:
-      "結月がU15カテゴリで初出場。陽葉と共に障害物スイム・マネキンキャリー・マネキントウの全種目にエントリー。",
-    members: ["結月", "陽葉"],
+    slug: "heisaura-beach",
+    date: "2026.04",
+    title: "平砂浦 ビーチトレーニング",
+    category: "トレーニング",
+    excerpt: "",
+    members: ["結月", "陽葉", "賢尚"],
   },
   {
-    slug: "jym-pool-2023",
-    date: "2023.02",
-    title: "全日本JYMプール大会 2023",
-    category: "大会",
-    excerpt:
-      "陽葉が2年連続出場。障害物スイム50mで36.57秒（前年比-2.94秒）と大幅にタイムを更新。チューブトウ100mも1:31.24。",
-    members: ["陽葉"],
-  },
-  {
-    slug: "jym-pool-2022",
-    date: "2022.02",
-    title: "全日本JYMプール大会 2022 初出場",
-    category: "大会",
-    excerpt:
-      "陽葉が小学5年生で全日本大会に初出場。障害物スイム50mで39.51秒（12位）。藤崎笑佳と共に館山SLSCチームでリレーにも出場。",
-    members: ["陽葉"],
-  },
-  {
-    slug: "jym-surf-2019",
-    date: "2019",
-    title: "2019年 全日本JYMサーフ大会（結月 小4 / 陽葉 小2）",
-    category: "大会",
-    excerpt: "結月：ランスイムラン決勝、ニッパー・ボード予選落ち。陽葉：ウェーディング7位、ニッパーボード3位。姉妹でU12タップリンリレー（結月ニッパーボード＋陽葉ラン）に出場し2位入賞！",
-    members: ["結月", "陽葉"],
-  },
-  {
-    slug: "jym-beach-2019",
-    date: "2019",
-    title: "2019年 全日本JYMビーチ大会（結月 小4 / 陽葉 小2）",
-    category: "大会",
-    excerpt: "結月：ビーチスプリント7位、ビーチフラッグス予選落ち。陽葉：ビーチスプリント4位、ビーチフラッグス3位。",
-    members: ["結月", "陽葉"],
-  },
-  {
-    slug: "jym-2018",
-    date: "2018",
-    title: "2018年 大会参加（結月 小3 / 陽葉 小1 初参加）",
-    category: "大会",
-    excerpt: "陽葉が小1で初参加。ウェーディングレース U8で出場。結月はランスイムラン・ニッパー・ボードで決勝進出、ビーチフラッグスにも出場。",
-    members: ["結月", "陽葉"],
-    link: "/activity/jym-2018",
-  },
-  {
-    slug: "jym-2017",
-    date: "2017",
-    title: "2017年 大会参加（結月 小2）",
-    category: "大会",
-    excerpt: "結月がウェーディングレース U8女子で2位に入賞。ビーチフラッグスにも出場。",
-    members: ["結月"],
-  },
-  {
-    slug: "jym-2016",
-    date: "2016",
-    title: "2016年 初めての大会参加（結月 小1）",
-    category: "大会",
-    excerpt: "矢上家として初めて大会に参加。結月がウェーディングとビーチフラッグスに出場。ここから矢上家の挑戦が始まった。",
-    members: ["結月"],
-  },
-  {
-    slug: "jym-beach-2022",
-    date: "2022.06",
-    title: "2022年 全日本JYMビーチ大会",
-    category: "大会",
-    excerpt: "横浜海の公園で開催。陽葉が小学5・6年生女子ビーチフラッグスで優勝！ビーチスプリント7位、ビーチラン1km 8位。動画レポート3本付き。",
-    members: ["陽葉"],
-    link: "/activity/jym-beach-2022",
+    slug: "junior-20260411",
+    date: "2026.04.11",
+    title: "ジュニアトレーニング",
+    category: "トレーニング",
+    excerpt: "",
+    members: ["結月", "陽葉", "賢尚"],
   },
 ];
 
 const categoryColors: Record<string, string> = {
-  大会: "bg-lifesaving-red/10 text-lifesaving-red border-lifesaving-red/20",
-  大会レポート動画: "bg-ocean-mid/10 text-ocean-mid border-ocean-mid/20",
+  トレーニング: "bg-ocean-mid/10 text-ocean-mid border-ocean-mid/20",
 };
 
 export default function ActivityPage() {

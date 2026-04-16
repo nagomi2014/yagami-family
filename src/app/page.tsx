@@ -192,30 +192,27 @@ function WhoWeAre() {
 function LatestActivity() {
   const posts = [
     {
-      date: "2026.03.09",
-      title: "全日本ライフセービング選手権 出場レポート",
-      category: "大会",
-      excerpt: "長女が見事3位入賞！全国の舞台で成長を見せました。",
-    },
-    {
-      date: "2026.02.15",
-      title: "冬季トレーニングキャンプ in 宮崎",
+      date: "2026.04.15",
+      title: "千倉トレーニング",
       category: "トレーニング",
-      excerpt: "家族全員で宮崎の海で冬季トレーニングを実施。",
+      excerpt: "",
     },
     {
-      date: "2026.01.20",
-      title: "地元小学校でライフセービング体験授業",
-      category: "地域活動",
-      excerpt: "地域の子どもたちに海の安全と命の大切さを伝えました。",
+      date: "2026.04.12",
+      title: "ユーストレーニング",
+      category: "トレーニング",
+      excerpt: "",
+    },
+    {
+      date: "2026.04.11",
+      title: "ジュニアトレーニング",
+      category: "トレーニング",
+      excerpt: "",
     },
   ];
 
   const categoryColors: Record<string, string> = {
-    大会: "bg-lifesaving-red/10 text-lifesaving-red",
     トレーニング: "bg-ocean-mid/10 text-ocean-mid",
-    地域活動: "bg-sunset/10 text-sunset",
-    メディア: "bg-guard-yellow/10 text-guard-yellow",
   };
 
   return (
