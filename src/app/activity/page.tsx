@@ -63,6 +63,16 @@ const posts: Post[] = [
     mediaType: "photo",
     link: "/activity/20260408-hojo",
   },
+  {
+    slug: "beachclean-20260405",
+    date: "2026.04.05",
+    title: "ビーチクリーン",
+    excerpt: "",
+    members: ["結月", "陽葉", "賢尚"],
+    thumbnail: "/images/activity/20260405beachclean/LINE_ALBUM_ビーチクリーン_260416_1.jpg",
+    mediaType: "photo",
+    link: "/activity/20260405-beachclean",
+  },
 ];
 
 /* 月別にグループ化 */
