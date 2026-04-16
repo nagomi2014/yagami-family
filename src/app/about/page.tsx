@@ -75,7 +75,7 @@ export default function AboutPage() {
             {athletes.map((member, i) => (
               <AnimateIn key={member.name} delay={i * 0.15}>
                 <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                  <div className="aspect-[16/9] bg-gradient-to-br from-ocean-dark to-ocean relative overflow-hidden">
+                  <div className="aspect-video bg-gradient-to-br from-ocean-dark to-ocean relative overflow-hidden">
                     {member.photo && (
                       <Image
                         src={member.photo}
