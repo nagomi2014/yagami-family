@@ -1,19 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
-
-const categories = ["全て", "トレーニング"];
 
 type Post = {
   slug: string;
   date: string;
   title: string;
-  category: string;
   excerpt: string;
   members: string[];
-  youtubeId?: string;
-  link?: string;
+  thumbnail?: string;
+  mediaType?: "photo" | "video";
+  link: string;
 };
 
 const posts: Post[] = [
@@ -21,47 +20,74 @@ const posts: Post[] = [
     slug: "chikura-20260415",
     date: "2026.04.15",
     title: "千倉トレーニング",
-    category: "トレーニング",
     excerpt: "",
     members: ["結月", "陽葉", "賢尚"],
+    link: "/activity/20260415-chikura",
   },
   {
     slug: "youth-20260412",
     date: "2026.04.12 AM",
     title: "ユーストレーニング",
-    category: "トレーニング",
     excerpt: "",
     members: ["結月", "陽葉"],
+    thumbnail: "/images/activity/20260412youth/LINE_ALBUM_2023412 育成_260416_1.jpg",
+    mediaType: "photo",
+    link: "/activity/20260412-youth",
   },
   {
-    slug: "heisaura-beach-20260412",
+    slug: "heisaura-20260412",
     date: "2026.04.12 PM",
     title: "平砂浦 ビーチトレーニング",
-    category: "トレーニング",
     excerpt: "",
     members: ["結月", "陽葉", "賢尚"],
+    mediaType: "video",
+    link: "/activity/20260412-heisaura",
   },
   {
     slug: "junior-20260411",
     date: "2026.04.11",
     title: "ジュニアトレーニング",
-    category: "トレーニング",
     excerpt: "",
     members: ["結月", "陽葉", "賢尚"],
+    thumbnail: "/images/activity/20260411jr/LINE_ALBUM_2026411ジュニア_260416_4.jpg",
+    mediaType: "photo",
+    link: "/activity/20260411-junior",
   },
 ];
 
-const categoryColors: Record<string, string> = {
-  トレーニング: "bg-ocean-mid/10 text-ocean-mid border-ocean-mid/20",
-};
+/* 月別にグループ化 */
+function groupByMonth(items: Post[]) {
+  const groups: { label: string; posts: Post[] }[] = [];
+  const map = new Map<string, Post[]>();
+
+  for (const post of items) {
+    // "2026.04.15" → "2026.04"
+    const month = post.date.split(".").slice(0, 2).join(".");
+    if (!map.has(month)) {
+      map.set(month, []);
+    }
+    map.get(month)!.push(post);
+  }
+
+  for (const [key, value] of map) {
+    const [y, m] = key.split(".");
+    groups.push({ label: `${y}年${Number(m)}月の活動`, posts: value });
+  }
+
+  return groups;
+}
+
+function MediaBadge({ type }: { type?: "photo" | "video" }) {
+  if (!type) return null;
+  return (
+    <span className="absolute top-3 right-3 bg-ocean-deep/60 text-white text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">
+      {type === "photo" ? "📷 写真" : "🎬 動画"}
+    </span>
+  );
+}
 
 export default function ActivityPage() {
-  const [activeCategory, setActiveCategory] = useState("全て");
-
-  const filtered =
-    activeCategory === "全て"
-      ? posts
-      : posts.filter((p) => p.category === activeCategory);
+  const groups = groupByMonth(posts);
 
   return (
     <>
@@ -87,88 +113,72 @@ export default function ActivityPage() {
         </div>
       </section>
 
-      {/* Filter + List */}
+      {/* 月別グループ */}
       <section className="py-16 px-5 bg-sand-pale">
-        <div className="max-w-4xl mx-auto">
-          {/* Category Filter */}
-          <AnimateIn>
-            <div className="flex flex-wrap gap-3 mb-12">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`text-xs px-4 py-2 rounded-full border transition-all font-medium ${
-                    activeCategory === cat
-                      ? "bg-ocean-dark text-white border-ocean-dark"
-                      : "bg-white text-text-mid border-ocean-light/30 hover:border-ocean-mid"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </AnimateIn>
-
-          {/* Posts */}
-          <div className="space-y-6">
-            {filtered.map((post, i) => (
-              <AnimateIn key={post.slug} delay={i * 0.08}>
-                <article
-                  className={`bg-white rounded-xl overflow-hidden shadow-sm ${post.link ? "cursor-pointer hover:shadow-md transition-shadow" : ""}`}
-                  onClick={() => post.link && (window.location.href = post.link)}
-                >
-                  {/* YouTube embed */}
-                  {post.youtubeId && (
-                    <div className="aspect-video w-full">
-                      <iframe
-                        src={`https://www.youtube.com/embed/${post.youtubeId}`}
-                        title={post.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
-                      />
-                    </div>
-                  )}
-
-                  {/* Thumbnail placeholder for non-video posts */}
-                  {!post.youtubeId && (
-                    <div className="h-3 bg-gradient-to-r from-ocean-mid to-ocean-dark" />
-                  )}
-
-                  <div className="p-6">
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <span
-                        className={`text-[10px] px-3 py-1 rounded-full font-medium border ${
-                          categoryColors[post.category] || "bg-gray-50 text-gray-600 border-gray-200"
-                        }`}
-                      >
-                        {post.category}
-                      </span>
-                      <span className="text-text-light text-xs">
-                        {post.date}
-                      </span>
-                      <div className="flex gap-1">
-                        {post.members.map((m) => (
-                          <span
-                            key={m}
-                            className="text-[10px] bg-ocean/5 text-ocean px-2 py-0.5 rounded"
-                          >
-                            {m}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <h2 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-lg leading-relaxed">
-                      {post.title}
-                    </h2>
-                    <p className="text-text-mid text-sm mt-3 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                  </div>
-                </article>
+        <div className="max-w-5xl mx-auto">
+          {groups.map((group, gi) => (
+            <div key={group.label} className={gi > 0 ? "mt-16" : ""}>
+              <AnimateIn>
+                <h2 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-xl mb-8 flex items-center gap-3">
+                  <span className="w-1 h-6 bg-ocean-mid rounded-full" />
+                  {group.label}
+                </h2>
               </AnimateIn>
-            ))}
-          </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {group.posts.map((post, i) => (
+                  <AnimateIn key={post.slug} delay={i * 0.08}>
+                    <Link href={post.link} className="group block">
+                      <article className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        {/* サムネイル */}
+                        <div className="relative aspect-[4/3] bg-gradient-to-br from-ocean/60 to-ocean-dark overflow-hidden">
+                          {post.thumbnail ? (
+                            <Image
+                              src={post.thumbnail}
+                              alt={post.title}
+                              fill
+                              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="text-white/30 text-4xl">
+                                {post.mediaType === "video" ? "🎬" : "🏖️"}
+                              </span>
+                            </div>
+                          )}
+                          <MediaBadge type={post.mediaType} />
+                        </div>
+
+                        {/* テキスト */}
+                        <div className="p-5">
+                          <span className="text-text-light text-xs">{post.date}</span>
+                          <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-base mt-1 group-hover:text-ocean-mid transition-colors leading-relaxed">
+                            {post.title}
+                          </h3>
+                          {post.excerpt && (
+                            <p className="text-text-mid text-sm mt-2 leading-relaxed line-clamp-2">
+                              {post.excerpt}
+                            </p>
+                          )}
+                          <div className="flex gap-1 mt-3">
+                            {post.members.map((m) => (
+                              <span
+                                key={m}
+                                className="text-[10px] bg-ocean/5 text-ocean px-2 py-0.5 rounded"
+                              >
+                                {m}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </article>
+                    </Link>
+                  </AnimateIn>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>

@@ -194,26 +194,21 @@ function LatestActivity() {
     {
       date: "2026.04.15",
       title: "千倉トレーニング",
-      category: "トレーニング",
-      excerpt: "",
+      link: "/activity/20260415-chikura",
     },
     {
-      date: "2026.04.12",
+      date: "2026.04.12 AM",
       title: "ユーストレーニング",
-      category: "トレーニング",
-      excerpt: "",
+      thumbnail: "/images/activity/20260412youth/LINE_ALBUM_2023412 育成_260416_1.jpg",
+      link: "/activity/20260412-youth",
     },
     {
       date: "2026.04.11",
       title: "ジュニアトレーニング",
-      category: "トレーニング",
-      excerpt: "",
+      thumbnail: "/images/activity/20260411jr/LINE_ALBUM_2026411ジュニア_260416_4.jpg",
+      link: "/activity/20260411-junior",
     },
   ];
-
-  const categoryColors: Record<string, string> = {
-    トレーニング: "bg-ocean-mid/10 text-ocean-mid",
-  };
 
   return (
     <section className="py-24 px-5 bg-white">
@@ -226,26 +221,31 @@ function LatestActivity() {
         <div className="grid md:grid-cols-3 gap-8">
           {posts.map((post, i) => (
             <AnimateIn key={post.title} delay={i * 0.12}>
-              <Link href="/activity" className="group block">
-                <div className="aspect-[16/10] bg-gradient-to-br from-ocean/80 to-ocean-dark rounded-xl mb-4 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-ocean-deep/20 group-hover:bg-transparent transition-colors duration-500" />
+              <Link href={post.link} className="group block">
+                <div className="aspect-[4/3] bg-gradient-to-br from-ocean/80 to-ocean-dark rounded-xl mb-4 overflow-hidden relative">
+                  {post.thumbnail ? (
+                    <Image
+                      src={post.thumbnail}
+                      alt={post.title}
+                      fill
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-white/30 text-4xl">🏖️</span>
+                    </div>
+                  )}
                 </div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span
-                    className={`text-[10px] px-2.5 py-0.5 rounded-full font-medium ${
-                      categoryColors[post.category] || "bg-gray-100 text-gray-600"
-                    }`}
-                  >
-                    {post.category}
+                  <span className="text-[10px] px-2.5 py-0.5 rounded-full font-medium bg-ocean-mid/10 text-ocean-mid">
+                    トレーニング
                   </span>
                   <span className="text-text-light text-xs">{post.date}</span>
                 </div>
                 <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark group-hover:text-ocean-mid transition-colors leading-relaxed">
                   {post.title}
                 </h3>
-                <p className="text-text-mid text-sm mt-2 leading-relaxed">
-                  {post.excerpt}
-                </p>
               </Link>
             </AnimateIn>
           ))}
