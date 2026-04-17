@@ -17,6 +17,16 @@ type Post = {
 
 const posts: Post[] = [
   {
+    slug: "sprint-20260417",
+    date: "2026.04.17",
+    title: "スタートダッシュ練習",
+    excerpt: "低い体勢の維持と足の軌道をテーマにスプリント自主練",
+    members: ["慎吾", "陽葉", "賢尚"],
+    thumbnail: "/images/activity/20260417sprint/5884.jpg",
+    mediaType: "video",
+    link: "/activity/20260417-sprint",
+  },
+  {
     slug: "chikura-20260415",
     date: "2026.04.15",
     title: "千倉トレーニング",
