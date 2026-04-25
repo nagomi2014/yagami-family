@@ -50,6 +50,7 @@ const posts: Post[] = [
     title: "平砂浦 ビーチトレーニング",
     excerpt: "",
     members: ["結月", "陽葉", "賢尚"],
+    thumbnail: "/videos/20260412heisaura/01.jpg",
     mediaType: "video",
     link: "/activity/20260412-heisaura",
   },

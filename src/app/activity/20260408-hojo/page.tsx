@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
+import { VideoGrid } from "@/components/VideoGrid";
 
 const photos = Array.from({ length: 39 }, (_, i) => ({
   src: `/images/activity/20260408hojo/LINE_ALBUM_202648\u3000北条_260416_${i + 1}.jpg`,
@@ -62,8 +63,20 @@ export default function Hojo20260408Page() {
         </div>
       </section>
 
-      {/* Back link */}
+      {/* トレーニング動画 */}
       <section className="py-12 px-5 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <AnimateIn>
+            <p className="section-label">Videos</p>
+            <h2 className="section-title mt-2 text-ocean-dark">トレーニング動画</h2>
+            <p className="text-text-light text-sm mt-2">全20本</p>
+          </AnimateIn>
+          <VideoGrid path="/videos/20260408hojo" count={20} />
+        </div>
+      </section>
+
+      {/* Back link */}
+      <section className="py-12 px-5 bg-sand-pale">
         <div className="max-w-4xl mx-auto text-center">
           <Link
             href="/activity"

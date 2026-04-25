@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
+import { VideoGrid } from "@/components/VideoGrid";
 
 const photos = [
   { src: "/images/activity/20260411jr/LINE_ALBUM_2026411ジュニア_260416_1.jpg", portrait: true },
@@ -13,9 +14,6 @@ const photos = [
   { src: "/images/activity/20260411jr/LINE_ALBUM_2026411ジュニア_260416_6.jpg", portrait: false },
   { src: "/images/activity/20260411jr/LINE_ALBUM_2026411ジュニア_260416_7.jpg", portrait: false },
 ];
-
-// YouTube動画ID（アップロード後に設定）
-const youtubeId = "";
 
 export default function Junior20260411Page() {
   return (
@@ -79,24 +77,7 @@ export default function Junior20260411Page() {
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
-            {youtubeId ? (
-              <div className="mt-8 bg-white rounded-2xl overflow-hidden shadow-sm">
-                <div className="aspect-video w-full">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${youtubeId}`}
-                    title="ジュニアトレーニング動画"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
-                </div>
-              </div>
-            ) : (
-              <div className="mt-8 bg-sand-pale rounded-2xl p-8 text-center">
-                <p className="text-ocean-mid text-2xl mb-2">🎬</p>
-                <p className="text-text-mid text-sm">動画を準備中です</p>
-              </div>
-            )}
+            <VideoGrid path="/videos/20260411jr" count={1} cols={2} />
           </AnimateIn>
         </div>
       </section>

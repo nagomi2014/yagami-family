@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
-
-// YouTube動画ID（アップロード後に設定）
-const youtubeIds: string[] = [];
+import { VideoGrid } from "@/components/VideoGrid";
 
 export default function Heisaura20260412Page() {
   return (
@@ -39,37 +37,8 @@ export default function Heisaura20260412Page() {
             <h2 className="section-title mt-2 text-ocean-dark">ビーチトレーニング動画</h2>
           </AnimateIn>
 
-          {youtubeIds.length > 0 ? (
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {youtubeIds.map((id, i) => (
-                <AnimateIn key={id} delay={i * 0.05}>
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
-                    <div className="aspect-video w-full">
-                      <iframe
-                        src={`https://www.youtube.com/embed/${id}`}
-                        title={`ビーチトレーニング動画 ${i + 1}`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
-                      />
-                    </div>
-                  </div>
-                </AnimateIn>
-              ))}
-            </div>
-          ) : (
-            <AnimateIn delay={0.1}>
-              <div className="mt-8 bg-white rounded-2xl p-12 text-center">
-                <p className="text-ocean-mid text-4xl mb-4">🎬</p>
-                <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-xl">
-                  動画を準備中です
-                </h3>
-                <p className="text-text-mid text-sm mt-3">
-                  近日公開予定
-                </p>
-              </div>
-            </AnimateIn>
-          )}
+          <VideoGrid path="/videos/20260412heisaura" count={19} />
+          <p className="text-text-light text-xs text-center mt-6">全19本</p>
         </div>
       </section>
 

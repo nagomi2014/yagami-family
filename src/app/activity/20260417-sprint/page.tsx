@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
+import { VideoGrid } from "@/components/VideoGrid";
 
 export default function Sprint20260417Page() {
   return (
@@ -99,11 +100,11 @@ export default function Sprint20260417Page() {
             </div>
           </AnimateIn>
 
-          {/* YouTube動画 */}
+          {/* ハイライト動画 */}
           <AnimateIn>
             <div className="bg-white rounded-2xl shadow-sm p-8">
               <h2 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-lg mb-4">
-                練習動画
+                ハイライト動画
               </h2>
               <div className="flex justify-center">
                 <iframe
@@ -114,6 +115,17 @@ export default function Sprint20260417Page() {
                   allowFullScreen
                 />
               </div>
+            </div>
+          </AnimateIn>
+
+          {/* 練習クリップ集 */}
+          <AnimateIn>
+            <div>
+              <h2 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-lg mb-2">
+                練習クリップ集
+              </h2>
+              <p className="text-text-light text-sm">1本ずつの走りをチェック</p>
+              <VideoGrid path="/videos/20260417sprint" count={25} />
             </div>
           </AnimateIn>
         </div>

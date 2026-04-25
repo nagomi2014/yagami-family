@@ -42,5 +42,8 @@ next-env.d.ts
 *.mp4
 *.mov
 *.avi
+# allow web-optimized videos for the site
+!/public/videos/**/*.mp4
 
 .vercel
+scripts/compress.log

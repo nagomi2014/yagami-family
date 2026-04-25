@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
+import { VideoGrid } from "@/components/VideoGrid";
 
 const photos = Array.from({ length: 79 }, (_, i) => ({
   src: `/images/activity/20260405beachclean/LINE_ALBUM_ビーチクリーン_260416_${i + 1}.jpg`,
@@ -62,8 +63,20 @@ export default function BeachClean20260405Page() {
         </div>
       </section>
 
-      {/* Back link */}
+      {/* 動画ギャラリー */}
       <section className="py-12 px-5 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <AnimateIn>
+            <p className="section-label">Videos</p>
+            <h2 className="section-title mt-2 text-ocean-dark">ビーチクリーン動画</h2>
+            <p className="text-text-light text-sm mt-2">全12本</p>
+          </AnimateIn>
+          <VideoGrid path="/videos/20260405beachclean" count={12} />
+        </div>
+      </section>
+
+      {/* Back link */}
+      <section className="py-12 px-5 bg-sand-pale">
         <div className="max-w-4xl mx-auto text-center">
           <Link
             href="/activity"
