@@ -192,21 +192,22 @@ function WhoWeAre() {
 function LatestActivity() {
   const posts = [
     {
-      date: "2026.04.15",
-      title: "千倉トレーニング",
-      link: "/activity/20260415-chikura",
+      date: "2026.04.17",
+      title: "スタートダッシュ練習",
+      thumbnail: "/images/activity/20260417sprint/5884.jpg",
+      link: "/activity/20260417-sprint",
+    },
+    {
+      date: "2026.04.12 PM",
+      title: "平砂浦 ビーチトレーニング",
+      thumbnail: "/videos/20260412heisaura/01.jpg",
+      link: "/activity/20260412-heisaura",
     },
     {
       date: "2026.04.12 AM",
       title: "ユーストレーニング",
       thumbnail: "/images/activity/20260412youth/LINE_ALBUM_2023412 育成_260416_1.jpg",
       link: "/activity/20260412-youth",
-    },
-    {
-      date: "2026.04.11",
-      title: "ジュニアトレーニング",
-      thumbnail: "/images/activity/20260411jr/LINE_ALBUM_2026411ジュニア_260416_4.jpg",
-      link: "/activity/20260411-junior",
     },
   ];
 
