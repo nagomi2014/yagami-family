@@ -17,6 +17,16 @@ type Post = {
 
 const posts: Post[] = [
   {
+    slug: "sprint-20260428",
+    date: "2026.04.28",
+    title: "トップスピードのフォーム練習",
+    excerpt: "8割の出力でフォームを反復。再現性を上げる早朝スプリント",
+    members: ["慎吾"],
+    thumbnail: "/images/activity/20260428sprint/cover.jpg",
+    mediaType: "video",
+    link: "/activity/20260428-sprint",
+  },
+  {
     slug: "sprint-20260417",
     date: "2026.04.17",
     title: "スタートダッシュ練習",
