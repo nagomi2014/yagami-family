@@ -444,6 +444,55 @@ def write_article(honsen_agg, youth_agg, junior_agg):
     print(f"[done] wrote {out}", file=sys.stderr)
 
 
+def emit_all_rankings_json(honsen_agg, youth_agg, junior_agg):
+    """全カテゴリのTOP10を data.ts 用にJSON出力。"""
+    sections = [
+        ("honsen_male", honsen_agg, "本戦", "男子", "全日本男子"),
+        ("honsen_female", honsen_agg, "本戦", "女子", "全日本女子"),
+        ("u18_male", youth_agg, "U18", "男子", "U18男子"),
+        ("u18_female", youth_agg, "U18", "女子", "U18女子"),
+        ("u15_male", youth_agg, "U15", "男子", "U15男子"),
+        ("u15_female", youth_agg, "U15", "女子", "U15女子"),
+        ("u12_male", junior_agg, "U12", "男子", "U12男子"),
+        ("u12_female", junior_agg, "U12", "女子", "U12女子"),
+        ("u10_male", junior_agg, "U10", "男子", "U10男子"),
+        ("u10_female", junior_agg, "U10", "女子", "U10女子"),
+        ("u8_male", junior_agg, "U8", "男子", "U8男子"),
+        ("u8_female", junior_agg, "U8", "女子", "U8女子"),
+    ]
+    out = {}
+    for key, agg, cat, gen, label in sections:
+        rows = [e for (c, g, _), e in agg.items() if c == cat and g == gen]
+        total_ranked = rank_section(rows, "total")
+        ocean_ranked = rank_section(rows, "ocean")
+        pool_ranked = rank_section(rows, "pool")
+
+        def serialize(ranked, top_n=10):
+            out_rows = []
+            for rank, e, total, count in ranked[:top_n]:
+                # 矢上家ハイライト
+                hl = ""
+                if "矢上" in e["name"]:
+                    hl = "本人"
+                elif e["team"] == "館山サーフライフセービングクラブ":
+                    hl = "館山勢"
+                out_rows.append({
+                    "rank": rank, "name": e["name"], "club": e["team"],
+                    "points": total, "highlight": hl,
+                })
+            return out_rows
+
+        out[key] = {
+            "label": label,
+            "totalTop": serialize(total_ranked),
+            "oceanTop": serialize(ocean_ranked),
+            "poolTop": serialize(pool_ranked),
+        }
+    out_path = SCRIPT_DIR / "all_rankings.json"
+    out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"[done] wrote {out_path}", file=sys.stderr)
+
+
 def emit_ranking_json(honsen_agg, youth_agg, junior_agg):
     """data.ts 生成用に、3きょうだいの所属カテゴリTOP10と矢上家順位をJSON出力。"""
     out = {}
@@ -501,6 +550,7 @@ def main():
     junior_agg = collect_junior()
     write_article(honsen_agg, youth_agg, junior_agg)
     emit_ranking_json(honsen_agg, youth_agg, junior_agg)
+    emit_all_rankings_json(honsen_agg, youth_agg, junior_agg)
 
 
 if __name__ == "__main__":
