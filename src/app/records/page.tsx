@@ -2,290 +2,13 @@
 
 import { useState } from "react";
 import { AnimateIn } from "@/components/AnimateIn";
-
-/* ===== DATA ===== */
-
-type Record = {
-  year: string;
-  time: string;
-  rank: number | string;
-  note?: string;
-};
-
-type EventRecords = {
-  event: string;
-  records: Record[];
-};
-
-type AthleteData = {
-  name: string;
-  nameEn: string;
-  age: string;
-  club: string;
-  events: EventRecords[];
-};
-
-const athleteRecords: AthleteData[] = [
-  {
-    name: "矢上 結月",
-    nameEn: "Yuzuki Yagami",
-    age: "17歳",
-    club: "館山SLSC",
-    events: [
-      {
-        event: "障害物スイム 100m (U15)",
-        records: [{ year: "2024", time: "1:33.47", rank: 25 }],
-      },
-      {
-        event: "マネキンキャリー 50m (U15)",
-        records: [{ year: "2024", time: "1:03.97", rank: 17 }],
-      },
-      {
-        event: "マネキンキャリーWF 100m (U15)",
-        records: [{ year: "2024", time: "失格", rank: "-" }],
-      },
-      {
-        event: "マネキントウWF 100m (U15)",
-        records: [{ year: "2024", time: "1:32.10", rank: 15 }],
-      },
-      {
-        event: "スーパーライフセーバー 200m (U18)",
-        records: [{ year: "2025", time: "3:52.41", rank: 22 }],
-      },
-    ],
-  },
-  {
-    name: "矢上 陽葉",
-    nameEn: "Kiyoha Yagami",
-    age: "15歳",
-    club: "館山SLSC",
-    events: [
-      {
-        event: "障害物スイム 50m (U12)",
-        records: [
-          { year: "2022", time: "39.51", rank: 12 },
-          { year: "2023", time: "36.57", rank: 13, note: "-2.94秒" },
-        ],
-      },
-      {
-        event: "障害物スイム 100m (U15)",
-        records: [
-          { year: "2024", time: "1:19.74", rank: 21 },
-          { year: "2025", time: "1:19.40", rank: 26, note: "-0.34秒" },
-        ],
-      },
-      {
-        event: "レスキューチューブトウ 100m (U12)",
-        records: [
-          { year: "2022", time: "1:34.82", rank: 10 },
-          { year: "2023", time: "1:31.24", rank: 10, note: "-3.58秒" },
-        ],
-      },
-      {
-        event: "マネキンキャリー 50m (U15)",
-        records: [
-          { year: "2024", time: "53.94", rank: 16 },
-          { year: "2025", time: "48.97", rank: 17, note: "-4.97秒" },
-        ],
-      },
-      {
-        event: "マネキンキャリーWF 100m (U15)",
-        records: [
-          { year: "2024", time: "失格", rank: "-" },
-          { year: "2025", time: "1:24.41", rank: 17, note: "完泳達成" },
-        ],
-      },
-      {
-        event: "マネキントウWF 100m (U15)",
-        records: [
-          { year: "2024", time: "1:37.74", rank: 20 },
-          { year: "2025", time: "1:27.72", rank: 20, note: "-10.02秒" },
-        ],
-      },
-      {
-        event: "スーパーライフセーバー 200m (U18)",
-        records: [{ year: "2025", time: "3:34.41", rank: 19 }],
-      },
-    ],
-  },
-  {
-    name: "矢上 賢尚",
-    nameEn: "Kenshow Yagami",
-    age: "9歳",
-    club: "館山SLSC",
-    events: [
-      {
-        event: "50m自由形（短水路・手動計測）",
-        records: [{ year: "2026", time: "41.00", rank: "B4級相当" }],
-      },
-      {
-        event: "50m走",
-        records: [{ year: "2026", time: "9.40秒", rank: "平均超" }],
-      },
-    ],
-  },
-];
-
-/* ===== 次の目標タイム（ベンチマーク） ===== */
-type BenchmarkRow = {
-  rank: string;
-  name: string;
-  club: string;
-  time: string;
-};
-type BenchmarkEvent = {
-  event: string;
-  rows: BenchmarkRow[];
-};
-type BenchmarkData = {
-  athleteName: string;
-  athleteNameEn: string;
-  category: string;
-  comment: string;
-  events: BenchmarkEvent[];
-};
-
-const benchmarks: BenchmarkData[] = [
-  {
-    athleteName: "矢上 賢尚",
-    athleteNameEn: "Kenshow Yagami",
-    category: "2026年度はU10",
-    comment: "U8で頂点に立った賢尚が、ひとつ上の階段へ。まずは入賞圏（16位以内）を確実に。",
-    events: [
-      {
-        event: "障害物スイム 50m",
-        rows: [
-          { rank: "1位", name: "村田 洋太郎", club: "K-AQUA", time: "30.89" },
-          { rank: "3位", name: "村上 晴", club: "茅ヶ崎SLSC", time: "39.13" },
-          { rank: "5位", name: "宮上 稜正", club: "湘南GAA", time: "41.44" },
-          { rank: "8位", name: "橋本 青瑚", club: "西浜SLSC", time: "45.68" },
-        ],
-      },
-      {
-        event: "レスキューチューブトウ 100m",
-        rows: [
-          { rank: "1位", name: "村田 洋太郎", club: "K-AQUA", time: "1:18.96" },
-          { rank: "3位", name: "山崎 悠太", club: "湯河原LSC", time: "1:34.20" },
-          { rank: "5位", name: "坂本 悠真", club: "湘南ひらつかLSC", time: "1:47.75" },
-          { rank: "8位", name: "梅木 孝太郎", club: "盛岡LSC", time: "1:55.47" },
-          { rank: "16位", name: "木村 岳", club: "西浜SLSC", time: "2:13.31" },
-        ],
-      },
-    ],
-  },
-  {
-    athleteName: "矢上 陽葉",
-    athleteNameEn: "Kiyoha Yagami",
-    category: "2026年度もU15",
-    comment: "オーシャンでは全国4位。プールでも入賞圏（16位以内）に届けば、総合順位で大きく前進。",
-    events: [
-      {
-        event: "障害物スイム 100m",
-        rows: [
-          { rank: "1位", name: "河端 詩央梨", club: "K-AQUA", time: "1:06.76" },
-          { rank: "3位", name: "小池 侑依", club: "K-AQUA", time: "1:08.81" },
-          { rank: "5位", name: "鴨林 夏花", club: "西浜SLSC", time: "1:10.18" },
-          { rank: "8位", name: "小関 友香理", club: "十文字中高", time: "1:12.07" },
-          { rank: "16位", name: "古木 柚", club: "K-AQUA", time: "1:15.90" },
-        ],
-      },
-      {
-        event: "マネキンキャリー 50m",
-        rows: [
-          { rank: "1位", name: "柳 輝於", club: "K-AQUA", time: "39.43" },
-          { rank: "3位", name: "塚根 小夏", club: "湘南GAA", time: "40.27" },
-          { rank: "5位", name: "髙松 澪", club: "K-AQUA", time: "42.16" },
-          { rank: "8位", name: "鹿取 彩葉", club: "西浜SLSC", time: "43.81" },
-          { rank: "16位", name: "古木 柚", club: "K-AQUA", time: "47.79" },
-        ],
-      },
-      {
-        event: "マネキンキャリーWF 100m",
-        rows: [
-          { rank: "1位", name: "柳 輝於", club: "K-AQUA", time: "1:00.47" },
-          { rank: "5位", name: "髙田 琉衣", club: "湘南GAA", time: "1:08.29" },
-          { rank: "8位", name: "兼田 笑那", club: "西浜SLSC", time: "1:13.80" },
-          { rank: "16位", name: "常盤 珠絆", club: "勝浦LSC", time: "1:21.76" },
-        ],
-      },
-      {
-        event: "マネキントウWF 100m",
-        rows: [
-          { rank: "3位", name: "春日 あかり", club: "十文字中高", time: "1:12.45" },
-          { rank: "5位", name: "古賀 夏美", club: "西浜SLSC", time: "1:15.10" },
-          { rank: "8位", name: "塚根 小夏", club: "湘南GAA", time: "1:17.09" },
-        ],
-      },
-    ],
-  },
-  {
-    athleteName: "矢上 結月",
-    athleteNameEn: "Yuzuki Yagami",
-    category: "2026年度もU18",
-    comment: "U18女子の超激戦区。今期の200m障害物は2:59、16位の壁（2:44）まで15秒。一歩ずつ削っていく。",
-    events: [
-      {
-        event: "障害物スイム 200m",
-        rows: [
-          { rank: "1位", name: "橋本 香蓮", club: "日体大荏原", time: "2:20.34" },
-          { rank: "3位", name: "林 美穂", club: "十文字中高", time: "2:25.67" },
-          { rank: "5位", name: "鹿取 彩葉", club: "西浜SLSC", time: "2:29.60" },
-          { rank: "8位", name: "千葉 まひる", club: "館山SLSC", time: "2:34.75" },
-          { rank: "16位", name: "佐藤 志帆子", club: "西浜SLSC", time: "2:44.91" },
-        ],
-      },
-      {
-        event: "マネキンキャリー 50m",
-        rows: [
-          { rank: "1位", name: "大橋 絆", club: "日体大荏原", time: "38.29" },
-          { rank: "3位", name: "橋本 香蓮", club: "日体大荏原", time: "40.91" },
-          { rank: "5位", name: "中西 裕愛", club: "K-AQUA", time: "41.96" },
-          { rank: "8位", name: "千葉 まひる", club: "館山SLSC", time: "44.53" },
-          { rank: "16位", name: "大﨑 真央", club: "日体大荏原", time: "48.07" },
-        ],
-      },
-      {
-        event: "マネキンキャリーWF 100m",
-        rows: [
-          { rank: "1位", name: "槍田 愛", club: "西浜SLSC", time: "1:01.69" },
-          { rank: "3位", name: "森田 真帆", club: "K-AQUA", time: "1:07.11" },
-          { rank: "5位", name: "田中 優那", club: "K-AQUA", time: "1:09.22" },
-          { rank: "8位", name: "山崎 さくら", club: "柏崎LSC", time: "1:14.35" },
-          { rank: "16位", name: "鶴巻 小夏", club: "K-AQUA", time: "1:18.72" },
-        ],
-      },
-      {
-        event: "レスキューメドレー 100m",
-        rows: [
-          { rank: "1位", name: "一関 ひより", club: "銚子LC", time: "1:16.68" },
-          { rank: "3位", name: "橋本 香蓮", club: "日体大荏原", time: "1:23.85" },
-          { rank: "5位", name: "槍田 愛", club: "西浜SLSC", time: "1:26.12" },
-          { rank: "8位", name: "中西 裕愛", club: "K-AQUA", time: "1:31.55" },
-        ],
-      },
-      {
-        event: "スーパーライフセーバー 200m",
-        rows: [
-          { rank: "1位", name: "柳 輝於", club: "K-AQUA", time: "2:43.44" },
-          { rank: "3位", name: "塚根 小夏", club: "湘南GAA", time: "2:52.83" },
-          { rank: "5位", name: "鴨林 夏花", club: "西浜SLSC", time: "2:56.93" },
-          { rank: "8位", name: "鈴木 萌那", club: "K-AQUA", time: "3:02.25" },
-          { rank: "16位", name: "大﨑 真央", club: "日体大荏原", time: "3:19.14" },
-        ],
-      },
-      {
-        event: "マネキントウWF 100m",
-        rows: [
-          { rank: "1位", name: "槍田 愛", club: "西浜SLSC", time: "1:07.85" },
-          { rank: "3位", name: "森田 真帆", club: "K-AQUA", time: "1:14.25" },
-          { rank: "5位", name: "田中 優那", club: "K-AQUA", time: "1:16.28" },
-          { rank: "8位", name: "飯野 花梨", club: "十文字中高", time: "1:17.92" },
-          { rank: "16位", name: "山崎 さくら", club: "柏崎LSC", time: "1:20.33" },
-        ],
-      },
-    ],
-  },
-];
+import {
+  yagamiRecords,
+  ranking2025,
+  type AthleteRecords,
+  type EventRecord,
+  type AthleteRankings,
+} from "./data";
 
 /* ===== 水泳資格級 ===== */
 const swimGrades = {
@@ -323,140 +46,190 @@ const sprint50m = {
 
 /* ===== COMPONENTS ===== */
 
-function BenchmarkCard({ data }: { data: BenchmarkData }) {
+function RecordsTable({ records }: { records: EventRecord[] }) {
+  if (records.length === 0) {
+    return <p className="text-text-light text-sm py-2">出場記録なし</p>;
+  }
   return (
-    <div className="bg-white rounded-2xl shadow-sm overflow-hidden border-l-4 border-guard-yellow">
-      <div className="px-6 py-5 bg-gradient-to-r from-guard-yellow/10 to-transparent">
-        <div className="flex items-baseline justify-between flex-wrap gap-2">
-          <div>
-            <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-xl text-ocean-dark">
-              {data.athleteName}
-              <span className="ml-3 text-xs px-2.5 py-1 rounded-full bg-guard-yellow text-white align-middle tracking-wider">
-                {data.category}
-              </span>
-            </h3>
-            <p className="text-text-light text-xs font-[family-name:var(--font-display)] tracking-wider mt-1">
-              {data.athleteNameEn}
-            </p>
-          </div>
-        </div>
-        <p className="text-sm text-text-mid mt-3 leading-relaxed">{data.comment}</p>
+    <div className="overflow-x-auto">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="text-text-light text-xs">
+            <th className="text-left py-1 pr-3">種目</th>
+            <th className="text-left py-1 pr-3">区分</th>
+            <th className="text-center py-1 pr-3 w-12">順位</th>
+            <th className="text-right py-1">タイム</th>
+          </tr>
+        </thead>
+        <tbody>
+          {records.map((r, i) => (
+            <tr key={`${r.event}-${i}`} className="border-t border-gray-100">
+              <td className="py-2 pr-3 text-text-mid">{r.event}</td>
+              <td className="py-2 pr-3 text-text-light text-xs">
+                {r.category}
+                {r.gender ? ` ${r.gender}` : ""}
+              </td>
+              <td className="py-2 pr-3 text-center">
+                {r.rank === 1 ? (
+                  <span className="bg-guard-yellow/20 text-guard-yellow px-2 py-0.5 rounded-full text-xs font-bold">
+                    1位
+                  </span>
+                ) : r.rank <= 3 ? (
+                  <span className="text-ocean-dark font-bold">{r.rank}位</span>
+                ) : (
+                  <span className="text-text-mid">{r.rank}位</span>
+                )}
+              </td>
+              <td className="py-2 text-right font-mono text-ocean-dark">
+                {r.time || "—"}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function YearBlock({
+  year,
+  records,
+  ranking,
+}: {
+  year: string;
+  records: EventRecord[];
+  ranking?: AthleteRankings;
+}) {
+  const ocean = records.filter((r) => r.section === "ocean");
+  const pool = records.filter((r) => r.section === "pool");
+  return (
+    <div className="border-l-2 border-ocean-mid/30 pl-5 ml-1 pb-6 last:pb-0">
+      <div className="flex items-baseline gap-3 mb-3">
+        <h4 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-2xl">
+          {year}
+        </h4>
+        <span className="text-xs text-text-light">年度</span>
       </div>
 
-      <div className="p-6">
-        {data.events.map((ev) => (
-          <div key={ev.event} className="mb-5 last:mb-0">
-            <h4 className="text-sm font-bold text-ocean-dark mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-guard-yellow" />
-              {ev.event}
-            </h4>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-text-light text-xs">
-                    <th className="text-left py-1 pr-3 w-12">順位</th>
-                    <th className="text-left py-1 pr-3">選手</th>
-                    <th className="text-left py-1 pr-3">所属</th>
-                    <th className="text-right py-1">タイム</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ev.rows.map((r) => (
-                    <tr key={r.rank} className="border-t border-gray-100">
-                      <td className="py-2 pr-3 font-bold text-guard-yellow">{r.rank}</td>
-                      <td className="py-2 pr-3 text-text-mid">{r.name}</td>
-                      <td className="py-2 pr-3 text-text-light text-xs">{r.club}</td>
-                      <td className="py-2 text-right font-mono font-medium text-ocean-dark">
-                        {r.time}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+      {ocean.length > 0 && (
+        <div className="mb-4">
+          <p className="text-xs font-bold text-ocean-mid mb-1 flex items-center gap-1">
+            <span className="w-1 h-3 bg-ocean-mid rounded-sm" />
+            オーシャン・ビーチ
+          </p>
+          <RecordsTable records={ocean} />
+        </div>
+      )}
+
+      {pool.length > 0 && (
+        <div className="mb-4">
+          <p className="text-xs font-bold text-ocean-mid mb-1 flex items-center gap-1">
+            <span className="w-1 h-3 bg-guard-yellow rounded-sm" />
+            プール
+          </p>
+          <RecordsTable records={pool} />
+        </div>
+      )}
+
+      {ranking && <RankingPanel ranking={ranking} />}
+    </div>
+  );
+}
+
+function RankingPanel({ ranking }: { ranking: AthleteRankings }) {
+  const [activeKind, setActiveKind] = useState<"total" | "ocean" | "pool">("total");
+  const rows =
+    activeKind === "total"
+      ? ranking.totalTop
+      : activeKind === "ocean"
+      ? ranking.oceanTop
+      : ranking.poolTop;
+
+  return (
+    <div className="mt-4 bg-sand-pale rounded-xl p-4">
+      <p className="text-xs text-text-light mb-2">📊 真のライフセーバーランキング</p>
+      <h5 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark mb-3">
+        {ranking.categoryLabel} TOP10
+      </h5>
+      <div className="flex gap-1 mb-3">
+        {[
+          { id: "total" as const, label: "総合" },
+          { id: "ocean" as const, label: "オーシャン" },
+          { id: "pool" as const, label: "プール" },
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveKind(tab.id)}
+            className={`px-3 py-1 rounded-lg text-xs font-medium transition ${
+              activeKind === tab.id
+                ? "bg-ocean-mid text-white"
+                : "bg-white text-text-mid hover:bg-ocean-mid/10"
+            }`}
+          >
+            {tab.label}
+          </button>
         ))}
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-xs">
+          <tbody>
+            {rows.map((row) => (
+              <tr
+                key={row.rank}
+                className={`border-t border-gray-200 ${
+                  row.highlight === "本人"
+                    ? "bg-guard-yellow/10 font-bold"
+                    : row.highlight === "館山勢"
+                    ? "bg-ocean-mid/5"
+                    : ""
+                }`}
+              >
+                <td className="py-1.5 pr-2 w-10 text-center font-bold text-ocean-mid">
+                  {row.rank}
+                </td>
+                <td className="py-1.5 pr-2 text-text-mid">{row.name}</td>
+                <td className="py-1.5 pr-2 text-text-light text-[11px]">
+                  {row.club}
+                </td>
+                <td className="py-1.5 text-right font-mono text-ocean-dark">
+                  {row.points}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 }
 
-function AthleteRecordCard({ athlete }: { athlete: AthleteData }) {
+function AthleteTimeline({ athlete }: { athlete: AthleteRecords }) {
+  const ranking = ranking2025.find((r) => r.shortName === athlete.shortName);
   return (
     <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-      {/* Header */}
       <div className="gradient-ocean px-6 py-5">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
-            <h3 className="font-[family-name:var(--font-serif-jp)] text-white font-bold text-xl">
-              {athlete.name}
+            <h3 className="font-[family-name:var(--font-serif-jp)] text-white font-bold text-2xl">
+              {athlete.athlete}
             </h3>
             <p className="text-ocean-light/60 text-xs font-[family-name:var(--font-display)] tracking-wider mt-1">
-              {athlete.nameEn}
+              {athlete.athleteEn}
             </p>
           </div>
-          <div className="text-right">
-            <span className="text-white/80 text-sm">{athlete.age}</span>
-            <p className="text-ocean-light/50 text-xs">{athlete.club}</p>
-          </div>
+          <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
+            2026年度: {athlete.currentCategory}
+          </span>
         </div>
       </div>
-
-      {/* Records */}
       <div className="p-6">
-        {athlete.events.map((ev) => (
-          <div key={ev.event} className="mb-5 last:mb-0">
-            <h4 className="text-sm font-bold text-ocean-dark mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-ocean-mid" />
-              {ev.event}
-            </h4>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-text-light text-xs">
-                    <th className="text-left py-1 pr-4">年</th>
-                    <th className="text-left py-1 pr-4">記録</th>
-                    <th className="text-left py-1 pr-4">順位</th>
-                    <th className="text-left py-1">成長</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ev.records.map((r) => (
-                    <tr key={r.year} className="border-t border-gray-100">
-                      <td className="py-2 pr-4 text-text-mid">{r.year}</td>
-                      <td className="py-2 pr-4 font-mono font-medium text-ocean-dark">
-                        {r.time}
-                      </td>
-                      <td className="py-2 pr-4 text-text-mid">
-                        {r.rank === 1 ? (
-                          <span className="bg-guard-yellow/20 text-guard-yellow px-2 py-0.5 rounded-full text-xs font-bold">
-                            1位
-                          </span>
-                        ) : (
-                          `${r.rank}${typeof r.rank === "number" ? "位" : ""}`
-                        )}
-                      </td>
-                      <td className="py-2">
-                        {r.note && (
-                          <span
-                            className={`text-xs px-2 py-0.5 rounded-full ${
-                              r.note.startsWith("-")
-                                ? "bg-green-50 text-green-600"
-                                : r.note === "完泳達成" || r.note.includes("連覇")
-                                ? "bg-blue-50 text-blue-600"
-                                : "bg-gray-50 text-gray-600"
-                            }`}
-                          >
-                            {r.note}
-                          </span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+        {athlete.years.map((y, idx) => (
+          <YearBlock
+            key={y.year}
+            year={y.year}
+            records={y.records}
+            ranking={idx === 0 ? ranking : undefined}
+          />
         ))}
       </div>
     </div>
@@ -488,7 +261,7 @@ export default function RecordsPage() {
               記録・指標
             </h1>
             <p className="text-white/50 mt-4 text-sm leading-loose">
-              大会記録の推移と、目標となる各種基準値
+              年度ごとの大会記録と、目標となる各種基準値
             </p>
           </AnimateIn>
         </div>
@@ -538,33 +311,21 @@ export default function RecordsPage() {
                 <div>
                   <p className="section-label">Yagami Family</p>
                   <h2 className="section-title mt-2 text-ocean-dark">
-                    全日本JYMプール大会 記録推移
+                    年度別 大会記録
                   </h2>
-                  <p className="text-text-light text-sm mt-2">
-                    2022年〜2025年の全日本ジュニア・ユース・マスターズ ライフセービング プール競技選手権大会
+                  <p className="text-text-light text-sm mt-2 leading-relaxed">
+                    全日本ライフセービング選手権・ユース・ジュニア・JYMプール大会の出場記録（2021〜2025年度）。
+                    最新年度には「真のライフセーバーランキング」TOP10も併記しています。
+                  </p>
+                  <p className="text-text-light text-xs mt-2">
+                    ※ ランキング加点：個人種目で1位＝16点、2位＝15点 …16位＝1点（JLA 2026年度方針）／チーム種目は対象外
                   </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-6">
-                  {athleteRecords.map((athlete) => (
-                    <AthleteRecordCard key={athlete.name} athlete={athlete} />
+                <div className="grid lg:grid-cols-1 gap-8">
+                  {yagamiRecords.map((athlete) => (
+                    <AthleteTimeline key={athlete.shortName} athlete={athlete} />
                   ))}
-                </div>
-
-                {/* 次の目標タイム */}
-                <div className="mt-12">
-                  <p className="section-label">Next Benchmarks</p>
-                  <h2 className="section-title mt-2 text-ocean-dark">
-                    次の目標タイム
-                  </h2>
-                  <p className="text-text-light text-sm mt-2">
-                    JYM プール競技選手権 2025 の上位タイム（1位／3位／5位／8位／16位）を、3きょうだいの来期ベンチマークに
-                  </p>
-                  <div className="mt-6 grid lg:grid-cols-2 gap-6">
-                    {benchmarks.map((b) => (
-                      <BenchmarkCard key={b.athleteName} data={b} />
-                    ))}
-                  </div>
                 </div>
               </div>
             </AnimateIn>
@@ -581,7 +342,6 @@ export default function RecordsPage() {
                   </h2>
                 </div>
 
-                {/* 資格級テーブル */}
                 <div className="bg-white rounded-2xl shadow-sm p-6 overflow-x-auto">
                   <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark mb-4">
                     {swimGrades.title}
@@ -600,9 +360,7 @@ export default function RecordsPage() {
                         <tr
                           key={g.num}
                           className={`border-t border-gray-100 ${
-                            g.num === 4
-                              ? "bg-sunset/10 font-bold"
-                              : ""
+                            g.num === 4 ? "bg-sunset/10 font-bold" : ""
                           }`}
                         >
                           <td className="py-2.5">
@@ -618,9 +376,7 @@ export default function RecordsPage() {
                               {g.cls}
                             </span>
                           </td>
-                          <td className="py-2.5 text-center font-mono">
-                            {g.num}
-                          </td>
+                          <td className="py-2.5 text-center font-mono">{g.num}</td>
                           <td className="py-2.5 text-center font-mono font-medium text-ocean-dark">
                             {g.time}
                           </td>
@@ -630,7 +386,6 @@ export default function RecordsPage() {
                     </tbody>
                   </table>
 
-                  {/* 賢尚の現在位置 */}
                   <div className="mt-4 p-4 bg-sunset/5 rounded-xl border border-sunset/20">
                     <p className="text-sm font-bold text-ocean-dark">
                       賢尚の現在地：41秒 → <span className="text-sunset">B4級相当</span>
@@ -641,7 +396,6 @@ export default function RecordsPage() {
                   </div>
                 </div>
 
-                {/* JO基準 */}
                 <div className="bg-white rounded-2xl shadow-sm p-6">
                   <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark mb-4">
                     JO（ジュニアオリンピック）標準記録 9歳以下 男子 50m自由形
@@ -707,9 +461,7 @@ export default function RecordsPage() {
                           <td className="py-2.5 text-center text-text-mid">
                             {d.age}
                           </td>
-                          <td className="py-2.5 text-center font-mono">
-                            {d.male}秒
-                          </td>
+                          <td className="py-2.5 text-center font-mono">{d.male}秒</td>
                           <td className="py-2.5 text-center font-mono">
                             {d.female}秒
                           </td>
@@ -718,7 +470,6 @@ export default function RecordsPage() {
                     </tbody>
                   </table>
 
-                  {/* 賢尚の現在位置 */}
                   <div className="mt-4 p-4 bg-sunset/5 rounded-xl border border-sunset/20">
                     <p className="text-sm font-bold text-ocean-dark">
                       賢尚（9歳）：9.4秒 →{" "}
