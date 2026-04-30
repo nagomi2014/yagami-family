@@ -95,10 +95,12 @@ function YearBlock({
   year,
   records,
   ranking,
+  athleteName,
 }: {
   year: string;
   records: EventRecord[];
   ranking?: AthleteRankings;
+  athleteName: string;
 }) {
   const ocean = records.filter((r) => r.section === "ocean");
   const pool = records.filter((r) => r.section === "pool");
@@ -131,12 +133,12 @@ function YearBlock({
         </div>
       )}
 
-      {ranking && <RankingPanel ranking={ranking} />}
+      {ranking && <RankingPanel ranking={ranking} athleteName={athleteName} />}
     </div>
   );
 }
 
-function RankingPanel({ ranking }: { ranking: AthleteRankings }) {
+function RankingPanel({ ranking, athleteName }: { ranking: AthleteRankings; athleteName: string }) {
   const [activeKind, setActiveKind] = useState<"total" | "ocean" | "pool">("total");
   const rows =
     activeKind === "total"
@@ -144,6 +146,16 @@ function RankingPanel({ ranking }: { ranking: AthleteRankings }) {
       : activeKind === "ocean"
       ? ranking.oceanTop
       : ranking.poolTop;
+
+  const selfStanding =
+    activeKind === "total"
+      ? ranking.self.total
+      : activeKind === "ocean"
+      ? ranking.self.ocean
+      : ranking.self.pool;
+
+  // 矢上家本人がTOP10に入っているかチェック
+  const selfInTop10 = rows.some((r) => r.highlight === "本人");
 
   return (
     <div className="mt-4 bg-sand-pale rounded-xl p-4">
@@ -175,7 +187,7 @@ function RankingPanel({ ranking }: { ranking: AthleteRankings }) {
           <tbody>
             {rows.map((row) => (
               <tr
-                key={row.rank}
+                key={`${row.rank}-${row.name}`}
                 className={`border-t border-gray-200 ${
                   row.highlight === "本人"
                     ? "bg-guard-yellow/10 font-bold"
@@ -199,6 +211,25 @@ function RankingPanel({ ranking }: { ranking: AthleteRankings }) {
           </tbody>
         </table>
       </div>
+
+      {/* 矢上家本人がTOP10外の場合は順位を別途表示 */}
+      {!selfInTop10 && (
+        <div className="mt-3 pt-3 border-t border-ocean-mid/20">
+          {selfStanding ? (
+            <p className="text-xs text-text-mid">
+              <span className="font-bold text-guard-yellow">📍 {athleteName}</span>：
+              <span className="font-bold text-ocean-dark">{selfStanding.rank}位</span>
+              <span className="ml-2 text-text-light">
+                （{selfStanding.points}点／{selfStanding.events}種目入賞）
+              </span>
+            </p>
+          ) : (
+            <p className="text-xs text-text-light">
+              <span className="font-bold">📍 {athleteName}</span>：この部門は入賞圏外
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -229,6 +260,7 @@ function AthleteTimeline({ athlete }: { athlete: AthleteRecords }) {
             year={y.year}
             records={y.records}
             ranking={idx === 0 ? ranking : undefined}
+            athleteName={athlete.athlete}
           />
         ))}
       </div>
