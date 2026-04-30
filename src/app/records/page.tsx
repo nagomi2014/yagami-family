@@ -126,51 +126,166 @@ const athleteRecords: AthleteData[] = [
   },
 ];
 
-/* ===== 藤﨑笑佳（比較参考） ===== */
-const rivalRecords: AthleteData = {
-  name: "藤﨑 笑佳",
-  nameEn: "Emika Fujisaki",
-  age: "",
-  club: "西浜SLSC（2025）",
-  events: [
-    {
-      event: "障害物スイム 50m (U12)",
-      records: [
-        { year: "2022", time: "35.30", rank: 7 },
-        { year: "2023", time: "34.69", rank: 7, note: "-0.61秒" },
-      ],
-    },
-    {
-      event: "障害物スイム 100m (U15)",
-      records: [{ year: "2025", time: "1:10.13", rank: 4 }],
-    },
-    {
-      event: "マネキンキャリー 50m (U15)",
-      records: [
-        { year: "2024", time: "44.25", rank: 2 },
-        { year: "2025", time: "41.84", rank: 4, note: "-2.41秒" },
-      ],
-    },
-    {
-      event: "マネキンキャリーWF 100m (U15)",
-      records: [
-        { year: "2024", time: "1:13.37", rank: 3 },
-        { year: "2025", time: "1:07.00", rank: 3, note: "-6.37秒" },
-      ],
-    },
-    {
-      event: "マネキントウWF 100m (U15)",
-      records: [
-        { year: "2024", time: "1:12.92", rank: 1, note: "優勝" },
-        { year: "2025", time: "1:09.00", rank: 1, note: "2連覇" },
-      ],
-    },
-    {
-      event: "スーパーライフセーバー 200m (U18)",
-      records: [{ year: "2025", time: "2:57.37", rank: 6 }],
-    },
-  ],
+/* ===== 次の目標タイム（ベンチマーク） ===== */
+type BenchmarkRow = {
+  rank: string;
+  name: string;
+  club: string;
+  time: string;
 };
+type BenchmarkEvent = {
+  event: string;
+  rows: BenchmarkRow[];
+};
+type BenchmarkData = {
+  athleteName: string;
+  athleteNameEn: string;
+  category: string;
+  comment: string;
+  events: BenchmarkEvent[];
+};
+
+const benchmarks: BenchmarkData[] = [
+  {
+    athleteName: "矢上 賢尚",
+    athleteNameEn: "Kenshow Yagami",
+    category: "2026年度はU10",
+    comment: "U8で頂点に立った賢尚が、ひとつ上の階段へ。まずは入賞圏（16位以内）を確実に。",
+    events: [
+      {
+        event: "障害物スイム 50m",
+        rows: [
+          { rank: "1位", name: "村田 洋太郎", club: "K-AQUA", time: "30.89" },
+          { rank: "3位", name: "村上 晴", club: "茅ヶ崎SLSC", time: "39.13" },
+          { rank: "5位", name: "宮上 稜正", club: "湘南GAA", time: "41.44" },
+          { rank: "8位", name: "橋本 青瑚", club: "西浜SLSC", time: "45.68" },
+        ],
+      },
+      {
+        event: "レスキューチューブトウ 100m",
+        rows: [
+          { rank: "1位", name: "村田 洋太郎", club: "K-AQUA", time: "1:18.96" },
+          { rank: "3位", name: "山崎 悠太", club: "湯河原LSC", time: "1:34.20" },
+          { rank: "5位", name: "坂本 悠真", club: "湘南ひらつかLSC", time: "1:47.75" },
+          { rank: "8位", name: "梅木 孝太郎", club: "盛岡LSC", time: "1:55.47" },
+          { rank: "16位", name: "木村 岳", club: "西浜SLSC", time: "2:13.31" },
+        ],
+      },
+    ],
+  },
+  {
+    athleteName: "矢上 陽葉",
+    athleteNameEn: "Kiyoha Yagami",
+    category: "2026年度もU15",
+    comment: "オーシャンでは全国4位。プールでも入賞圏（16位以内）に届けば、総合順位で大きく前進。",
+    events: [
+      {
+        event: "障害物スイム 100m",
+        rows: [
+          { rank: "1位", name: "河端 詩央梨", club: "K-AQUA", time: "1:06.76" },
+          { rank: "3位", name: "小池 侑依", club: "K-AQUA", time: "1:08.81" },
+          { rank: "5位", name: "鴨林 夏花", club: "西浜SLSC", time: "1:10.18" },
+          { rank: "8位", name: "小関 友香理", club: "十文字中高", time: "1:12.07" },
+          { rank: "16位", name: "古木 柚", club: "K-AQUA", time: "1:15.90" },
+        ],
+      },
+      {
+        event: "マネキンキャリー 50m",
+        rows: [
+          { rank: "1位", name: "柳 輝於", club: "K-AQUA", time: "39.43" },
+          { rank: "3位", name: "塚根 小夏", club: "湘南GAA", time: "40.27" },
+          { rank: "5位", name: "髙松 澪", club: "K-AQUA", time: "42.16" },
+          { rank: "8位", name: "鹿取 彩葉", club: "西浜SLSC", time: "43.81" },
+          { rank: "16位", name: "古木 柚", club: "K-AQUA", time: "47.79" },
+        ],
+      },
+      {
+        event: "マネキンキャリーWF 100m",
+        rows: [
+          { rank: "1位", name: "柳 輝於", club: "K-AQUA", time: "1:00.47" },
+          { rank: "5位", name: "髙田 琉衣", club: "湘南GAA", time: "1:08.29" },
+          { rank: "8位", name: "兼田 笑那", club: "西浜SLSC", time: "1:13.80" },
+          { rank: "16位", name: "常盤 珠絆", club: "勝浦LSC", time: "1:21.76" },
+        ],
+      },
+      {
+        event: "マネキントウWF 100m",
+        rows: [
+          { rank: "3位", name: "春日 あかり", club: "十文字中高", time: "1:12.45" },
+          { rank: "5位", name: "古賀 夏美", club: "西浜SLSC", time: "1:15.10" },
+          { rank: "8位", name: "塚根 小夏", club: "湘南GAA", time: "1:17.09" },
+        ],
+      },
+    ],
+  },
+  {
+    athleteName: "矢上 結月",
+    athleteNameEn: "Yuzuki Yagami",
+    category: "2026年度もU18",
+    comment: "U18女子の超激戦区。今期の200m障害物は2:59、16位の壁（2:44）まで15秒。一歩ずつ削っていく。",
+    events: [
+      {
+        event: "障害物スイム 200m",
+        rows: [
+          { rank: "1位", name: "橋本 香蓮", club: "日体大荏原", time: "2:20.34" },
+          { rank: "3位", name: "林 美穂", club: "十文字中高", time: "2:25.67" },
+          { rank: "5位", name: "鹿取 彩葉", club: "西浜SLSC", time: "2:29.60" },
+          { rank: "8位", name: "千葉 まひる", club: "館山SLSC", time: "2:34.75" },
+          { rank: "16位", name: "佐藤 志帆子", club: "西浜SLSC", time: "2:44.91" },
+        ],
+      },
+      {
+        event: "マネキンキャリー 50m",
+        rows: [
+          { rank: "1位", name: "大橋 絆", club: "日体大荏原", time: "38.29" },
+          { rank: "3位", name: "橋本 香蓮", club: "日体大荏原", time: "40.91" },
+          { rank: "5位", name: "中西 裕愛", club: "K-AQUA", time: "41.96" },
+          { rank: "8位", name: "千葉 まひる", club: "館山SLSC", time: "44.53" },
+          { rank: "16位", name: "大﨑 真央", club: "日体大荏原", time: "48.07" },
+        ],
+      },
+      {
+        event: "マネキンキャリーWF 100m",
+        rows: [
+          { rank: "1位", name: "槍田 愛", club: "西浜SLSC", time: "1:01.69" },
+          { rank: "3位", name: "森田 真帆", club: "K-AQUA", time: "1:07.11" },
+          { rank: "5位", name: "田中 優那", club: "K-AQUA", time: "1:09.22" },
+          { rank: "8位", name: "山崎 さくら", club: "柏崎LSC", time: "1:14.35" },
+          { rank: "16位", name: "鶴巻 小夏", club: "K-AQUA", time: "1:18.72" },
+        ],
+      },
+      {
+        event: "レスキューメドレー 100m",
+        rows: [
+          { rank: "1位", name: "一関 ひより", club: "銚子LC", time: "1:16.68" },
+          { rank: "3位", name: "橋本 香蓮", club: "日体大荏原", time: "1:23.85" },
+          { rank: "5位", name: "槍田 愛", club: "西浜SLSC", time: "1:26.12" },
+          { rank: "8位", name: "中西 裕愛", club: "K-AQUA", time: "1:31.55" },
+        ],
+      },
+      {
+        event: "スーパーライフセーバー 200m",
+        rows: [
+          { rank: "1位", name: "柳 輝於", club: "K-AQUA", time: "2:43.44" },
+          { rank: "3位", name: "塚根 小夏", club: "湘南GAA", time: "2:52.83" },
+          { rank: "5位", name: "鴨林 夏花", club: "西浜SLSC", time: "2:56.93" },
+          { rank: "8位", name: "鈴木 萌那", club: "K-AQUA", time: "3:02.25" },
+          { rank: "16位", name: "大﨑 真央", club: "日体大荏原", time: "3:19.14" },
+        ],
+      },
+      {
+        event: "マネキントウWF 100m",
+        rows: [
+          { rank: "1位", name: "槍田 愛", club: "西浜SLSC", time: "1:07.85" },
+          { rank: "3位", name: "森田 真帆", club: "K-AQUA", time: "1:14.25" },
+          { rank: "5位", name: "田中 優那", club: "K-AQUA", time: "1:16.28" },
+          { rank: "8位", name: "飯野 花梨", club: "十文字中高", time: "1:17.92" },
+          { rank: "16位", name: "山崎 さくら", club: "柏崎LSC", time: "1:20.33" },
+        ],
+      },
+    ],
+  },
+];
 
 /* ===== 水泳資格級 ===== */
 const swimGrades = {
@@ -207,6 +322,64 @@ const sprint50m = {
 };
 
 /* ===== COMPONENTS ===== */
+
+function BenchmarkCard({ data }: { data: BenchmarkData }) {
+  return (
+    <div className="bg-white rounded-2xl shadow-sm overflow-hidden border-l-4 border-guard-yellow">
+      <div className="px-6 py-5 bg-gradient-to-r from-guard-yellow/10 to-transparent">
+        <div className="flex items-baseline justify-between flex-wrap gap-2">
+          <div>
+            <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-xl text-ocean-dark">
+              {data.athleteName}
+              <span className="ml-3 text-xs px-2.5 py-1 rounded-full bg-guard-yellow text-white align-middle tracking-wider">
+                {data.category}
+              </span>
+            </h3>
+            <p className="text-text-light text-xs font-[family-name:var(--font-display)] tracking-wider mt-1">
+              {data.athleteNameEn}
+            </p>
+          </div>
+        </div>
+        <p className="text-sm text-text-mid mt-3 leading-relaxed">{data.comment}</p>
+      </div>
+
+      <div className="p-6">
+        {data.events.map((ev) => (
+          <div key={ev.event} className="mb-5 last:mb-0">
+            <h4 className="text-sm font-bold text-ocean-dark mb-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-guard-yellow" />
+              {ev.event}
+            </h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-text-light text-xs">
+                    <th className="text-left py-1 pr-3 w-12">順位</th>
+                    <th className="text-left py-1 pr-3">選手</th>
+                    <th className="text-left py-1 pr-3">所属</th>
+                    <th className="text-right py-1">タイム</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ev.rows.map((r) => (
+                    <tr key={r.rank} className="border-t border-gray-100">
+                      <td className="py-2 pr-3 font-bold text-guard-yellow">{r.rank}</td>
+                      <td className="py-2 pr-3 text-text-mid">{r.name}</td>
+                      <td className="py-2 pr-3 text-text-light text-xs">{r.club}</td>
+                      <td className="py-2 text-right font-mono font-medium text-ocean-dark">
+                        {r.time}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function AthleteRecordCard({ athlete }: { athlete: AthleteData }) {
   return (
@@ -378,17 +551,19 @@ export default function RecordsPage() {
                   ))}
                 </div>
 
-                {/* 藤﨑笑佳（比較参考） */}
+                {/* 次の目標タイム */}
                 <div className="mt-12">
-                  <p className="section-label">Rival & Training Partner</p>
+                  <p className="section-label">Next Benchmarks</p>
                   <h2 className="section-title mt-2 text-ocean-dark">
-                    比較参考：藤﨑 笑佳
+                    次の目標タイム
                   </h2>
                   <p className="text-text-light text-sm mt-2">
-                    館山SLSC時代から共に成長してきた仲間の記録
+                    JYM プール競技選手権 2025 の上位タイム（1位／3位／5位／8位／16位）を、3きょうだいの来期ベンチマークに
                   </p>
-                  <div className="mt-6 max-w-2xl">
-                    <AthleteRecordCard athlete={rivalRecords} />
+                  <div className="mt-6 grid lg:grid-cols-2 gap-6">
+                    {benchmarks.map((b) => (
+                      <BenchmarkCard key={b.athleteName} data={b} />
+                    ))}
                   </div>
                 </div>
               </div>
