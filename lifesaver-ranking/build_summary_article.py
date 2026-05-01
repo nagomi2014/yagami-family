@@ -232,26 +232,15 @@ def collect_youth():
         # 多い方を主区分。同数の場合はU18優先（年長優先）
         main_cat[key] = "U18" if u18 > u15 else ("U15" if u15 > u18 else "U18")
 
-    # 集計：選手の主区分と一致する種目（および合同種目）に加算
-    # 加えて、U15選手が「U15に同じ種目がないU18種目」（サーフスキー／レスキューメドレー／
-    # スーパーLS）で入賞した点数はU15部門にも加算する。これらはJLA方針で
-    # 「U15区分の種目設定がなく、U18にしかない種目に限りU15競技者の出場を認める」
-    # と明記された種目で、実質U15選手の上位種目として扱える。
-    U18_EVENTS_OPEN_TO_U15 = {
-        "サーフスキーレース",
-        "レスキューメドレー（100m）",
-        "スーパーライフセーバー（200m）",
-    }
+    # 集計：選手の主区分と完全一致する明示種目のみ加算
+    # ユースオーシャンウーマン/マン（合同種目）も U18種目（サーフスキー等）も対象外。
+    # U15はU15の種目のみ、U18はU18の種目のみで集計する。
     agg = {}
     for key, recs in raw_records.items():
         gen, nname = key
         cat = main_cat[key]
         for r in recs:
-            # 主区分一致 or 合同種目 → 加算
-            if r["cat"] == cat or r["cat"] == "undecided":
-                add_entry(agg, cat, gen, nname, r["team"], r["place"], r["source"])
-            # U15選手のU18種目（U15に種目設定がないもの）→ U15に加算
-            elif cat == "U15" and r["cat"] == "U18" and r["event"] in U18_EVENTS_OPEN_TO_U15:
+            if r["cat"] == cat:
                 add_entry(agg, cat, gen, nname, r["team"], r["place"], r["source"])
     return agg
 
