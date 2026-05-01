@@ -41,6 +41,22 @@ const sprint50m = {
   ],
 };
 
+/* ===== 陸上100m走 全国小学生陸上競技交流大会 大会記録 ===== */
+const sprint100m = {
+  title: "100m走 全国小学生陸上競技交流大会（日清食品カップ）大会記録",
+  description:
+    "全国小学生陸上競技交流大会（日清食品カップ）は5・6年生のみ出場可能。出場資格は各都道府県の代表選手のみで、参加標準タイムは設定されていない（選抜制）。",
+  records: [
+    { grade: "小5男子", time: "12.48秒", holder: "服部 蓮太郎", year: "2017年" },
+    { grade: "小6男子", time: "11.63秒", holder: "目野 惺大", year: "2025年" },
+  ],
+  reference: [
+    { level: "県大会 決勝進出", time: "13.0〜13.7秒", note: "兵庫県小6男子 2024年決勝より参考" },
+    { level: "県大会 上位入賞", time: "12.5〜13.0秒", note: "都道府県上位レベル" },
+    { level: "全国大会 決勝進出", time: "11.5〜12.5秒", note: "5・6年生 全国上位" },
+  ],
+};
+
 /* ===== COMPONENTS ===== */
 
 function RecordsTable({ records }: { records: EventRecord[] }) {
@@ -781,6 +797,86 @@ export default function RecordsPage() {
                       <span className="text-green-600">平均9.61秒を上回る</span>
                     </p>
                   </div>
+                </div>
+
+                {/* 100m走（小学生） */}
+                <div className="bg-white rounded-2xl shadow-sm p-6 mt-6">
+                  <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark mb-2 text-lg">
+                    {sprint100m.title}
+                  </h3>
+                  <p className="text-text-light text-xs mb-4 leading-relaxed">
+                    {sprint100m.description}
+                  </p>
+
+                  <div className="bg-ocean-mid/5 rounded-xl p-5 mb-4">
+                    <p className="text-xs text-text-light mb-3 font-bold">
+                      🏆 大会記録（歴代）
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {sprint100m.records.map((r) => (
+                        <div
+                          key={r.grade}
+                          className="bg-white rounded-lg p-4 border border-ocean-mid/10"
+                        >
+                          <p className="text-xs text-text-light">{r.grade}</p>
+                          <p className="text-2xl font-mono font-bold text-ocean-dark mt-1">
+                            {r.time}
+                          </p>
+                          <p className="text-xs text-text-mid mt-1">
+                            {r.holder}（{r.year}）
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-sand-pale rounded-xl p-4">
+                    <p className="text-xs text-text-light mb-3 font-bold">
+                      📊 参考タイム（小学生男子100m）
+                    </p>
+                    <table className="w-full text-sm">
+                      <tbody>
+                        {sprint100m.reference.map((r) => (
+                          <tr
+                            key={r.level}
+                            className="border-t border-gray-100"
+                          >
+                            <td className="py-2 pr-3 text-text-mid">{r.level}</td>
+                            <td className="py-2 pr-3 font-mono font-bold text-ocean-dark">
+                              {r.time}
+                            </td>
+                            <td className="py-2 text-text-light text-xs">
+                              {r.note}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-4 p-4 bg-sunset/5 rounded-xl border border-sunset/20">
+                    <p className="text-sm font-bold text-ocean-dark">
+                      🎯 賢尚（小4・9歳）の道のり
+                    </p>
+                    <ul className="text-xs text-text-mid mt-2 space-y-1 leading-relaxed">
+                      <li>
+                        <strong>来年（小5）から</strong> 全国小学生陸上競技交流大会（日清食品カップ）出場対象に
+                      </li>
+                      <li>
+                        小5全国大会記録は <strong>12.48秒</strong>（服部蓮太郎・2017）
+                      </li>
+                      <li>
+                        小6全国大会記録は <strong>11.63秒</strong>（目野惺大・2025）
+                      </li>
+                      <li>
+                        まずは <strong>都道府県の代表選手</strong> を目指す（タイム標準なし、選抜制）
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p className="text-[11px] text-text-light mt-3">
+                    ※ 陸上のジュニアオリンピック標準記録（U16/U18/U20）は中学生以上が対象のため、小学生にはJO基準そのものは存在しません。
+                  </p>
                 </div>
               </div>
             </AnimateIn>
