@@ -13,21 +13,14 @@ import {
   type CategoryRanking,
   type AthleteBenchmark,
 } from "./data";
+import {
+  yagamiSwimGrades,
+  type AthleteSwimGrades,
+  type DistanceGrade,
+} from "./swim_grades";
 
-/* ===== 水泳資格級 ===== */
-const swimGrades = {
-  title: "水泳資格級 男子 50m自由形（9歳）",
-  grades: [
-    { cls: "AA", num: 15, time: "28.20", level: "全国トップ" },
-    { cls: "AA", num: 11, time: "31.04", level: "全国大会" },
-    { cls: "A", num: 10, time: "32.51", level: "公認大会上位" },
-    { cls: "A", num: 6, time: "38.39", level: "公認大会" },
-    { cls: "B", num: 5, time: "39.86", level: "地域大会上位" },
-    { cls: "B", num: 4, time: "41.33", level: "地域大会" },
-    { cls: "B", num: 1, time: "45.74", level: "初心者" },
-  ],
-  joStandard: { shortCourse: "31.14", longCourse: "31.56" },
-};
+/* ===== 水泳資格級（旧定数。新データは swim_grades.ts へ） ===== */
+const joStandard = { shortCourse: "31.14", longCourse: "31.56" };
 
 /* ===== 陸上50m走 ===== */
 const sprint50m = {
@@ -393,6 +386,159 @@ function BenchmarkCard({ data }: { data: AthleteBenchmark }) {
   );
 }
 
+/* ===== 水泳 資格級カード ===== */
+
+function DistanceGradeTable({
+  data,
+  athleteName,
+}: {
+  data: DistanceGrade;
+  athleteName: string;
+}) {
+  // 「次の目標」級を計算：currentより速いgrade群の中で最も遅いタイム
+  const currentSec = parseTime(data.current);
+  const slowerGrades = data.grades
+    .filter((g) => parseTime(g.time) < currentSec)
+    .sort((a, b) => parseTime(b.time) - parseTime(a.time));
+  const nextGradeTime = slowerGrades[0]?.time;
+
+  return (
+    <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+      <div className="px-5 py-4 bg-ocean-mid/5 border-b border-ocean-mid/10 flex items-baseline justify-between flex-wrap gap-2">
+        <h4 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-lg">
+          {data.distance}
+        </h4>
+        <div className="text-right">
+          <span className="text-xs text-text-light mr-2">現在</span>
+          <span className="font-mono font-bold text-ocean-dark text-lg">
+            {data.current}
+          </span>
+          <span className="ml-2 text-xs px-2 py-0.5 rounded-full bg-sunset/15 text-sunset font-bold">
+            {data.currentLevel}
+          </span>
+        </div>
+      </div>
+      <div className="px-5 py-3 bg-sunset/5 border-b border-sunset/10">
+        <p className="text-xs text-text-mid">
+          <span className="font-bold text-sunset mr-1">📍 {athleteName}</span>
+          {data.comment}
+        </p>
+      </div>
+      <div className="overflow-x-auto p-2">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-text-light text-xs border-b-2 border-ocean-light/20">
+              <th className="text-left py-2 px-2">クラス</th>
+              <th className="text-center py-2">級</th>
+              <th className="text-center py-2">基準タイム</th>
+              <th className="text-left py-2 px-2">現在地</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.grades.map((g) => {
+              const baseStatus = compareCleared(data.current, g.time);
+              const cleared =
+                baseStatus === "future" && g.time === nextGradeTime
+                  ? "next"
+                  : baseStatus;
+              return (
+                <tr
+                  key={`${g.cls}-${g.num}`}
+                  className={`border-t border-gray-100 ${
+                    cleared === "next"
+                      ? "bg-sunset/10 font-bold"
+                      : cleared === "cleared"
+                      ? "bg-green-50/50"
+                      : ""
+                  }`}
+                >
+                  <td className="py-1.5 px-2">
+                    <span
+                      className={`text-[11px] px-2 py-0.5 rounded-full font-bold ${
+                        g.cls === "AA"
+                          ? "bg-guard-yellow/20 text-guard-yellow"
+                          : g.cls === "A"
+                          ? "bg-green-50 text-green-600"
+                          : "bg-blue-50 text-blue-600"
+                      }`}
+                    >
+                      {g.cls}
+                    </span>
+                  </td>
+                  <td className="py-1.5 text-center font-mono text-xs">{g.num}</td>
+                  <td className="py-1.5 text-center font-mono text-ocean-dark">
+                    {g.time}
+                  </td>
+                  <td className="py-1.5 px-2 text-xs">
+                    {cleared === "cleared" ? (
+                      <span className="text-green-600">✓ クリア</span>
+                    ) : cleared === "next" ? (
+                      <span className="text-sunset font-bold">← 次の目標</span>
+                    ) : (
+                      <span className="text-text-light">挑戦中</span>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+// "39.00" / "1:13.00" のタイム文字列を秒数に変換
+function parseTime(s: string): number {
+  if (s.includes(":")) {
+    const [m, sec] = s.split(":");
+    return parseInt(m) * 60 + parseFloat(sec);
+  }
+  return parseFloat(s);
+}
+
+// current が grade.time をクリアしているか判定
+// "cleared": クリア済み（current ≤ grade）
+// "next": クリアしていないが、最も近い未達ライン
+// "future": まだ届かない上位
+function compareCleared(
+  current: string,
+  gradeTime: string
+): "cleared" | "next" | "future" {
+  const c = parseTime(current);
+  const g = parseTime(gradeTime);
+  // current が g 以下（速い）= cleared
+  if (c <= g) return "cleared";
+  return "future";
+}
+
+function AthleteSwimCard({ athlete }: { athlete: AthleteSwimGrades }) {
+  return (
+    <div className="space-y-5">
+      <div className="bg-ocean-mid/5 rounded-2xl p-5 border-l-4 border-ocean-mid">
+        <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-xl">
+          {athlete.athleteName}
+          <span className="ml-3 text-xs px-2.5 py-1 rounded-full bg-ocean-mid text-white tracking-wider">
+            {athlete.ageLabel}
+          </span>
+        </h3>
+        <p className="text-text-light text-xs mt-1">
+          資格級カテゴリ：{athlete.categoryLabel}
+        </p>
+      </div>
+      <div className="grid lg:grid-cols-1 gap-5">
+        {athlete.distances.map((d) => (
+          <DistanceGradeTable
+            key={d.distance}
+            data={d}
+            athleteName={athlete.athleteName}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /* ===== TABS ===== */
 type Tab = "lifesaving" | "ranking" | "swimming" | "sprint";
 
@@ -537,83 +683,39 @@ export default function RecordsPage() {
           {/* ===== SWIMMING TAB ===== */}
           {activeTab === "swimming" && (
             <AnimateIn>
-              <div className="space-y-8">
+              <div className="space-y-10">
                 <div>
-                  <p className="section-label">Swimming Standards</p>
+                  <p className="section-label">Swimming Qualification</p>
                   <h2 className="section-title mt-2 text-ocean-dark">
-                    水泳 資格級 & JO基準
+                    水泳 資格級
                   </h2>
+                  <p className="text-text-light text-sm mt-2 leading-relaxed">
+                    日本水泳連盟の年齢別資格級を、3きょうだいの年代＋種目別にまとめました。
+                    現在タイム（黄色）とクリア済み級（緑）、次の目標（オレンジ）を一目で確認できます。
+                  </p>
                 </div>
 
-                <div className="bg-white rounded-2xl shadow-sm p-6 overflow-x-auto">
-                  <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark mb-4">
-                    {swimGrades.title}
-                  </h3>
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-text-light text-xs border-b-2 border-ocean-light/20">
-                        <th className="text-left py-2">クラス</th>
-                        <th className="text-center py-2">級</th>
-                        <th className="text-center py-2">タイム</th>
-                        <th className="text-left py-2">レベル</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {swimGrades.grades.map((g) => (
-                        <tr
-                          key={g.num}
-                          className={`border-t border-gray-100 ${
-                            g.num === 4 ? "bg-sunset/10 font-bold" : ""
-                          }`}
-                        >
-                          <td className="py-2.5">
-                            <span
-                              className={`text-xs px-2.5 py-1 rounded-full font-bold ${
-                                g.cls === "AA"
-                                  ? "bg-guard-yellow/20 text-guard-yellow"
-                                  : g.cls === "A"
-                                  ? "bg-green-50 text-green-600"
-                                  : "bg-blue-50 text-blue-600"
-                              }`}
-                            >
-                              {g.cls}
-                            </span>
-                          </td>
-                          <td className="py-2.5 text-center font-mono">{g.num}</td>
-                          <td className="py-2.5 text-center font-mono font-medium text-ocean-dark">
-                            {g.time}
-                          </td>
-                          <td className="py-2.5 text-text-mid">{g.level}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-
-                  <div className="mt-4 p-4 bg-sunset/5 rounded-xl border border-sunset/20">
-                    <p className="text-sm font-bold text-ocean-dark">
-                      賢尚の現在地：41秒 → <span className="text-sunset">B4級相当</span>
-                    </p>
-                    <p className="text-xs text-text-light mt-1">
-                      飛び込み補正込みで実質B5級圏内。A級（38.39秒）まであと約2.6秒
-                    </p>
+                {yagamiSwimGrades.map((athlete) => (
+                  <div key={athlete.shortName} className="space-y-5">
+                    <AthleteSwimCard athlete={athlete} />
                   </div>
-                </div>
+                ))}
 
-                <div className="bg-white rounded-2xl shadow-sm p-6">
-                  <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark mb-4">
-                    JO（ジュニアオリンピック）標準記録 9歳以下 男子 50m自由形
+                <div className="pt-6 border-t border-ocean-mid/20">
+                  <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark mb-4 text-lg">
+                    JO（ジュニアオリンピック）標準記録 ／ 9歳以下 男子 50m自由形
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-ocean-mid/5 rounded-xl p-5 text-center">
                       <p className="text-xs text-text-light mb-1">短水路（25m）</p>
                       <p className="text-3xl font-mono font-bold text-ocean-dark">
-                        {swimGrades.joStandard.shortCourse}
+                        {joStandard.shortCourse}
                       </p>
                     </div>
                     <div className="bg-ocean-mid/5 rounded-xl p-5 text-center">
                       <p className="text-xs text-text-light mb-1">長水路（50m）</p>
                       <p className="text-3xl font-mono font-bold text-ocean-dark">
-                        {swimGrades.joStandard.longCourse}
+                        {joStandard.longCourse}
                       </p>
                     </div>
                   </div>
