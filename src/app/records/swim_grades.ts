@@ -148,8 +148,8 @@ export const yagamiSwimGrades: AthleteSwimGrades[] = [
   {
     shortName: "賢尚",
     athleteName: "矢上 賢尚",
-    ageLabel: "9歳（小4）",
-    categoryLabel: "男子9歳",
+    ageLabel: "小学3年生",
+    categoryLabel: "男子9歳（資格級基準）",
     distances: [
       {
         distance: "50m自由形",

@@ -22,40 +22,69 @@ import {
 /* ===== 水泳資格級（旧定数。新データは swim_grades.ts へ） ===== */
 const joStandard = { shortCourse: "31.14", longCourse: "31.56" };
 
-/* ===== 陸上50m走 ===== */
-const sprint50m = {
-  title: "50m走 全国平均タイム（文部科学省 新体力テスト）",
-  data: [
-    { grade: "小1", age: "6歳", male: "11.45", female: "11.82" },
-    { grade: "小2", age: "7歳", male: "10.59", female: "10.93" },
-    { grade: "小3", age: "8歳", male: "10.02", female: "10.40" },
-    { grade: "小4", age: "9歳", male: "9.61", female: "9.91" },
-    { grade: "小5", age: "10歳", male: "9.22", female: "9.52" },
-    { grade: "小6", age: "11歳", male: "8.87", female: "9.15" },
-    { grade: "中1", age: "12歳", male: "8.42", female: "8.90" },
-    { grade: "中2", age: "13歳", male: "7.80", female: "8.62" },
-    { grade: "中3", age: "14歳", male: "7.45", female: "8.56" },
-    { grade: "高1", age: "15歳", male: "7.45", female: "8.85" },
-    { grade: "高2", age: "16歳", male: "7.24", female: "8.79" },
-    { grade: "高3", age: "17歳", male: "7.16", female: "8.83" },
-  ],
+/* ===== 陸上100m走 3きょうだいの全国基準 ===== */
+type SprintTarget = {
+  level: string;
+  time: string;
+  note: string;
+  highlight?: boolean;
 };
 
-/* ===== 陸上100m走 全国小学生陸上競技交流大会 大会記録 ===== */
-const sprint100m = {
-  title: "100m走 全国小学生陸上競技交流大会（日清食品カップ）大会記録",
-  description:
-    "全国小学生陸上競技交流大会（日清食品カップ）は5・6年生のみ出場可能。出場資格は各都道府県の代表選手のみで、参加標準タイムは設定されていない（選抜制）。",
-  records: [
-    { grade: "小5男子", time: "12.48秒", holder: "服部 蓮太郎", year: "2017年" },
-    { grade: "小6男子", time: "11.63秒", holder: "目野 惺大", year: "2025年" },
-  ],
-  reference: [
-    { level: "県大会 決勝進出", time: "13.0〜13.7秒", note: "兵庫県小6男子 2024年決勝より参考" },
-    { level: "県大会 上位入賞", time: "12.5〜13.0秒", note: "都道府県上位レベル" },
-    { level: "全国大会 決勝進出", time: "11.5〜12.5秒", note: "5・6年生 全国上位" },
-  ],
+type AthleteSprint = {
+  shortName: string;
+  athleteName: string;
+  ageLabel: string;
+  categoryLabel: string;
+  description: string;
+  targets: SprintTarget[];
+  closingNote?: string;
 };
+
+const sprintData: AthleteSprint[] = [
+  {
+    shortName: "賢尚",
+    athleteName: "矢上 賢尚",
+    ageLabel: "小学3年生（男子）",
+    categoryLabel: "全国小学生陸上競技交流大会（日清食品カップ）",
+    description:
+      "出場対象は5・6年生のみ。参加標準タイムは設定されておらず、各都道府県の代表として選抜される必要があります。賢尚は小3のため、来々年（小5）から出場対象に。",
+    targets: [
+      { level: "小6男子 大会記録", time: "11.63秒", note: "目野 惺大（2025年）" },
+      { level: "小5男子 大会記録", time: "12.48秒", note: "服部 蓮太郎（2017年）", highlight: true },
+      { level: "全国大会 決勝進出ライン", time: "11.5〜12.5秒", note: "5・6年生 全国上位レベル" },
+      { level: "都道府県 上位入賞", time: "12.5〜13.0秒", note: "県大会 表彰台クラス" },
+      { level: "都道府県 決勝進出", time: "13.0〜13.7秒", note: "兵庫県小6男子・2024年決勝参考" },
+    ],
+    closingNote:
+      "※ 陸上のジュニアオリンピックカップ（U16/U18/U20）は中学生以上が対象のため、小学生にはJO基準そのものは存在しない。",
+  },
+  {
+    shortName: "陽葉",
+    athleteName: "矢上 陽葉",
+    ageLabel: "中学2年生（女子・U16カデット）",
+    categoryLabel: "全日本中学校陸上競技選手権（全中陸上） / U16カデット",
+    description:
+      "全日本中学校陸上競技選手権（全中）の参加標準記録（2025年度）と、JOCジュニアオリンピックカップ第56回U16陸上競技大会の参考タイム。",
+    targets: [
+      { level: "全中 女子100m 参加標準（2025）", time: "12.50秒", note: "全国大会出場ライン", highlight: true },
+      { level: "JO U16 都道府県予選 標準", time: "13.70秒", note: "三重県U16共通女子参考（2025）" },
+      { level: "中学全国上位 決勝", time: "11.8〜12.3秒", note: "全国大会 表彰台クラス" },
+    ],
+  },
+  {
+    shortName: "結月",
+    athleteName: "矢上 結月",
+    ageLabel: "高校2年生（女子・U18ユース）",
+    categoryLabel: "全国高等学校総合体育大会（インターハイ） / U18ユース",
+    description:
+      "インターハイ（全国高校総体）の参加標準記録と、JOCジュニアオリンピックカップ第19回U18陸上競技大会の参考タイム。",
+    targets: [
+      { level: "インターハイ 女子100m 参加標準", time: "12.25秒", note: "全国大会標準タイム", highlight: true },
+      { level: "高校全国上位 決勝", time: "11.5〜12.0秒", note: "インターハイ 表彰台クラス" },
+      { level: "県総体 決勝進出", time: "12.5〜13.5秒", note: "都道府県大会上位の目安" },
+    ],
+  },
+];
 
 /* ===== COMPONENTS ===== */
 
@@ -565,7 +594,7 @@ export default function RecordsPage() {
     { id: "lifesaving", label: "ライフセービング記録", labelEn: "Lifesaving" },
     { id: "ranking", label: "全国ランキング", labelEn: "Rankings" },
     { id: "swimming", label: "水泳 資格級・JO基準", labelEn: "Swimming" },
-    { id: "sprint", label: "陸上 50m走基準", labelEn: "Sprint" },
+    { id: "sprint", label: "陸上 100m走基準", labelEn: "Sprint" },
   ];
 
   return (
@@ -743,141 +772,76 @@ export default function RecordsPage() {
           {/* ===== SPRINT TAB ===== */}
           {activeTab === "sprint" && (
             <AnimateIn>
-              <div className="space-y-8">
+              <div className="space-y-10">
                 <div>
                   <p className="section-label">Sprint Standards</p>
                   <h2 className="section-title mt-2 text-ocean-dark">
-                    陸上 50m走 全国平均
+                    陸上 100m走 全国基準
                   </h2>
-                  <p className="text-text-light text-sm mt-2">
-                    文部科学省 新体力テスト データより
+                  <p className="text-text-light text-sm mt-2 leading-relaxed">
+                    3きょうだいそれぞれの年代に対応する全国大会の参加標準・大会記録をまとめました。
                   </p>
                 </div>
 
-                <div className="bg-white rounded-2xl shadow-sm p-6 overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-text-light text-xs border-b-2 border-ocean-light/20">
-                        <th className="text-left py-2">学年</th>
-                        <th className="text-center py-2">年齢</th>
-                        <th className="text-center py-2">男子平均</th>
-                        <th className="text-center py-2">女子平均</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {sprint50m.data.map((d) => (
-                        <tr
-                          key={d.grade}
-                          className={`border-t border-gray-100 ${
-                            d.age === "9歳"
-                              ? "bg-sunset/10 font-bold"
-                              : d.age === "15歳" || d.age === "17歳"
-                              ? "bg-ocean-mid/5"
-                              : ""
-                          }`}
-                        >
-                          <td className="py-2.5 font-medium text-ocean-dark">
-                            {d.grade}
-                          </td>
-                          <td className="py-2.5 text-center text-text-mid">
-                            {d.age}
-                          </td>
-                          <td className="py-2.5 text-center font-mono">{d.male}秒</td>
-                          <td className="py-2.5 text-center font-mono">
-                            {d.female}秒
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-
-                  <div className="mt-4 p-4 bg-sunset/5 rounded-xl border border-sunset/20">
-                    <p className="text-sm font-bold text-ocean-dark">
-                      賢尚（9歳）：9.4秒 →{" "}
-                      <span className="text-green-600">平均9.61秒を上回る</span>
-                    </p>
-                  </div>
-                </div>
-
-                {/* 100m走（小学生） */}
-                <div className="bg-white rounded-2xl shadow-sm p-6 mt-6">
-                  <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark mb-2 text-lg">
-                    {sprint100m.title}
-                  </h3>
-                  <p className="text-text-light text-xs mb-4 leading-relaxed">
-                    {sprint100m.description}
-                  </p>
-
-                  <div className="bg-ocean-mid/5 rounded-xl p-5 mb-4">
-                    <p className="text-xs text-text-light mb-3 font-bold">
-                      🏆 大会記録（歴代）
-                    </p>
-                    <div className="grid sm:grid-cols-2 gap-3">
-                      {sprint100m.records.map((r) => (
-                        <div
-                          key={r.grade}
-                          className="bg-white rounded-lg p-4 border border-ocean-mid/10"
-                        >
-                          <p className="text-xs text-text-light">{r.grade}</p>
-                          <p className="text-2xl font-mono font-bold text-ocean-dark mt-1">
-                            {r.time}
-                          </p>
-                          <p className="text-xs text-text-mid mt-1">
-                            {r.holder}（{r.year}）
-                          </p>
-                        </div>
-                      ))}
+                {sprintData.map((athlete) => (
+                  <div
+                    key={athlete.shortName}
+                    className="bg-white rounded-2xl shadow-sm overflow-hidden"
+                  >
+                    <div className="px-6 py-5 bg-gradient-to-r from-ocean-mid/10 to-transparent border-l-4 border-ocean-mid">
+                      <h3 className="font-[family-name:var(--font-serif-jp)] font-bold text-ocean-dark text-xl">
+                        {athlete.athleteName}
+                        <span className="ml-3 text-xs px-2.5 py-1 rounded-full bg-ocean-mid text-white tracking-wider">
+                          {athlete.ageLabel}
+                        </span>
+                      </h3>
+                      <p className="text-text-light text-xs mt-1">
+                        {athlete.categoryLabel}
+                      </p>
+                      <p className="text-text-mid text-sm mt-3 leading-relaxed">
+                        {athlete.description}
+                      </p>
+                    </div>
+                    <div className="p-5">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="text-text-light text-xs border-b-2 border-ocean-light/20">
+                            <th className="text-left py-2 pr-3">レベル</th>
+                            <th className="text-center py-2 pr-3">タイム</th>
+                            <th className="text-left py-2">備考</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {athlete.targets.map((t) => (
+                            <tr
+                              key={t.level}
+                              className={`border-t border-gray-100 ${
+                                t.highlight
+                                  ? "bg-sunset/10 font-bold"
+                                  : ""
+                              }`}
+                            >
+                              <td className="py-2.5 pr-3 text-text-mid">
+                                {t.level}
+                              </td>
+                              <td className="py-2.5 pr-3 text-center font-mono font-bold text-ocean-dark">
+                                {t.time}
+                              </td>
+                              <td className="py-2.5 text-text-light text-xs">
+                                {t.note}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      {athlete.closingNote && (
+                        <p className="text-[11px] text-text-light mt-4 leading-relaxed">
+                          {athlete.closingNote}
+                        </p>
+                      )}
                     </div>
                   </div>
-
-                  <div className="bg-sand-pale rounded-xl p-4">
-                    <p className="text-xs text-text-light mb-3 font-bold">
-                      📊 参考タイム（小学生男子100m）
-                    </p>
-                    <table className="w-full text-sm">
-                      <tbody>
-                        {sprint100m.reference.map((r) => (
-                          <tr
-                            key={r.level}
-                            className="border-t border-gray-100"
-                          >
-                            <td className="py-2 pr-3 text-text-mid">{r.level}</td>
-                            <td className="py-2 pr-3 font-mono font-bold text-ocean-dark">
-                              {r.time}
-                            </td>
-                            <td className="py-2 text-text-light text-xs">
-                              {r.note}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div className="mt-4 p-4 bg-sunset/5 rounded-xl border border-sunset/20">
-                    <p className="text-sm font-bold text-ocean-dark">
-                      🎯 賢尚（小4・9歳）の道のり
-                    </p>
-                    <ul className="text-xs text-text-mid mt-2 space-y-1 leading-relaxed">
-                      <li>
-                        <strong>来年（小5）から</strong> 全国小学生陸上競技交流大会（日清食品カップ）出場対象に
-                      </li>
-                      <li>
-                        小5全国大会記録は <strong>12.48秒</strong>（服部蓮太郎・2017）
-                      </li>
-                      <li>
-                        小6全国大会記録は <strong>11.63秒</strong>（目野惺大・2025）
-                      </li>
-                      <li>
-                        まずは <strong>都道府県の代表選手</strong> を目指す（タイム標準なし、選抜制）
-                      </li>
-                    </ul>
-                  </div>
-
-                  <p className="text-[11px] text-text-light mt-3">
-                    ※ 陸上のジュニアオリンピック標準記録（U16/U18/U20）は中学生以上が対象のため、小学生にはJO基準そのものは存在しません。
-                  </p>
-                </div>
+                ))}
               </div>
             </AnimateIn>
           )}
