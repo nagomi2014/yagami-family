@@ -36,6 +36,8 @@ type AthleteSprint = {
   ageLabel: string;
   categoryLabel: string;
   description: string;
+  current: string;
+  currentNote: string;
   targets: SprintTarget[];
   closingNote?: string;
 };
@@ -48,6 +50,8 @@ const sprintData: AthleteSprint[] = [
     categoryLabel: "全国小学生陸上競技交流大会（日清食品カップ）",
     description:
       "出場対象は5・6年生のみ。参加標準タイムは設定されておらず、各都道府県の代表として選抜される必要があります。賢尚は小3のため、来々年（小5）から出場対象に。",
+    current: "17.80秒",
+    currentNote: "県大会 決勝進出ライン（13.7秒）まで残り 4.10秒。これから2年で大きく伸ばせる時期。",
     targets: [
       { level: "小6男子 大会記録", time: "11.63秒", note: "目野 惺大（2025年）" },
       { level: "小5男子 大会記録", time: "12.48秒", note: "服部 蓮太郎（2017年）", highlight: true },
@@ -65,6 +69,8 @@ const sprintData: AthleteSprint[] = [
     categoryLabel: "全日本中学校陸上競技選手権（全中陸上） / U16カデット",
     description:
       "全日本中学校陸上競技選手権（全中）の参加標準記録（2025年度）と、JOCジュニアオリンピックカップ第56回U16陸上競技大会の参考タイム。",
+    current: "14.80秒",
+    currentNote: "JO U16 都道府県予選標準（13.70秒）まで残り 1.10秒。射程圏内！",
     targets: [
       { level: "全中 女子100m 参加標準（2025）", time: "12.50秒", note: "全国大会出場ライン", highlight: true },
       { level: "JO U16 都道府県予選 標準", time: "13.70秒", note: "三重県U16共通女子参考（2025）" },
@@ -78,6 +84,8 @@ const sprintData: AthleteSprint[] = [
     categoryLabel: "全国高等学校総合体育大会（インターハイ） / U18ユース",
     description:
       "インターハイ（全国高校総体）の参加標準記録と、JOCジュニアオリンピックカップ第19回U18陸上競技大会の参考タイム。",
+    current: "16.50秒",
+    currentNote: "県総体 決勝進出ライン（13.5秒）まで残り 3.00秒。スプリントは伸びしろが大きい。",
     targets: [
       { level: "インターハイ 女子100m 参加標準", time: "12.25秒", note: "全国大会標準タイム", highlight: true },
       { level: "高校全国上位 決勝", time: "11.5〜12.0秒", note: "インターハイ 表彰台クラス" },
@@ -800,6 +808,18 @@ export default function RecordsPage() {
                       </p>
                       <p className="text-text-mid text-sm mt-3 leading-relaxed">
                         {athlete.description}
+                      </p>
+                    </div>
+                    {/* 現在記録ボックス */}
+                    <div className="px-6 py-4 bg-sunset/10 border-y border-sunset/20 flex items-center justify-between flex-wrap gap-2">
+                      <div>
+                        <span className="text-xs text-text-light mr-2">現在ベスト</span>
+                        <span className="font-mono font-bold text-ocean-dark text-2xl">
+                          {athlete.current}
+                        </span>
+                      </div>
+                      <p className="text-xs text-text-mid flex-1 text-right min-w-[200px]">
+                        🎯 {athlete.currentNote}
                       </p>
                     </div>
                     <div className="p-5">
