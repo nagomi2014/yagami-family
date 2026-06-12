@@ -1,0 +1,93 @@
+{
+  "data": {
+    "eventDivision": {
+      "id": "704843",
+      "status": "drawn",
+      "division": {
+        "name": "【U8】ニッパーボードレース（女子）"
+      },
+      "ranking": [
+        {
+          "place": 1,
+          "athleteId": "1786503",
+          "competitor": {
+            "athlete": {
+              "name": "下総 葵花（ シモフサ アオカ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 2,
+          "athleteId": "1786502",
+          "competitor": {
+            "athlete": {
+              "name": "伊藤 彩恵（イトウ サエ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 3,
+          "athleteId": "1774093",
+          "competitor": {
+            "athlete": {
+              "name": "尾内 凪波（オナイ ナナミ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 4,
+          "athleteId": "1772049",
+          "competitor": {
+            "athlete": {
+              "name": "桑原 瑠奈（クワバラ ルナ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 5,
+          "athleteId": "1786504",
+          "competitor": {
+            "athlete": {
+              "name": "斉藤 咲来（サイトウ サクラ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 6,
+          "athleteId": "1783374",
+          "competitor": {
+            "athlete": {
+              "name": "富樫 にか（トガシ ニカ）"
+            },
+            "teamName": "湯河原ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 7,
+          "athleteId": "1787353",
+          "competitor": {
+            "athlete": {
+              "name": "中川 結麻（ナカガワ ユマ）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 8,
+          "athleteId": "1787350",
+          "competitor": {
+            "athlete": {
+              "name": "石原 碧惟（イシハラ アオイ）"
+            },
+            "teamName": "牧之原ライフセービングクラブ"
+          }
+        }
+      ]
+    }
+  }
+}

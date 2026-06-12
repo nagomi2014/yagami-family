@@ -1,0 +1,393 @@
+{
+  "data": {
+    "eventDivision": {
+      "id": "732819",
+      "status": "drawn",
+      "division": {
+        "name": "ビーチスプリント（男子）"
+      },
+      "ranking": [
+        {
+          "place": 1,
+          "athleteId": "1692053",
+          "competitor": {
+            "athlete": {
+              "name": "森下 広大（モリシタ コウダイ)"
+            },
+            "teamName": "鴨川ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 2,
+          "athleteId": "1693083",
+          "competitor": {
+            "athlete": {
+              "name": "小川 慶生（オガワ ケイセイ）"
+            },
+            "teamName": "大磯ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 3,
+          "athleteId": "1688359",
+          "competitor": {
+            "athlete": {
+              "name": "柿崎 稔（カキザキ ミノル）"
+            },
+            "teamName": "九十九里ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 4,
+          "athleteId": "1693104",
+          "competitor": {
+            "athlete": {
+              "name": "柴﨑 太一（シバザキ タイチ）"
+            },
+            "teamName": "大磯ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 5,
+          "athleteId": "1790756",
+          "competitor": {
+            "athlete": {
+              "name": "村岸 郁哉（ムラギシ イクヤ）"
+            },
+            "teamName": "白浜ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 6,
+          "athleteId": "1691861",
+          "competitor": {
+            "athlete": {
+              "name": "池田 圭汰（イケダ ケイタ）"
+            },
+            "teamName": "大磯ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 7,
+          "athleteId": "1691860",
+          "competitor": {
+            "athlete": {
+              "name": "田中 政也（タナカ マサヤ）"
+            },
+            "teamName": "大磯ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 8,
+          "athleteId": "1691538",
+          "competitor": {
+            "athlete": {
+              "name": "石井 雄大（イシイ ユウダイ）"
+            },
+            "teamName": "白浜ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1684430",
+          "competitor": {
+            "athlete": {
+              "name": "和田 賢一（ワダ ケンイチ）"
+            },
+            "teamName": "淡路島ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1688366",
+          "competitor": {
+            "athlete": {
+              "name": "高松 夏一（タカマツ カイチ）"
+            },
+            "teamName": "九十九里ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1804270",
+          "competitor": {
+            "athlete": {
+              "name": "赤川 慶（アカガワ ケイ）"
+            },
+            "teamName": "湘南ひらつかライフセービングクラブ"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1695122",
+          "competitor": {
+            "athlete": {
+              "name": "竹田 光希（タケダ ミツキ）"
+            },
+            "teamName": "波崎サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1318988",
+          "competitor": {
+            "athlete": {
+              "name": "坂本 真徳（サカモト マサトク）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1310186",
+          "competitor": {
+            "athlete": {
+              "name": "嶋津 俊哉（シマヅ トシヤ）"
+            },
+            "teamName": "大磯ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 15,
+          "athleteId": "1693044",
+          "competitor": {
+            "athlete": {
+              "name": "鈴木 直輝（スズキ ナオキ)"
+            },
+            "teamName": "大磯ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 15,
+          "athleteId": "1693777",
+          "competitor": {
+            "athlete": {
+              "name": "草野 稜斗（クサノ リョウト）"
+            },
+            "teamName": "若狭和田ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1693937",
+          "competitor": {
+            "athlete": {
+              "name": "木村 啓人（キムラ ケイト）"
+            },
+            "teamName": "岩井ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1694036",
+          "competitor": {
+            "athlete": {
+              "name": "福田 健太（フクダ ケンタ）"
+            },
+            "teamName": "西伊豆ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1803024",
+          "competitor": {
+            "athlete": {
+              "name": "香味 翼（コウミ ツバサ）"
+            },
+            "teamName": "西伊豆ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1797990",
+          "competitor": {
+            "athlete": {
+              "name": "新海 航生（シンカイ コウキ)"
+            },
+            "teamName": "茅ヶ崎サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1692025",
+          "competitor": {
+            "athlete": {
+              "name": "山下 湧輝（ヤマシタ ユウキ）"
+            },
+            "teamName": "若狭和田ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1695155",
+          "competitor": {
+            "athlete": {
+              "name": "山本 寛（ヤマモト カン）"
+            },
+            "teamName": "土肥ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1694540",
+          "competitor": {
+            "athlete": {
+              "name": "野口 勝成（ノグチ カツナリ）"
+            },
+            "teamName": "湯河原ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1802476",
+          "competitor": {
+            "athlete": {
+              "name": "布井 漣（ヌノイ レン）"
+            },
+            "teamName": "鴨川ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1690048",
+          "competitor": {
+            "athlete": {
+              "name": "八尾 哲平（ヤオ テッペイ）"
+            },
+            "teamName": "大磯ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1800076",
+          "competitor": {
+            "athlete": {
+              "name": "清水 颯斗（シミズ ハヤト）"
+            },
+            "teamName": "神津島ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1692992",
+          "competitor": {
+            "athlete": {
+              "name": "山本 竜也（ヤマモト タツヤ）"
+            },
+            "teamName": "神戸ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1804249",
+          "competitor": {
+            "athlete": {
+              "name": "菊地 優杜（キクチ ユウト）"
+            },
+            "teamName": "土肥ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 29,
+          "athleteId": "1691536",
+          "competitor": {
+            "athlete": {
+              "name": "片桐 稜馬（カタギリ リョウマ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 29,
+          "athleteId": "1798907",
+          "competitor": {
+            "athlete": {
+              "name": "藤本 圭太（フジモト ケイタ）"
+            },
+            "teamName": "淡輪ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 29,
+          "athleteId": "1804784",
+          "competitor": {
+            "athlete": {
+              "name": "加藤 春（カトウ ハル）"
+            },
+            "teamName": "西伊豆ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 29,
+          "athleteId": "1804255",
+          "competitor": {
+            "athlete": {
+              "name": "塩澤 大騎（シオザワ ダイキ）"
+            },
+            "teamName": "西伊豆ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 33,
+          "athleteId": "1801425",
+          "competitor": {
+            "athlete": {
+              "name": "齋藤 光海（サイトウ コウ）"
+            },
+            "teamName": "勝浦ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 33,
+          "athleteId": "1835025",
+          "competitor": {
+            "athlete": {
+              "name": "石川 穂高（イシカワ ホタカ）"
+            },
+            "teamName": "若狭和田ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 33,
+          "athleteId": "1692252",
+          "competitor": {
+            "athlete": {
+              "name": "宮本 幸生（ミヤモト コウセイ）"
+            },
+            "teamName": "白浜ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 36,
+          "athleteId": "1800230",
+          "competitor": {
+            "athlete": {
+              "name": "石井 大翔（イシイ ハルト）"
+            },
+            "teamName": "淡輪ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1689162",
+          "competitor": {
+            "athlete": {
+              "name": "染谷 騎平（ソメヤ キッペイ）"
+            },
+            "teamName": "南伊豆ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1688325",
+          "competitor": {
+            "athlete": {
+              "name": "蓮沼 未洋（ハスヌマ ミヒロ）"
+            },
+            "teamName": "岩井ライフセービングクラブ"
+          }
+        }
+      ]
+    }
+  }
+}

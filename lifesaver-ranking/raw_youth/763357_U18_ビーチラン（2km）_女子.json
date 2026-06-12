@@ -1,0 +1,243 @@
+{
+  "data": {
+    "eventDivision": {
+      "id": "763357",
+      "status": "drawn",
+      "division": {
+        "name": "【U18】ビーチラン（2km）（女子）"
+      },
+      "ranking": [
+        {
+          "place": 1,
+          "athleteId": "1813668",
+          "competitor": {
+            "athlete": {
+              "name": "石黒 未波（イシグロ ミナミ）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 2,
+          "athleteId": "1691492",
+          "competitor": {
+            "athlete": {
+              "name": "東條 奈帆（トウジョウ ナホ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 3,
+          "athleteId": "1811415",
+          "competitor": {
+            "athlete": {
+              "name": "宍戸 晴奏（シシド ハルカ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 4,
+          "athleteId": "1796301",
+          "competitor": {
+            "athlete": {
+              "name": "永山 心愛（ナガヤマ ミア）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 5,
+          "athleteId": "1815803",
+          "competitor": {
+            "athlete": {
+              "name": "根本 真海（ネモト マナミ）"
+            },
+            "teamName": "銚子ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 6,
+          "athleteId": "1815837",
+          "competitor": {
+            "athlete": {
+              "name": "光守 明香里（ミツモリ アカリ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 7,
+          "athleteId": "1814522",
+          "competitor": {
+            "athlete": {
+              "name": "菅野 紗希（カンノ サキ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 8,
+          "athleteId": "1818484",
+          "competitor": {
+            "athlete": {
+              "name": "飯野 花梨（イイノ カリン）"
+            },
+            "teamName": "十文字中学・高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1809434",
+          "competitor": {
+            "athlete": {
+              "name": "遠藤 吏莉佳（エンドウ リリカ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 10,
+          "athleteId": "1808784",
+          "competitor": {
+            "athlete": {
+              "name": "乗田 ひなの（ノリタ ヒナノ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1690691",
+          "competitor": {
+            "athlete": {
+              "name": "杉山 冬華（スギヤマ トウカ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 12,
+          "athleteId": "1805937",
+          "competitor": {
+            "athlete": {
+              "name": "横溝 いとの（ヨコミゾ イトノ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1805975",
+          "competitor": {
+            "athlete": {
+              "name": "小野 柚希（オノ ユズキ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 14,
+          "athleteId": "1806596",
+          "competitor": {
+            "athlete": {
+              "name": "大﨑 真央（オオサキ マオ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 15,
+          "athleteId": "1814389",
+          "competitor": {
+            "athlete": {
+              "name": "田澤 てるひ（タザワ テルヒ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 16,
+          "athleteId": "1806695",
+          "competitor": {
+            "athlete": {
+              "name": "池田 琉華（イケダ ルカ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1806333",
+          "competitor": {
+            "athlete": {
+              "name": "綾城 らら（アヤキ ララ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 18,
+          "athleteId": "1803451",
+          "competitor": {
+            "athlete": {
+              "name": "田 杏莉（デン アンリ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 19,
+          "athleteId": "1815840",
+          "competitor": {
+            "athlete": {
+              "name": "橋野 美優（ハシノ ミユ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 20,
+          "athleteId": "1808437",
+          "competitor": {
+            "athlete": {
+              "name": "稲川 琶久（イナガワ ワク）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1808790",
+          "competitor": {
+            "athlete": {
+              "name": "阿部 優衣（アベ ユイ）"
+            },
+            "teamName": "盛岡ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1690487",
+          "competitor": {
+            "athlete": {
+              "name": "根本 心海（ネモト ココミ）"
+            },
+            "teamName": "銚子ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1819994",
+          "competitor": {
+            "athlete": {
+              "name": "田中 優那（タナカ ユナ）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        }
+      ]
+    }
+  }
+}

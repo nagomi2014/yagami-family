@@ -1,0 +1,413 @@
+{
+  "data": {
+    "eventDivision": {
+      "id": "763344",
+      "status": "drawn",
+      "division": {
+        "name": "【U18】サーフレース（男子）"
+      },
+      "ranking": [
+        {
+          "place": 1,
+          "athleteId": "1688365",
+          "competitor": {
+            "athlete": {
+              "name": "小松 壮（コマツ ソウ）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 2,
+          "athleteId": "1690697",
+          "competitor": {
+            "athlete": {
+              "name": "浜地 櫂依（ハマジ カイ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 3,
+          "athleteId": "1691096",
+          "competitor": {
+            "athlete": {
+              "name": "高田 理世（タカダ リセイ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 4,
+          "athleteId": "1690695",
+          "competitor": {
+            "athlete": {
+              "name": "江渕 匡祐（エブチ キョウスケ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 5,
+          "athleteId": "1813563",
+          "competitor": {
+            "athlete": {
+              "name": "水野 陽祐（ミズノ ヨウスケ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 6,
+          "athleteId": "1692268",
+          "competitor": {
+            "athlete": {
+              "name": "小川 結生（オガワ ユウキ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 7,
+          "athleteId": "1691531",
+          "competitor": {
+            "athlete": {
+              "name": "青山 希助（アオヤマ キスケ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 8,
+          "athleteId": "1692251",
+          "competitor": {
+            "athlete": {
+              "name": "中村 孔信（ナカムラ ヨシノブ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1813997",
+          "competitor": {
+            "athlete": {
+              "name": "住吉 蒼玄（スミヨシ ソウゲン）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 10,
+          "athleteId": "1692265",
+          "competitor": {
+            "athlete": {
+              "name": "田畑 佑笑（タバタ ユウショウ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1806335",
+          "competitor": {
+            "athlete": {
+              "name": "井上 瑛太（イノウエ エイタ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 12,
+          "athleteId": "1814517",
+          "competitor": {
+            "athlete": {
+              "name": "横矢 翔（ヨコヤ ショウ）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1687136",
+          "competitor": {
+            "athlete": {
+              "name": "渡辺 龍斗（ワタナベ リュウト）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 14,
+          "athleteId": "1684797",
+          "competitor": {
+            "athlete": {
+              "name": "百田 梅吉（モモタ ウメキチ）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": 15,
+          "athleteId": "1695386",
+          "competitor": {
+            "athlete": {
+              "name": "菅野 滉太（カンノ コウタ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 16,
+          "athleteId": "1804219",
+          "competitor": {
+            "athlete": {
+              "name": "渡邉 敬太（ワタナベ ケイタ）"
+            },
+            "teamName": "湘南ひらつかライフセービングクラブ"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1805990",
+          "competitor": {
+            "athlete": {
+              "name": "伊藤 一希（イトウ カズキ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 18,
+          "athleteId": "1812537",
+          "competitor": {
+            "athlete": {
+              "name": "田邊 敬翔（タナベ ケイト）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 19,
+          "athleteId": "1692879",
+          "competitor": {
+            "athlete": {
+              "name": "村上 漣（ムラカミ レン）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": 20,
+          "athleteId": "1806597",
+          "competitor": {
+            "athlete": {
+              "name": "小島 徠叶（コジマ ライド）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1811381",
+          "competitor": {
+            "athlete": {
+              "name": "池埜 結人（イケノ ユウト）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 22,
+          "athleteId": "1812635",
+          "competitor": {
+            "athlete": {
+              "name": "渡邊 裕斗（ワタナベ ヒロト）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 23,
+          "athleteId": "1690040",
+          "competitor": {
+            "athlete": {
+              "name": "池戸 真誉（イケド マヨ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 24,
+          "athleteId": "1694003",
+          "competitor": {
+            "athlete": {
+              "name": "井上 大地（イノウエ タイチ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1808792",
+          "competitor": {
+            "athlete": {
+              "name": "松本 煌史（マツモト コウシ）"
+            },
+            "teamName": "盛岡ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 26,
+          "athleteId": "1693418",
+          "competitor": {
+            "athlete": {
+              "name": "西 夏祈（ニシ ナツキ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 27,
+          "athleteId": "1688261",
+          "competitor": {
+            "athlete": {
+              "name": "笠井 謙（カサイ ケン）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 28,
+          "athleteId": "1692125",
+          "competitor": {
+            "athlete": {
+              "name": "西川 温人（ニシカワ ハルト）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 29,
+          "athleteId": "1815884",
+          "competitor": {
+            "athlete": {
+              "name": "岩田 旺甫（イワタ オウスケ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 30,
+          "athleteId": "1794024",
+          "competitor": {
+            "athlete": {
+              "name": "山田 晄世（ヤマダ コウセイ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 30,
+          "athleteId": "1807222",
+          "competitor": {
+            "athlete": {
+              "name": "奈良 颯大（ナラ ソウダイ)"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 30,
+          "athleteId": "1808101",
+          "competitor": {
+            "athlete": {
+              "name": "添田 遼太郎（ソエダ リョウタロウ)"
+            },
+            "teamName": "下田ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 33,
+          "athleteId": "1690044",
+          "competitor": {
+            "athlete": {
+              "name": "上野 佑太（ウエノ ユウタ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 33,
+          "athleteId": "1806679",
+          "competitor": {
+            "athlete": {
+              "name": "山本 真幹（ヤマモト マキ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 35,
+          "athleteId": "1817893",
+          "competitor": {
+            "athlete": {
+              "name": "山本 耀斗（ヤマモト ライト）"
+            },
+            "teamName": "昭和第一学園高等学校ライフセービング部"
+          }
+        },
+        {
+          "place": 35,
+          "athleteId": "1811315",
+          "competitor": {
+            "athlete": {
+              "name": "伊藤 晴也（イトウ ハルヤ）"
+            },
+            "teamName": "昭和第一学園高等学校ライフセービング部"
+          }
+        },
+        {
+          "place": 37,
+          "athleteId": "1808787",
+          "competitor": {
+            "athlete": {
+              "name": "畑山 統吾（ハタヤマ トウゴ）"
+            },
+            "teamName": "盛岡ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 37,
+          "athleteId": "1817897",
+          "competitor": {
+            "athlete": {
+              "name": "藤田 武史（フジタ タケシ）"
+            },
+            "teamName": "昭和第一学園高等学校ライフセービング部"
+          }
+        },
+        {
+          "place": 39,
+          "athleteId": "1806538",
+          "competitor": {
+            "athlete": {
+              "name": "山﨑 怜和（ヤマザキ レイワ）"
+            },
+            "teamName": "日本体育大学荏原高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 39,
+          "athleteId": "1817883",
+          "competitor": {
+            "athlete": {
+              "name": "小野村 圭敏（オノムラ ヨシト）"
+            },
+            "teamName": "昭和第一学園高等学校ライフセービング部"
+          }
+        }
+      ]
+    }
+  }
+}

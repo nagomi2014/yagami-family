@@ -1,0 +1,544 @@
+{
+  "賢尚": {
+    "2024": [
+      {
+        "section": "ocean",
+        "event": "ニッパーボードレース",
+        "category": "",
+        "gender": "男子",
+        "rank": 3,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "",
+        "gender": "男子",
+        "rank": 1,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "",
+        "gender": "男子",
+        "rank": 3,
+        "time": ""
+      },
+      {
+        "section": "pool",
+        "event": "障害物スイム",
+        "category": "",
+        "gender": "男子",
+        "rank": 8,
+        "time": "54.80"
+      },
+      {
+        "section": "pool",
+        "event": "ジュニアチューブスイム",
+        "category": "",
+        "gender": "男子",
+        "rank": 7,
+        "time": "55.90"
+      }
+    ],
+    "2025": [
+      {
+        "section": "ocean",
+        "event": "ウェーディングレース",
+        "category": "U8",
+        "gender": "男子",
+        "rank": 2,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ニッパーボードレース",
+        "category": "U8",
+        "gender": "男子",
+        "rank": 2,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "U8",
+        "gender": "男子",
+        "rank": 1,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "U8",
+        "gender": "男子",
+        "rank": 3,
+        "time": ""
+      },
+      {
+        "section": "pool",
+        "event": "障害物スイム（50m）",
+        "category": "U8",
+        "gender": "男子",
+        "rank": 2,
+        "time": "45.54"
+      },
+      {
+        "section": "pool",
+        "event": "ジュニアチューブスイム（50m）",
+        "category": "U8",
+        "gender": "男子",
+        "rank": 3,
+        "time": "48.07"
+      }
+    ]
+  },
+  "陽葉": {
+    "2021": [
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "小学3-4年",
+        "gender": "女子",
+        "rank": 7,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ウェーディングレース",
+        "category": "",
+        "gender": "男子",
+        "rank": 4,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ニッパーボードレース",
+        "category": "小学3-4年",
+        "gender": "女子",
+        "rank": 1,
+        "time": ""
+      }
+    ],
+    "2022": [
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "小学5-6年",
+        "gender": "女子",
+        "rank": 1,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "小学5-6年",
+        "gender": "女子",
+        "rank": 7,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチラン",
+        "category": "小学5-6年",
+        "gender": "女子",
+        "rank": 8,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ニッパーボードレース",
+        "category": "小学5-6年",
+        "gender": "女子",
+        "rank": 2,
+        "time": ""
+      },
+      {
+        "section": "pool",
+        "event": "障害物スイム（50m）",
+        "category": "小学5-6年",
+        "gender": "女子",
+        "rank": 12,
+        "time": "39.51"
+      },
+      {
+        "section": "pool",
+        "event": "レスキューチューブトウ（100m）",
+        "category": "小学5-6年",
+        "gender": "女子",
+        "rank": 10,
+        "time": "1:34.82"
+      }
+    ],
+    "2023": [
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "U12",
+        "gender": "女子",
+        "rank": 3,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "U12",
+        "gender": "女子",
+        "rank": 7,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチラン",
+        "category": "U12",
+        "gender": "女子",
+        "rank": 7,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ニッパーボードレース",
+        "category": "U12",
+        "gender": "女子",
+        "rank": 1,
+        "time": ""
+      }
+    ],
+    "2024": [
+      {
+        "section": "ocean",
+        "event": "ニッパーボードレース",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 4,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ボードレース",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 8,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 2,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 5,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 4,
+        "time": ""
+      },
+      {
+        "section": "pool",
+        "event": "ラインスロー",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 2,
+        "time": ""
+      },
+      {
+        "section": "pool",
+        "event": "障害物スイム",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 21,
+        "time": "1:19.74"
+      },
+      {
+        "section": "pool",
+        "event": "マネキンキャリー",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 16,
+        "time": "53.94"
+      },
+      {
+        "section": "pool",
+        "event": "マネキントウ",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 20,
+        "time": "1:37.74"
+      }
+    ],
+    "2019": [
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "小学1-2年",
+        "gender": "女子",
+        "rank": 3,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "小学1-2年",
+        "gender": "女子",
+        "rank": 4,
+        "time": ""
+      }
+    ],
+    "2025": [
+      {
+        "section": "ocean",
+        "event": "サーフレース",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 12,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ボードレース",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 7,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 1,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 13,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ユースオーシャンウーマン",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 10,
+        "time": ""
+      },
+      {
+        "section": "pool",
+        "event": "障害物スイム（200m）",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 26,
+        "time": "2:59.39"
+      },
+      {
+        "section": "pool",
+        "event": "障害物スイム（100m）",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 26,
+        "time": "1:19.40"
+      },
+      {
+        "section": "pool",
+        "event": "マネキンキャリー（50m）",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 17,
+        "time": "48.97"
+      },
+      {
+        "section": "pool",
+        "event": "マネキンキャリー・ウィズフィン（100m）",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 17,
+        "time": "1:24.41"
+      },
+      {
+        "section": "pool",
+        "event": "スーパーライフセーバー（200m）",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 19,
+        "time": "3:34.41"
+      },
+      {
+        "section": "pool",
+        "event": "マネキントウ・ウィズフィン（100m）",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 20,
+        "time": "1:27.72"
+      }
+    ]
+  },
+  "結月": {
+    "2022": [
+      {
+        "section": "pool",
+        "event": "100m 平泳ぎ",
+        "category": "",
+        "gender": "女子",
+        "rank": 24,
+        "time": "1:39.02"
+      },
+      {
+        "section": "pool",
+        "event": "ラインスロー（10m）",
+        "category": "中学生",
+        "gender": "女子",
+        "rank": 1,
+        "time": ""
+      },
+      {
+        "section": "pool",
+        "event": "マネキンキャリー（50m）",
+        "category": "中学生",
+        "gender": "女子",
+        "rank": 7,
+        "time": "1:08.47"
+      },
+      {
+        "section": "pool",
+        "event": "マネキントウ",
+        "category": "中学生",
+        "gender": "女子",
+        "rank": 12,
+        "time": "1:40.64"
+      },
+      {
+        "section": "pool",
+        "event": "ラインスロー",
+        "category": "高校生",
+        "gender": "女子",
+        "rank": 1,
+        "time": ""
+      }
+    ],
+    "2024": [
+      {
+        "section": "pool",
+        "event": "障害物スイム",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 25,
+        "time": "1:33.47"
+      },
+      {
+        "section": "pool",
+        "event": "マネキンキャリー",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 17,
+        "time": "1:03.97"
+      },
+      {
+        "section": "pool",
+        "event": "マネキントウ",
+        "category": "U15",
+        "gender": "女子",
+        "rank": 15,
+        "time": "1:32.10"
+      }
+    ],
+    "2019": [
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "小学3-4年",
+        "gender": "女子",
+        "rank": 7,
+        "time": ""
+      }
+    ],
+    "2025": [
+      {
+        "section": "ocean",
+        "event": "サーフレース",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 26,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ボードレース",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 16,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチフラッグス",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 13,
+        "time": ""
+      },
+      {
+        "section": "ocean",
+        "event": "ビーチスプリント",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 16,
+        "time": ""
+      },
+      {
+        "section": "pool",
+        "event": "障害物スイム（200m）",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 27,
+        "time": "3:19.42"
+      },
+      {
+        "section": "pool",
+        "event": "マネキンキャリー（50m）",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 24,
+        "time": "55.79"
+      },
+      {
+        "section": "pool",
+        "event": "マネキンキャリー・ウィズフィン（100m）",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 30,
+        "time": "1:33.95"
+      },
+      {
+        "section": "pool",
+        "event": "スーパーライフセーバー（200m）",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 22,
+        "time": "3:52.41"
+      },
+      {
+        "section": "pool",
+        "event": "マネキントウ・ウィズフィン（100m）",
+        "category": "U18",
+        "gender": "女子",
+        "rank": 36,
+        "time": "1:34.34"
+      }
+    ]
+  }
+}

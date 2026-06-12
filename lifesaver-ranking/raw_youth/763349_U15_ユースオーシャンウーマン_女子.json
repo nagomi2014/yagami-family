@@ -1,0 +1,363 @@
+{
+  "data": {
+    "eventDivision": {
+      "id": "763349",
+      "status": "drawn",
+      "division": {
+        "name": "ユースオーシャンウーマン（女子）"
+      },
+      "ranking": [
+        {
+          "place": 1,
+          "athleteId": "1688396",
+          "competitor": {
+            "athlete": {
+              "name": "塚根 小夏（ツカネ コナツ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 2,
+          "athleteId": "1814041",
+          "competitor": {
+            "athlete": {
+              "name": "鴨林 夏花（カモバヤシ カハナ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 3,
+          "athleteId": "1690692",
+          "competitor": {
+            "athlete": {
+              "name": "藤﨑 笑佳（フジサキ エミカ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 4,
+          "athleteId": "1814392",
+          "competitor": {
+            "athlete": {
+              "name": "上野 美月（ウエノ ミヅキ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 5,
+          "athleteId": "1689974",
+          "competitor": {
+            "athlete": {
+              "name": "成海 幸波（ナルミ サナ）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 6,
+          "athleteId": "1694062",
+          "competitor": {
+            "athlete": {
+              "name": "千葉 まひる（チバ マヒル）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 7,
+          "athleteId": "1684444",
+          "competitor": {
+            "athlete": {
+              "name": "髙田 琉衣（タカダ ルイ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 8,
+          "athleteId": "1691229",
+          "competitor": {
+            "athlete": {
+              "name": "古賀 夏美（コガ ナツミ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1685720",
+          "competitor": {
+            "athlete": {
+              "name": "柳 輝於（ヤナギ キオ）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": 10,
+          "athleteId": "1802009",
+          "competitor": {
+            "athlete": {
+              "name": "矢上 陽葉（ヤガミ キヨハ）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1811415",
+          "competitor": {
+            "athlete": {
+              "name": "宍戸 晴奏（シシド ハルカ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 12,
+          "athleteId": "1813659",
+          "competitor": {
+            "athlete": {
+              "name": "根岸 梨紗（ネギシ リサ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1816268",
+          "competitor": {
+            "athlete": {
+              "name": "谷中 渚瑠（タニナカ ナル）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 14,
+          "athleteId": "1815803",
+          "competitor": {
+            "athlete": {
+              "name": "根本 真海（ネモト マナミ）"
+            },
+            "teamName": "銚子ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 15,
+          "athleteId": "1819599",
+          "competitor": {
+            "athlete": {
+              "name": "後上 夏菜子（ゴガミ ナナコ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 16,
+          "athleteId": "1818482",
+          "competitor": {
+            "athlete": {
+              "name": "安倍 佑美（アベ ユウビ）"
+            },
+            "teamName": "十文字中学・高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1812011",
+          "competitor": {
+            "athlete": {
+              "name": "兼田 笑那（カネダ エナ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1813528",
+          "competitor": {
+            "athlete": {
+              "name": "小川 菜々花（オガワ ナナカ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 19,
+          "athleteId": "1820060",
+          "competitor": {
+            "athlete": {
+              "name": "久保木 葉琉（クボキ ハル）"
+            },
+            "teamName": "銚子ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 19,
+          "athleteId": "1819063",
+          "competitor": {
+            "athlete": {
+              "name": "高梨 夏生（タカナシ ナツキ）"
+            },
+            "teamName": "勝浦ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1691034",
+          "competitor": {
+            "athlete": {
+              "name": "鈴木 萌那（スズキ モアナ）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1819770",
+          "competitor": {
+            "athlete": {
+              "name": "石塚 心陽（イシツカ コハル）"
+            },
+            "teamName": "勝浦ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 23,
+          "athleteId": "1816301",
+          "competitor": {
+            "athlete": {
+              "name": "折原 まゆ（オリハラ マユ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 23,
+          "athleteId": "1813613",
+          "competitor": {
+            "athlete": {
+              "name": "上田 香蓮（ウエダ カレン）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1815181",
+          "competitor": {
+            "athlete": {
+              "name": "大平 夏凪（オオヒラ カナ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1794090",
+          "competitor": {
+            "athlete": {
+              "name": "梅谷 二葉（ウメタニ フタバ）"
+            },
+            "teamName": "成城学園高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 27,
+          "athleteId": "1803803",
+          "competitor": {
+            "athlete": {
+              "name": "佐藤 ひなの（サトウ ヒナノ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 27,
+          "athleteId": "1802757",
+          "competitor": {
+            "athlete": {
+              "name": "成田 千絵（ナリタ チエ）"
+            },
+            "teamName": "柏崎ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1692779",
+          "competitor": {
+            "athlete": {
+              "name": "花塚 聖奈（ハナヅカ セナ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1807625",
+          "competitor": {
+            "athlete": {
+              "name": "矢上 結月（ヤガミ ユヅキ）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1691988",
+          "competitor": {
+            "athlete": {
+              "name": "槍田 愛（ウツダ マナ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1693011",
+          "competitor": {
+            "athlete": {
+              "name": "常盤 珠絆（トキワ ジュナ）"
+            },
+            "teamName": "勝浦ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1818489",
+          "competitor": {
+            "athlete": {
+              "name": "明智 蘭（アケチ ラン）"
+            },
+            "teamName": "十文字中学・高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1694035",
+          "competitor": {
+            "athlete": {
+              "name": "内藤 希音（ナイトウ ネネ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1817156",
+          "competitor": {
+            "athlete": {
+              "name": "佐藤 絢羽（サトウ アヤハ）"
+            },
+            "teamName": "柏崎ライフセービングクラブ"
+          }
+        }
+      ]
+    }
+  }
+}

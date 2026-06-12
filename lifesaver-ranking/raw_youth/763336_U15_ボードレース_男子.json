@@ -1,0 +1,203 @@
+{
+  "data": {
+    "eventDivision": {
+      "id": "763336",
+      "status": "drawn",
+      "division": {
+        "name": "【U15】ボードレース（男子）"
+      },
+      "ranking": [
+        {
+          "place": 1,
+          "athleteId": "1686938",
+          "competitor": {
+            "athlete": {
+              "name": "大野 快（オオノ カイ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 2,
+          "athleteId": "1818611",
+          "competitor": {
+            "athlete": {
+              "name": "米林 志（ヨネバヤシ ココロ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 3,
+          "athleteId": "1806793",
+          "competitor": {
+            "athlete": {
+              "name": "土谷 颯真（ツチヤ ソウマ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 4,
+          "athleteId": "1810756",
+          "competitor": {
+            "athlete": {
+              "name": "高木 秀征（タカギ シュウセイ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 5,
+          "athleteId": "1803923",
+          "competitor": {
+            "athlete": {
+              "name": "郷田 純一郎（ゴウダ ジュンイチロウ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 6,
+          "athleteId": "1683137",
+          "competitor": {
+            "athlete": {
+              "name": "髙田 夏都（タカダ ナツ）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": 7,
+          "athleteId": "1803098",
+          "competitor": {
+            "athlete": {
+              "name": "北川 成（キタガワ ナル）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 8,
+          "athleteId": "1807630",
+          "competitor": {
+            "athlete": {
+              "name": "寺地 晴之介（テラチ ハルノスケ）"
+            },
+            "teamName": "湯河原ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1820182",
+          "competitor": {
+            "athlete": {
+              "name": "橋本 音次郎（ハシモト オトジロウ）"
+            },
+            "teamName": "由比ガ浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 10,
+          "athleteId": "1816002",
+          "competitor": {
+            "athlete": {
+              "name": "佐藤 煌晃（サトウ テルアキ)"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1695362",
+          "competitor": {
+            "athlete": {
+              "name": "山田 悠仁（ヤマダ ユウト）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 12,
+          "athleteId": "1819112",
+          "competitor": {
+            "athlete": {
+              "name": "亀井 佑伍（カメイ ユウゴ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1811183",
+          "competitor": {
+            "athlete": {
+              "name": "春山 誠太朗（ハルヤマ セイタロウ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 14,
+          "athleteId": "1817421",
+          "competitor": {
+            "athlete": {
+              "name": "福田 諒（フクダ リョウ）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": 15,
+          "athleteId": "1813998",
+          "competitor": {
+            "athlete": {
+              "name": "住吉 至玄（スミヨシ ジゲン）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1809302",
+          "competitor": {
+            "athlete": {
+              "name": "古賀 埜新（コガ ノア）"
+            },
+            "teamName": "逗子サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1818939",
+          "competitor": {
+            "athlete": {
+              "name": "笹生 律樹（サソウ リツキ）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1811515",
+          "competitor": {
+            "athlete": {
+              "name": "西澤 伶衣（ニシザワ レイ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1811516",
+          "competitor": {
+            "athlete": {
+              "name": "西澤 伶王（ニシザワ レオ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        }
+      ]
+    }
+  }
+}

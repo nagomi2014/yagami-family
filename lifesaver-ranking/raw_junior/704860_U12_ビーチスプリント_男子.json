@@ -1,0 +1,353 @@
+{
+  "data": {
+    "eventDivision": {
+      "id": "704860",
+      "status": "drawn",
+      "division": {
+        "name": "【U12】ビーチスプリント（男子）"
+      },
+      "ranking": [
+        {
+          "place": 1,
+          "athleteId": "1784951",
+          "competitor": {
+            "athlete": {
+              "name": "伏黒 泰世（フシクロ タイセイ）"
+            },
+            "teamName": "湘南ひらつかライフセービングクラブ"
+          }
+        },
+        {
+          "place": 2,
+          "athleteId": "1784917",
+          "competitor": {
+            "athlete": {
+              "name": "岩本 銀士郎（イワモト ギンシロウ）"
+            },
+            "teamName": "湯河原ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 3,
+          "athleteId": "1787354",
+          "competitor": {
+            "athlete": {
+              "name": "原 瑛斗（ハラ エイト）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 4,
+          "athleteId": "1776106",
+          "competitor": {
+            "athlete": {
+              "name": "岡田 大和（オカダ ヤマト）"
+            },
+            "teamName": "勝浦ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 5,
+          "athleteId": "1787351",
+          "competitor": {
+            "athlete": {
+              "name": "永野 大地（ナガノ ダイチ）"
+            },
+            "teamName": "牧之原ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 6,
+          "athleteId": "1779224",
+          "competitor": {
+            "athlete": {
+              "name": "松本 幸大（マツモト コウタ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 7,
+          "athleteId": "1784176",
+          "competitor": {
+            "athlete": {
+              "name": "山本 逢瑠（ヤマモト アイル）"
+            },
+            "teamName": "湯河原ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 8,
+          "athleteId": "1786037",
+          "competitor": {
+            "athlete": {
+              "name": "ランブル ケーラム"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1784217",
+          "competitor": {
+            "athlete": {
+              "name": "佐藤 波瑠（サトウ ハル）"
+            },
+            "teamName": "勝浦ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1786072",
+          "competitor": {
+            "athlete": {
+              "name": "谷嶋 碧太（タニシマ アオタロウ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1786471",
+          "competitor": {
+            "athlete": {
+              "name": "田中 絃太（タナカ ゲンタ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1786473",
+          "competitor": {
+            "athlete": {
+              "name": "小谷 太一（コタニ タイチ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1786470",
+          "competitor": {
+            "athlete": {
+              "name": "阿部 拓真（アベ タクマ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1776337",
+          "competitor": {
+            "athlete": {
+              "name": "大野 友臣（オオノ トモオミ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 15,
+          "athleteId": "1784947",
+          "competitor": {
+            "athlete": {
+              "name": "坂本 拓海（サカモト タクミ）"
+            },
+            "teamName": "湘南ひらつかライフセービングクラブ"
+          }
+        },
+        {
+          "place": 15,
+          "athleteId": "1787341",
+          "competitor": {
+            "athlete": {
+              "name": "上村 蔵ノ介（カミムラ クラノスケ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1783379",
+          "competitor": {
+            "athlete": {
+              "name": "菊地 勘太（キクチ カンタ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1785872",
+          "competitor": {
+            "athlete": {
+              "name": "宮下 遍（ミヤシタ アマネ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1786472",
+          "competitor": {
+            "athlete": {
+              "name": "本郷 隼人（ホンゴウ ハヤト）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 17,
+          "athleteId": "1786474",
+          "competitor": {
+            "athlete": {
+              "name": "河地 泰典（カワチ タイスケ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1786477",
+          "competitor": {
+            "athlete": {
+              "name": "本間 梨央（ ホンマ リオ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1786478",
+          "competitor": {
+            "athlete": {
+              "name": "谷口 颯汰（タニグチ ソウタ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1786476",
+          "competitor": {
+            "athlete": {
+              "name": "光山 裕太（ミツヤマ ユウタ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 21,
+          "athleteId": "1784477",
+          "competitor": {
+            "athlete": {
+              "name": "八栁 雄成（ヤツヤナギ ユウセイ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1777259",
+          "competitor": {
+            "athlete": {
+              "name": "森 徳多郎（モリ トクタロウ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1778124",
+          "competitor": {
+            "athlete": {
+              "name": "豊間根 一樹（トヨマネ カズキ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1784952",
+          "competitor": {
+            "athlete": {
+              "name": "田中 甚（タナカ イサギ）"
+            },
+            "teamName": "湘南ひらつかライフセービングクラブ"
+          }
+        },
+        {
+          "place": 25,
+          "athleteId": "1779173",
+          "competitor": {
+            "athlete": {
+              "name": "吉井 怜央（ヨシイ レオ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 29,
+          "athleteId": "1777226",
+          "competitor": {
+            "athlete": {
+              "name": "佐藤 匠（サトウ タクミ）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 30,
+          "athleteId": "1784252",
+          "competitor": {
+            "athlete": {
+              "name": "安田 かいり（ヤスダ カイリ）"
+            },
+            "teamName": "勝浦ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1784216",
+          "competitor": {
+            "athlete": {
+              "name": "内藤 雄志（ナイトウ ユウシ）"
+            },
+            "teamName": "岩井ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1776514",
+          "competitor": {
+            "athlete": {
+              "name": "染野 智也（ソメノ トモヤ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1805992",
+          "competitor": {
+            "athlete": {
+              "name": "谷口 蒼太（タニグチ ソウタ）"
+            },
+            "teamName": null
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1777989",
+          "competitor": {
+            "athlete": {
+              "name": "宮本 開音（ミヤモト カイト）"
+            },
+            "teamName": "西浜サーフライフセービングクラブ"
+          }
+        }
+      ]
+    }
+  }
+}

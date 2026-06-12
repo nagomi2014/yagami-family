@@ -1,0 +1,173 @@
+{
+  "data": {
+    "eventDivision": {
+      "id": "763333",
+      "status": "drawn",
+      "division": {
+        "name": "【U15】ニッパーボードレース（女子）"
+      },
+      "ranking": [
+        {
+          "place": 1,
+          "athleteId": "1801396",
+          "competitor": {
+            "athlete": {
+              "name": "斎藤 りの（サイトウ リノ）"
+            },
+            "teamName": "館山サーフライフセービングクラブ"
+          }
+        },
+        {
+          "place": 2,
+          "athleteId": "1819770",
+          "competitor": {
+            "athlete": {
+              "name": "石塚 心陽（イシツカ コハル）"
+            },
+            "teamName": "勝浦ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 3,
+          "athleteId": "1818632",
+          "competitor": {
+            "athlete": {
+              "name": "塚根 ゆず（ツカネ ユズ）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 4,
+          "athleteId": "1816760",
+          "competitor": {
+            "athlete": {
+              "name": "古木 柚（フルキ ユズ）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": 5,
+          "athleteId": "1802757",
+          "competitor": {
+            "athlete": {
+              "name": "成田 千絵（ナリタ チエ）"
+            },
+            "teamName": "柏崎ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 6,
+          "athleteId": "1813613",
+          "competitor": {
+            "athlete": {
+              "name": "上田 香蓮（ウエダ カレン）"
+            },
+            "teamName": "湘南GoldenAgeアカデミー"
+          }
+        },
+        {
+          "place": 7,
+          "athleteId": "1818490",
+          "competitor": {
+            "athlete": {
+              "name": "大瀧 由里奈（オオタキ ユリナ）"
+            },
+            "teamName": "十文字中学・高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 8,
+          "athleteId": "1814879",
+          "competitor": {
+            "athlete": {
+              "name": "江田 叶実（エダ カナミ）"
+            },
+            "teamName": "下田ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 9,
+          "athleteId": "1818487",
+          "competitor": {
+            "athlete": {
+              "name": "中澤 珠来（ナカザワ ミク）"
+            },
+            "teamName": "十文字中学・高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 10,
+          "athleteId": "1808794",
+          "competitor": {
+            "athlete": {
+              "name": "熊谷 心絆（クマガイ ココナ）"
+            },
+            "teamName": "盛岡ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 11,
+          "athleteId": "1818744",
+          "competitor": {
+            "athlete": {
+              "name": "須貝 美琴（スガイ ミコト）"
+            },
+            "teamName": "KITAJIMAQUATICS"
+          }
+        },
+        {
+          "place": 12,
+          "athleteId": "1818494",
+          "competitor": {
+            "athlete": {
+              "name": "日吉 佑菜（ヒヨシ ユナ）"
+            },
+            "teamName": "十文字中学・高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 13,
+          "athleteId": "1818496",
+          "competitor": {
+            "athlete": {
+              "name": "小林 優衣（コバヤシ ユイ）"
+            },
+            "teamName": "十文字中学・高等学校ライフセービングクラブ"
+          }
+        },
+        {
+          "place": 14,
+          "athleteId": "1808796",
+          "competitor": {
+            "athlete": {
+              "name": "佐藤 凜桜（サトウ リオ）"
+            },
+            "teamName": "盛岡ライフセービングクラブ"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1816661",
+          "competitor": {
+            "athlete": {
+              "name": "佐藤 禾子（サトウ カコ）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        },
+        {
+          "place": null,
+          "athleteId": "1816268",
+          "competitor": {
+            "athlete": {
+              "name": "谷中 渚瑠（タニナカ ナル）"
+            },
+            "teamName": "鎌倉ライフガード"
+          }
+        }
+      ]
+    }
+  }
+}
