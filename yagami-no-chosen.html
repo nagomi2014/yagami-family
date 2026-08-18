@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>矢上家の挑戦 ｜ 全日本ライフセービング選手権 2025-2026</title>
+<meta name="description" content="館山サーフライフセービングクラブで戦う矢上家3兄妹（賢尚・陽葉・結月）の全日本大会2025-2026の挑戦記録。U8男子全国1位の快挙も。">
+<style>
+  :root {
+    --c-sea: #0d4f8b;
+    --c-sea-light: #4a90c9;
+    --c-sand: #f4e8d0;
+    --c-sand-deep: #d9b67a;
+    --c-text: #1f2933;
+    --c-muted: #5b6770;
+    --c-gold: #c79a3b;
+    --c-line: #e3e8ee;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--c-text);
+    line-height: 1.85;
+    background: #fdfdfd;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--c-sea) 0%, var(--c-sea-light) 100%);
+    color: #fff;
+    padding: 60px 20px 50px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    opacity: 0.85;
+    margin: 0 0 12px;
+  }
+  .hero h1 {
+    font-size: 32px;
+    margin: 0 0 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .hero .lead {
+    font-size: 16px;
+    opacity: 0.95;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  .hero .place {
+    margin-top: 20px;
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  section {
+    padding: 50px 0 30px;
+  }
+  h2 {
+    font-size: 24px;
+    color: var(--c-sea);
+    border-left: 6px solid var(--c-sea);
+    padding-left: 14px;
+    margin: 0 0 20px;
+    line-height: 1.4;
+  }
+  h3 {
+    font-size: 19px;
+    color: var(--c-sea);
+    margin: 30px 0 10px;
+  }
+  p { margin: 0 0 16px; }
+  .muted { color: var(--c-muted); font-size: 14px; }
+
+  .intro p {
+    font-size: 16px;
+  }
+
+  /* 選手カード */
+  .athlete {
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: 10px;
+    padding: 28px 24px;
+    margin-bottom: 26px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .athlete .badge {
+    display: inline-block;
+    background: var(--c-sea);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .athlete.gold .badge { background: var(--c-gold); }
+  .athlete h3 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    color: var(--c-text);
+  }
+  .athlete .ruby {
+    font-size: 13px;
+    color: var(--c-muted);
+    margin: 0 0 18px;
+  }
+  .athlete .summary {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--c-sea);
+    margin: 0 0 14px;
+  }
+  .athlete.gold .summary { color: var(--c-gold); }
+  .athlete .events ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 14px;
+    color: var(--c-text);
+  }
+  .athlete .events li { margin-bottom: 4px; }
+  .athlete .voice {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: var(--c-sand);
+    border-radius: 6px;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  /* ランキング表 */
+  details {
+    border: 1px solid var(--c-line);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #fff;
+  }
+  details > summary {
+    cursor: pointer;
+    padding: 14px 18px;
+    font-weight: 700;
+    color: var(--c-sea);
+    font-size: 15px;
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 11px;
+    transition: transform 0.2s;
+    color: var(--c-sea-light);
+  }
+  details[open] > summary::before { transform: rotate(90deg); }
+
+  .ranking-block { padding: 0 18px 18px; }
+  .ranking-block h4 {
+    font-size: 14px;
+    color: var(--c-muted);
+    border-bottom: 1px solid var(--c-line);
+    padding-bottom: 4px;
+    margin: 16px 0 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-bottom: 6px;
+  }
+  th, td {
+    padding: 6px 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--c-line);
+  }
+  th {
+    background: var(--c-sand);
+    color: var(--c-text);
+    font-weight: 600;
+    font-size: 12px;
+  }
+  td.rank { text-align: center; width: 38px; font-weight: 600; color: var(--c-sea); }
+  td.pts { text-align: right; width: 50px; font-variant-numeric: tabular-nums; }
+  tr.yagami td { background: #fff7df; font-weight: 700; }
+  tr.yagami td.rank { color: var(--c-gold); }
+
+  /* 次の目標セクション */
+  .benchmark-card {
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-left: 6px solid var(--c-gold);
+    border-radius: 10px;
+    padding: 22px 22px 8px;
+    margin-bottom: 22px;
+  }
+  .benchmark-card .who {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--c-text);
+    margin: 0 0 4px;
+  }
+  .benchmark-card .who .level {
+    display: inline-block;
+    background: var(--c-gold);
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+    letter-spacing: 0.08em;
+  }
+  .benchmark-card .who-sub {
+    font-size: 13px;
+    color: var(--c-muted);
+    margin: 0 0 14px;
+  }
+  .benchmark-card table { font-size: 13px; }
+  .benchmark-card th { background: #f8efd9; }
+  .benchmark-card td.t-rank {
+    text-align: center; width: 50px;
+    font-weight: 700; color: var(--c-gold);
+    font-size: 13px;
+  }
+  .benchmark-card td.t-time {
+    text-align: right; width: 80px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+  .benchmark-card .event-name {
+    font-size: 14px;
+    color: var(--c-sea);
+    font-weight: 700;
+    margin: 18px 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed var(--c-line);
+  }
+
+  .closing {
+    background: var(--c-sand);
+    padding: 40px 0;
+    margin-top: 40px;
+  }
+  .closing p { font-size: 16px; }
+
+  .meta {
+    background: #f8f9fb;
+    padding: 24px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--c-muted);
+    line-height: 1.7;
+    margin: 30px 0;
+  }
+  .meta strong { color: var(--c-text); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 16px 36px; }
+    .hero h1 { font-size: 24px; }
+    .hero .lead { font-size: 14px; }
+    h2 { font-size: 20px; }
+    .athlete { padding: 22px 18px; }
+    .athlete h3 { font-size: 19px; }
+    table { font-size: 12.5px; }
+    th, td { padding: 5px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="eyebrow">YAGAMI FAMILY CHALLENGE</p>
+  <h1>矢上家の挑戦</h1>
+  <p class="lead">館山サーフライフセービングクラブで戦う3きょうだいの<br>全日本ライフセービング選手権 2025-2026 挑戦記</p>
+  <p class="place">第51回全日本／第17回ユース／第22回ジュニア／全日本ジュニアユースマスターズ・プール 2025</p>
+</header>
+
+<div class="container intro">
+  <section>
+    <p>2025年9月から2026年1月にかけて、矢上家の3きょうだいは、それぞれの世代の全国大会に挑みました。</p>
+    <p>JLA（日本ライフセービング協会）の方針に基づき、各個人種目の <strong>1位＝16点〜16位＝1点</strong> で集計した「真のライフセーバーランキング」。
+       兄妹それぞれの戦績と、各カテゴリのTOP10をまとめました。</p>
+  </section>
+</div>
+
+<div class="container">
+  <section>
+    <h2>3きょうだいの戦績</h2>
+
+    <!-- 賢尚くん -->
+    <div class="athlete gold">
+      <span class="badge">U8男子（小学校低学年）</span>
+      <h3>矢上 賢尚</h3>
+      <p class="ruby">やがみ けんしょう</p>
+      <p class="summary">🏆 全国総合 1位（89点・6種目入賞）</p>
+      <div class="events">
+        <ul>
+          <li><strong>オーシャン部門 全国1位</strong>（60点／4種目入賞）</li>
+          <li><strong>プール部門 全国2位</strong>（29点／2種目入賞）</li>
+          <li>ビーチフラッグス全国1位／ウェーディングレース2位／ニッパーボードレース2位／ビーチスプリント3位</li>
+          <li>障害物スイム（50m）2位／ジュニアチューブスイム（50m）3位</li>
+        </ul>
+      </div>
+      <p class="voice">海でもプールでも、両方の舞台で全国トップ。U8男子総合で全国1位という快挙を成し遂げました。「海もプールも両方できるライフセーバー」を体現してくれた、家族の誇りです。</p>
+    </div>
+
+    <!-- 陽葉ちゃん -->
+    <div class="athlete">
+      <span class="badge">U15女子（中学生）</span>
+      <h3>矢上 陽葉</h3>
+      <p class="ruby">やがみ きよは</p>
+      <p class="summary">全国総合 10位（42点・5種目入賞） ／ オーシャン部門 全国4位</p>
+      <div class="events">
+        <ul>
+          <li><strong>ビーチフラッグス全国1位</strong>（U15女子）</li>
+          <li>ニッパーボードレース／ビーチスプリント／ビーチフラッグス／ユースオーシャンウーマン に出場</li>
+          <li>プール大会では U15 で 4種目、さらに U18 越境で 3種目にエントリー</li>
+        </ul>
+      </div>
+      <p class="voice">5種目に出場してオーシャン部門で全国4位、ビーチフラッグスでは全国1位。さらにプール大会では1学年上のU18種目にも挑戦。数字以上に「挑戦の数」が光った大会でした。</p>
+    </div>
+
+    <!-- 結月ちゃん -->
+    <div class="athlete">
+      <span class="badge">U18女子（高校生）</span>
+      <h3>矢上 結月</h3>
+      <p class="ruby">やがみ ゆづき</p>
+      <p class="summary">U18女子・全国64位（6点・3種目入賞）</p>
+      <div class="events">
+        <ul>
+          <li>ボードレース16位／ビーチフラッグス13位／ビーチスプリント16位</li>
+          <li>プール大会では U18 障害物スイム200m、200mスーパーライフセーバー、ラインスローにエントリー</li>
+          <li>U15・U18合わせて出場5種目以上の挑戦</li>
+        </ul>
+      </div>
+      <p class="voice">U18の超激戦区にチャレンジし続ける結月。妹・陽葉とお姉ちゃんとして、館山SLSC Bチームでラインスローも一緒に。順位以上に、挑戦し続ける姿勢が後輩たちへの最大の贈り物です。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>各カテゴリ TOP10</h2>
+    <p class="muted">矢上家3人が出場した6カテゴリのTOP10を「総合（オーシャン＋プール）／オーシャン部門／プール部門」で掲載。<br>その他カテゴリは記事末尾の参考資料からご覧いただけます。</p>
+
+    <!-- U8 男子 -->
+    <details open>
+      <summary>ジュニア U8男子 ／ 賢尚くん 出場カテゴリ</summary>
+      <div class="ranking-block">
+
+        <h4>総合（オーシャン＋プール）</h4>
+        <table>
+          <thead><tr><th class="rank">順</th><th>選手</th><th>所属</th><th class="pts">点</th></tr></thead>
+          <tbody>
+            <tr class="yagami"><td class="rank">1</td><td>矢上 賢尚</td><td>館山SLSC</td><td class="pts">89</td></tr>
+            <tr><td class="rank">2</td><td>山崎 貴大</td><td>湯河原LSC</td><td class="pts">86</td></tr>
+            <tr><td class="rank">3</td><td>河地 遼大</td><td>湘南GoldenAge</td><td class="pts">68</td></tr>
+            <tr><td class="rank">4</td><td>大塚 理玄</td><td>西浜SLSC</td><td class="pts">66</td></tr>
+            <tr><td class="rank">5</td><td>常盤 琉仁</td><td>勝浦LSC</td><td class="pts">59</td></tr>
+            <tr><td class="rank">6</td><td>佐藤 亙</td><td>西浜SLSC</td><td class="pts">57</td></tr>
+            <tr class="yagami"><td class="rank">7</td><td>岡本 涼太</td><td>館山SLSC</td><td class="pts">49</td></tr>
+            <tr><td class="rank">8</td><td>飯田 真凪</td><td>西浜SLSC</td><td class="pts">48</td></tr>
+            <tr><td class="rank">9</td><td>高橋 海心</td><td>湘南GoldenAge</td><td class="pts">41</td></tr>
+            <tr><td class="rank">10</td><td>古藤 大智</td><td>西浜SLSC</td><td class="pts">35</td></tr>
+          </tbody>
+        </table>
+
+        <h4>オーシャン部門</h4>
+        <table>
+          <thead><tr><th class="rank">順</th><th>選手</th><th>所属</th><th class="pts">点</th></tr></thead>
+          <tbody>
+            <tr class="yagami"><td class="rank">1</td><td>矢上 賢尚</td><td>館山SLSC</td><td class="pts">60</td></tr>
+            <tr><td class="rank">2</td><td>山崎 貴大</td><td>湯河原LSC</td><td class="pts">59</td></tr>
+            <tr class="yagami"><td class="rank">3</td><td>岡本 涼太</td><td>館山SLSC</td><td class="pts">49</td></tr>
+            <tr><td class="rank">4</td><td>飯田 真凪</td><td>西浜SLSC</td><td class="pts">48</td></tr>
+            <tr><td class="rank">5</td><td>大塚 理玄</td><td>西浜SLSC</td><td class="pts">45</td></tr>
+            <tr><td class="rank">5</td><td>河地 遼大</td><td>湘南GoldenAge</td><td class="pts">45</td></tr>
+            <tr><td class="rank">7</td><td>佐藤 亙</td><td>西浜SLSC</td><td class="pts">42</td></tr>
+            <tr><td class="rank">8</td><td>高橋 海心</td><td>湘南GoldenAge</td><td class="pts">41</td></tr>
+            <tr><td class="rank">9</td><td>常盤 琉仁</td><td>勝浦LSC</td><td class="pts">37</td></tr>
+            <tr><td class="rank">10</td><td>マイヤーエーロン晟</td><td>勝浦LSC</td><td class="pts">18</td></tr>
+          </tbody>
+        </table>
+
+        <h4>プール部門</h4>
+        <table>
+          <thead><tr><th class="rank">順</th><th>選手</th><th>所属</th><th class="pts">点</th></tr></thead>
+          <tbody>
+            <tr><td class="rank">1</td><td>外村 爽羽</td><td>湘南GAA</td><td class="pts">32</td></tr>
+            <tr class="yagami"><td class="rank">2</td><td>矢上 賢尚</td><td>館山SLSC</td><td class="pts">29</td></tr>
+            <tr><td class="rank">3</td><td>荒井 絢仁</td><td>西浜SLSC</td><td class="pts">28</td></tr>
+            <tr><td class="rank">4</td><td>山崎 貴大</td><td>湯河原LSC</td><td class="pts">27</td></tr>
+            <tr><td class="rank">5</td><td>河地 遼大</td><td>湘南GoldenAge</td><td class="pts">23</td></tr>
+            <tr><td class="rank">6</td><td>常盤 琉仁</td><td>勝浦LSC</td><td class="pts">22</td></tr>
+            <tr><td class="rank">7</td><td>大塚 理玄</td><td>西浜SLSC</td><td class="pts">21</td></tr>
+            <tr><td class="rank">8</td><td>古藤 大智</td><td>西浜SLSC</td><td class="pts">18</td></tr>
+            <tr><td class="rank">9</td><td>佐藤 亙</td><td>西浜SLSC</td><td class="pts">15</td></tr>
+            <tr><td class="rank">9</td><td>森田 千瑛</td><td>湘南GoldenAge</td><td class="pts">15</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <!-- U15 女子 -->
+    <details>
+      <summary>ユース U15女子 ／ 陽葉ちゃん 出場カテゴリ</summary>
+      <div class="ranking-block">
+
+        <h4>総合（オーシャン＋プール）</h4>
+        <table>
+          <thead><tr><th class="rank">順</th><th>選手</th><th>所属</th><th class="pts">点</th></tr></thead>
+          <tbody>
+            <tr><td class="rank">1</td><td>髙田 琉衣</td><td>湘南GoldenAge</td><td class="pts">104</td></tr>
+            <tr><td class="rank">2</td><td>鴨林 夏花</td><td>西浜SLSC</td><td class="pts">88</td></tr>
+            <tr><td class="rank">3</td><td>柳 輝於</td><td>KITAJIMAQUATICS</td><td class="pts">83</td></tr>
+            <tr><td class="rank">4</td><td>河端 詩央梨</td><td>KITAJIMAQUATICS</td><td class="pts">82</td></tr>
+            <tr><td class="rank">5</td><td>藤﨑 笑佳</td><td>西浜SLSC</td><td class="pts">81</td></tr>
+            <tr><td class="rank">6</td><td>上野 美月</td><td>西浜SLSC</td><td class="pts">71</td></tr>
+            <tr><td class="rank">7</td><td>塚根 小夏</td><td>湘南GoldenAge</td><td class="pts">60</td></tr>
+            <tr><td class="rank">8</td><td>古賀 夏美</td><td>西浜SLSC</td><td class="pts">53</td></tr>
+            <tr><td class="rank">9</td><td>小池 侑依</td><td>KITAJIMAQUATICS</td><td class="pts">46</td></tr>
+            <tr class="yagami"><td class="rank">10</td><td>矢上 陽葉</td><td>館山SLSC</td><td class="pts">42</td></tr>
+          </tbody>
+        </table>
+
+        <h4>オーシャン部門</h4>
+        <table>
+          <thead><tr><th class="rank">順</th><th>選手</th><th>所属</th><th class="pts">点</th></tr></thead>
+          <tbody>
+            <tr><td class="rank">1</td><td>髙田 琉衣</td><td>湘南GoldenAge</td><td class="pts">68</td></tr>
+            <tr><td class="rank">2</td><td>上野 美月</td><td>西浜SLSC</td><td class="pts">62</td></tr>
+            <tr><td class="rank">3</td><td>鴨林 夏花</td><td>西浜SLSC</td><td class="pts">56</td></tr>
+            <tr class="yagami"><td class="rank">4</td><td>矢上 陽葉</td><td>館山SLSC</td><td class="pts">42</td></tr>
+            <tr><td class="rank">5</td><td>塚根 小夏</td><td>湘南GoldenAge</td><td class="pts">37</td></tr>
+            <tr><td class="rank">6</td><td>丸山 はやか</td><td>鎌倉LG</td><td class="pts">33</td></tr>
+            <tr><td class="rank">7</td><td>常盤 珠絆</td><td>勝浦LSC</td><td class="pts">29</td></tr>
+            <tr><td class="rank">8</td><td>谷中 渚瑠</td><td>鎌倉LG</td><td class="pts">27</td></tr>
+            <tr><td class="rank">8</td><td>河端 詩央梨</td><td>KITAJIMAQUATICS</td><td class="pts">27</td></tr>
+            <tr><td class="rank">10</td><td>上田 香蓮</td><td>湘南GoldenAge</td><td class="pts">25</td></tr>
+          </tbody>
+        </table>
+
+        <h4>プール部門</h4>
+        <table>
+          <thead><tr><th class="rank">順</th><th>選手</th><th>所属</th><th class="pts">点</th></tr></thead>
+          <tbody>
+            <tr><td class="rank">1</td><td>柳 輝於</td><td>KITAJIMAQUATICS</td><td class="pts">62</td></tr>
+            <tr><td class="rank">2</td><td>藤﨑 笑佳</td><td>西浜SLSC</td><td class="pts">56</td></tr>
+            <tr><td class="rank">3</td><td>河端 詩央梨</td><td>KITAJIMAQUATICS</td><td class="pts">55</td></tr>
+            <tr><td class="rank">4</td><td>古賀 夏美</td><td>西浜SLSC</td><td class="pts">39</td></tr>
+            <tr><td class="rank">5</td><td>髙田 琉衣</td><td>湘南GoldenAge</td><td class="pts">36</td></tr>
+            <tr><td class="rank">6</td><td>小池 侑依</td><td>KITAJIMAQUATICS</td><td class="pts">35</td></tr>
+            <tr><td class="rank">7</td><td>鈴木 萌那</td><td>KITAJIMAQUATICS</td><td class="pts">32</td></tr>
+            <tr><td class="rank">7</td><td>鴨林 夏花</td><td>西浜SLSC</td><td class="pts">32</td></tr>
+            <tr><td class="rank">9</td><td>髙松 澪</td><td>K-AQUA</td><td class="pts">30</td></tr>
+            <tr><td class="rank">10</td><td>春日 あかり</td><td>十文字中高</td><td class="pts">29</td></tr>
+          </tbody>
+        </table>
+        <p class="muted" style="margin-top:14px;">陽葉はプール大会にもU15で4種目、さらにU18越境で3種目にエントリー。すべて完走したものの16位以内に届かず、加点には反映されていません。</p>
+      </div>
+    </details>
+
+    <!-- U18 女子 -->
+    <details>
+      <summary>ユース U18女子 ／ 結月ちゃん 出場カテゴリ</summary>
+      <div class="ranking-block">
+
+        <h4>総合（オーシャン＋プール）</h4>
+        <table>
+          <thead><tr><th class="rank">順</th><th>選手</th><th>所属</th><th class="pts">点</th></tr></thead>
+          <tbody>
+            <tr><td class="rank">1</td><td>槍田 愛</td><td>西浜SLSC</td><td class="pts">115</td></tr>
+            <tr class="yagami"><td class="rank">2</td><td>千葉 まひる</td><td>館山SLSC</td><td class="pts">94</td></tr>
+            <tr><td class="rank">3</td><td>中西 裕愛</td><td>KITAJIMAQUATICS</td><td class="pts">77</td></tr>
+            <tr><td class="rank">4</td><td>花塚 聖奈</td><td>西浜SLSC</td><td class="pts">73</td></tr>
+            <tr><td class="rank">5</td><td>橋本 香蓮</td><td>日体大荏原</td><td class="pts">68</td></tr>
+            <tr><td class="rank">6</td><td>大橋 絆</td><td>日体大荏原</td><td class="pts">67</td></tr>
+            <tr class="yagami"><td class="rank">7</td><td>成海 幸波</td><td>館山SLSC</td><td class="pts">65</td></tr>
+            <tr><td class="rank">8</td><td>鴨林 夏花</td><td>西浜SLSC</td><td class="pts">60</td></tr>
+            <tr><td class="rank">9</td><td>飯野 花梨</td><td>十文字中高</td><td class="pts">58</td></tr>
+            <tr><td class="rank">10</td><td>藤﨑 笑佳</td><td>西浜SLSC</td><td class="pts">57</td></tr>
+          </tbody>
+        </table>
+        <p class="muted">館山SLSCから2位（千葉まひる選手）と7位（成海幸波選手）の2名がトップ10入り。結月は64位（6点・3種目入賞）。</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>家族で挑む「真のライフセーバー」</h2>
+    <p>ライフセービングは、海でも、プールでも、命を救う技術を競うスポーツです。</p>
+    <p>JLA（日本ライフセービング協会）の方針では、各個人種目で <strong>1位＝16点〜16位＝1点</strong> という加点ルールがあります。
+       これにオーシャンとプールの両方を合算した順位を「真のライフセーバーランキング」として今回独自に集計しました。</p>
+    <p>賢尚はU8男子の頂点に立ち、陽葉はU15女子の全国10位＋オーシャン4位、結月はU18の超激戦区にチャレンジ。
+       館山サーフライフセービングクラブの一員として、家族3人それぞれが、それぞれの舞台で全力を尽くしました。</p>
+    <p>これからも家族みんなで、海の安全と、ライフセービングの魅力を伝えていきます。</p>
+  </section>
+
+  <section>
+    <h2>🎯 次の目標タイム</h2>
+    <p>2025-2026シーズンの結果を踏まえて、来期に向けて3きょうだいそれぞれのベンチマークタイムをまとめました。<br>
+       各種目の <strong>1位／3位／5位／8位／16位</strong> を「次に目指す壁」として記しています。</p>
+
+    <!-- 賢尚（U10男子）-->
+    <div class="benchmark-card">
+      <p class="who">矢上 賢尚<span class="level">2026年度はU10</span></p>
+      <p class="who-sub">U10男子のプール種目ベンチマーク</p>
+
+      <p class="event-name">障害物スイム（50m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>村田 洋太郎</td><td>K-AQUA</td><td class="t-time">30.89</td></tr>
+          <tr><td class="t-rank">3位</td><td>村上 晴</td><td>茅ヶ崎SLSC</td><td class="t-time">39.13</td></tr>
+          <tr><td class="t-rank">5位</td><td>宮上 稜正</td><td>湘南GAA</td><td class="t-time">41.44</td></tr>
+          <tr><td class="t-rank">8位</td><td>橋本 青瑚</td><td>西浜SLSC</td><td class="t-time">45.68</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">レスキューチューブトウ（100m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>村田 洋太郎</td><td>K-AQUA</td><td class="t-time">1:18.96</td></tr>
+          <tr><td class="t-rank">3位</td><td>山崎 悠太</td><td>湯河原LSC</td><td class="t-time">1:34.20</td></tr>
+          <tr><td class="t-rank">5位</td><td>坂本 悠真</td><td>湘南ひらつかLSC</td><td class="t-time">1:47.75</td></tr>
+          <tr><td class="t-rank">8位</td><td>梅木 孝太郎</td><td>盛岡LSC</td><td class="t-time">1:55.47</td></tr>
+          <tr><td class="t-rank">16位</td><td>木村 岳</td><td>西浜SLSC</td><td class="t-time">2:13.31</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin:14px 0 4px;">U8で頂点に立った賢尚が、ひとつ上の階段へ。まずは入賞圏（16位以内）を確実に、そして表彰台へ。</p>
+    </div>
+
+    <!-- 陽葉（U15女子）-->
+    <div class="benchmark-card">
+      <p class="who">矢上 陽葉<span class="level">2026年度もU15</span></p>
+      <p class="who-sub">U15女子のプール種目ベンチマーク</p>
+
+      <p class="event-name">障害物スイム（100m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>河端 詩央梨</td><td>K-AQUA</td><td class="t-time">1:06.76</td></tr>
+          <tr><td class="t-rank">3位</td><td>小池 侑依</td><td>K-AQUA</td><td class="t-time">1:08.81</td></tr>
+          <tr><td class="t-rank">5位</td><td>鴨林 夏花</td><td>西浜SLSC</td><td class="t-time">1:10.18</td></tr>
+          <tr><td class="t-rank">8位</td><td>小関 友香理</td><td>十文字中高</td><td class="t-time">1:12.07</td></tr>
+          <tr><td class="t-rank">16位</td><td>古木 柚</td><td>K-AQUA</td><td class="t-time">1:15.90</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">マネキンキャリー（50m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>柳 輝於</td><td>K-AQUA</td><td class="t-time">39.43</td></tr>
+          <tr><td class="t-rank">3位</td><td>塚根 小夏</td><td>湘南GAA</td><td class="t-time">40.27</td></tr>
+          <tr><td class="t-rank">5位</td><td>髙松 澪</td><td>K-AQUA</td><td class="t-time">42.16</td></tr>
+          <tr><td class="t-rank">8位</td><td>鹿取 彩葉</td><td>西浜SLSC</td><td class="t-time">43.81</td></tr>
+          <tr><td class="t-rank">16位</td><td>古木 柚</td><td>K-AQUA</td><td class="t-time">47.79</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">マネキンキャリー・ウィズフィン（100m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>柳 輝於</td><td>K-AQUA</td><td class="t-time">1:00.47</td></tr>
+          <tr><td class="t-rank">5位</td><td>髙田 琉衣</td><td>湘南GAA</td><td class="t-time">1:08.29</td></tr>
+          <tr><td class="t-rank">8位</td><td>兼田 笑那</td><td>西浜SLSC</td><td class="t-time">1:13.80</td></tr>
+          <tr><td class="t-rank">16位</td><td>常盤 珠絆</td><td>勝浦LSC</td><td class="t-time">1:21.76</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">マネキントウ・ウィズフィン（100m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">3位</td><td>春日 あかり</td><td>十文字中高</td><td class="t-time">1:12.45</td></tr>
+          <tr><td class="t-rank">5位</td><td>古賀 夏美</td><td>西浜SLSC</td><td class="t-time">1:15.10</td></tr>
+          <tr><td class="t-rank">8位</td><td>塚根 小夏</td><td>湘南GAA</td><td class="t-time">1:17.09</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin:14px 0 4px;">オーシャンでは全国4位。プールでも入賞圏（16位以内）に届けば、総合順位で大きく前進できます。</p>
+    </div>
+
+    <!-- 結月（U18女子）-->
+    <div class="benchmark-card">
+      <p class="who">矢上 結月<span class="level">2026年度もU18</span></p>
+      <p class="who-sub">U18女子のプール種目ベンチマーク</p>
+
+      <p class="event-name">障害物スイム（200m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>橋本 香蓮</td><td>日体大荏原</td><td class="t-time">2:20.34</td></tr>
+          <tr><td class="t-rank">3位</td><td>林 美穂</td><td>十文字中高</td><td class="t-time">2:25.67</td></tr>
+          <tr><td class="t-rank">5位</td><td>鹿取 彩葉</td><td>西浜SLSC</td><td class="t-time">2:29.60</td></tr>
+          <tr><td class="t-rank">8位</td><td>千葉 まひる</td><td>館山SLSC</td><td class="t-time">2:34.75</td></tr>
+          <tr><td class="t-rank">16位</td><td>佐藤 志帆子</td><td>西浜SLSC</td><td class="t-time">2:44.91</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">マネキンキャリー（50m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>大橋 絆</td><td>日体大荏原</td><td class="t-time">38.29</td></tr>
+          <tr><td class="t-rank">3位</td><td>橋本 香蓮</td><td>日体大荏原</td><td class="t-time">40.91</td></tr>
+          <tr><td class="t-rank">5位</td><td>中西 裕愛</td><td>K-AQUA</td><td class="t-time">41.96</td></tr>
+          <tr><td class="t-rank">8位</td><td>千葉 まひる</td><td>館山SLSC</td><td class="t-time">44.53</td></tr>
+          <tr><td class="t-rank">16位</td><td>大﨑 真央</td><td>日体大荏原</td><td class="t-time">48.07</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">マネキンキャリー・ウィズフィン（100m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>槍田 愛</td><td>西浜SLSC</td><td class="t-time">1:01.69</td></tr>
+          <tr><td class="t-rank">3位</td><td>森田 真帆</td><td>K-AQUA</td><td class="t-time">1:07.11</td></tr>
+          <tr><td class="t-rank">5位</td><td>田中 優那</td><td>K-AQUA</td><td class="t-time">1:09.22</td></tr>
+          <tr><td class="t-rank">8位</td><td>山崎 さくら</td><td>柏崎LSC</td><td class="t-time">1:14.35</td></tr>
+          <tr><td class="t-rank">16位</td><td>鶴巻 小夏</td><td>K-AQUA</td><td class="t-time">1:18.72</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">レスキューメドレー（100m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>一関 ひより</td><td>銚子LC</td><td class="t-time">1:16.68</td></tr>
+          <tr><td class="t-rank">3位</td><td>橋本 香蓮</td><td>日体大荏原</td><td class="t-time">1:23.85</td></tr>
+          <tr><td class="t-rank">5位</td><td>槍田 愛</td><td>西浜SLSC</td><td class="t-time">1:26.12</td></tr>
+          <tr><td class="t-rank">8位</td><td>中西 裕愛</td><td>K-AQUA</td><td class="t-time">1:31.55</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">スーパーライフセーバー（200m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>柳 輝於</td><td>K-AQUA</td><td class="t-time">2:43.44</td></tr>
+          <tr><td class="t-rank">3位</td><td>塚根 小夏</td><td>湘南GAA</td><td class="t-time">2:52.83</td></tr>
+          <tr><td class="t-rank">5位</td><td>鴨林 夏花</td><td>西浜SLSC</td><td class="t-time">2:56.93</td></tr>
+          <tr><td class="t-rank">8位</td><td>鈴木 萌那</td><td>K-AQUA</td><td class="t-time">3:02.25</td></tr>
+          <tr><td class="t-rank">16位</td><td>大﨑 真央</td><td>日体大荏原</td><td class="t-time">3:19.14</td></tr>
+        </tbody>
+      </table>
+
+      <p class="event-name">マネキントウ・ウィズフィン（100m）</p>
+      <table>
+        <thead><tr><th class="t-rank">順位</th><th>選手</th><th>所属</th><th class="t-time">タイム</th></tr></thead>
+        <tbody>
+          <tr><td class="t-rank">1位</td><td>槍田 愛</td><td>西浜SLSC</td><td class="t-time">1:07.85</td></tr>
+          <tr><td class="t-rank">3位</td><td>森田 真帆</td><td>K-AQUA</td><td class="t-time">1:14.25</td></tr>
+          <tr><td class="t-rank">5位</td><td>田中 優那</td><td>K-AQUA</td><td class="t-time">1:16.28</td></tr>
+          <tr><td class="t-rank">8位</td><td>飯野 花梨</td><td>十文字中高</td><td class="t-time">1:17.92</td></tr>
+          <tr><td class="t-rank">16位</td><td>山崎 さくら</td><td>柏崎LSC</td><td class="t-time">1:20.33</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin:14px 0 4px;">U18女子の超激戦区。今期の200m障害物スイムは2:59、16位の壁（2:44）まで15秒。一歩ずつ削っていきます。</p>
+    </div>
+  </section>
+
+  <div class="meta">
+    <p><strong>📅 集計対象大会</strong></p>
+    <ul>
+      <li>第51回 全日本ライフセービング選手権大会（2025年10月／成人）</li>
+      <li>第17回 全日本ユースライフセービング選手権大会（2025年10月／U15・U18）</li>
+      <li>第22回 全日本ジュニアライフセービング選手権大会（2025年9月／U8・U10・U12）</li>
+      <li>全日本ジュニアユースマスターズライフセービング・プール競技選手権大会2025（2026年1月）</li>
+    </ul>
+    <p><strong>📐 加点ルール</strong>：JLA 2026年度競技会運営方針に準拠／個人種目のみ／1位16点〜16位1点／チーム種目は対象外</p>
+  </div>
+</div>
+
+<div class="closing">
+  <div class="container">
+    <h2 style="border-color:var(--c-gold); color:var(--c-text);">応援、ありがとうございます</h2>
+    <p>3きょうだいの挑戦を、いつも応援してくださる皆さまに心から感謝します。<br>
+       これからもライフセービングを通じて、水辺の安全と、人を思いやる心を学び続けていきます。</p>
+    <p style="text-align:right; margin-top:30px;"><strong>矢上家 ／ 館山サーフライフセービングクラブ</strong></p>
+  </div>
+</div>
+
+</body>
+</html>
