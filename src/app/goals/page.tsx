@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { fetchAllGoalsWithTasks } from "@/lib/goals/queries";
-import { isSupabaseConfigured } from "@/lib/goals/supabase";
+import { isGoalsConfigured } from "@/lib/goals/db";
 import { isAdminLoggedIn } from "@/lib/goals/auth";
 import {
   CATEGORY_COLOR,
@@ -21,7 +21,7 @@ export const metadata = {
 };
 
 export default async function GoalsPage() {
-  if (!isSupabaseConfigured()) {
+  if (!(await isGoalsConfigured())) {
     return <SetupNotice />;
   }
 
@@ -220,20 +220,22 @@ function SetupNotice() {
     <div className="pt-24 pb-24 px-5 bg-sand-pale min-h-screen">
       <div className="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-ocean-mid/10">
         <h1 className="font-[family-name:var(--font-serif-jp)] text-xl font-bold text-ocean-dark">
-          🛠 Supabase のセットアップが必要です
+          🛠 データベースのセットアップが必要です
         </h1>
         <p className="text-sm text-text-mid mt-3 leading-loose">
-          このページを使うには Supabase プロジェクトを作成し、
+          このページは Cloudflare D1 を使います。
           <br />
-          <code className="bg-sand-light px-1 rounded">yagami-family/.env.local</code>{" "}
-          に下記キーを追加してください：
+          D1 バインディング <code className="bg-sand-light px-1 rounded">DB</code>{" "}
+          が見つかりませんでした。
         </p>
-        <pre className="bg-ocean-deep text-ocean-light text-xs p-4 rounded-lg mt-4 overflow-x-auto">{`NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
-SUPABASE_SERVICE_ROLE_KEY=eyJ...
-GOALS_ADMIN_PASSWORD=家族の合言葉`}</pre>
+        <pre className="bg-ocean-deep text-ocean-light text-xs p-4 rounded-lg mt-4 overflow-x-auto">{`# スキーマ適用
+npm run db:remote
+
+# シークレット登録
+npx wrangler secret put GOALS_ADMIN_PASSWORD
+npx wrangler secret put GOALS_SESSION_SECRET`}</pre>
         <p className="text-xs text-text-light mt-4">
-          詳しい手順は <code>yagami-family/supabase/SETUP.md</code> を参照
+          詳しい手順は <code>yagami-family/d1/SETUP.md</code> を参照
         </p>
       </div>
     </div>

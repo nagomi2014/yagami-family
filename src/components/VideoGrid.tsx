@@ -6,13 +6,22 @@ type Props = {
   path: string;
   count: number;
   cols?: 2 | 3;
+  /**
+   * 配信から外している番号。Cloudflare は静的ファイル1つが25MBを超えると
+   * 載せられないため、上限を超えた動画をここで飛ばす（欠番の壊れた
+   * プレイヤーを出さないため）。圧縮して戻したら番号を消せばよい。
+   */
+  skip?: number[];
 };
 
-export function VideoGrid({ path, count, cols = 3 }: Props) {
-  const clips = Array.from({ length: count }, (_, i) => {
-    const n = String(i + 1).padStart(2, "0");
-    return { src: `${path}/${n}.mp4`, poster: `${path}/${n}.jpg` };
-  });
+export function VideoGrid({ path, count, cols = 3, skip = [] }: Props) {
+  const skipped = new Set(skip);
+  const clips = Array.from({ length: count }, (_, i) => i + 1)
+    .filter((i) => !skipped.has(i))
+    .map((i) => {
+      const n = String(i).padStart(2, "0");
+      return { src: `${path}/${n}.mp4`, poster: `${path}/${n}.jpg` };
+    });
 
   const gridCols =
     cols === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-2 md:grid-cols-3";

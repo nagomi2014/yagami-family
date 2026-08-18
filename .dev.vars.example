@@ -1,0 +1,6 @@
+# ローカルで `npm run preview` するとき用。
+# このファイルを .dev.vars にコピーして値を入れる（.dev.vars は Git 管理外）。
+# 本番は wrangler secret put で登録する。
+
+GOALS_ADMIN_PASSWORD="家族の合言葉"
+GOALS_SESSION_SECRET="32文字以上のランダム文字列"

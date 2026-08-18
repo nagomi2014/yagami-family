@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { getAdminClient } from "./supabase";
+import { getDB, newId } from "./db";
 import { isAdminLoggedIn, loginAdmin, logoutAdmin } from "./auth";
 import type { Category, Member, TaskStatus } from "./types";
 
@@ -28,24 +28,30 @@ export async function logoutAction() {
 
 export async function createGoalAction(formData: FormData) {
   await requireAdmin();
-  const supabase = getAdminClient();
+  const db = await getDB();
 
-  const payload = {
-    member: String(formData.get("member")) as Member,
-    category: String(formData.get("category")) as Category,
-    title: String(formData.get("title") ?? "").trim(),
-    target_value: nullable(formData.get("target_value")),
-    current_value: nullable(formData.get("current_value")),
-    unit: nullable(formData.get("unit")),
-    deadline: nullable(formData.get("deadline")),
-    notes: nullable(formData.get("notes")),
-    sort_order: Number(formData.get("sort_order") ?? 0),
-  };
+  const title = String(formData.get("title") ?? "").trim();
+  if (!title) throw new Error("タイトル必須");
 
-  if (!payload.title) throw new Error("タイトル必須");
-
-  const { error } = await supabase.from("goals").insert(payload);
-  if (error) throw error;
+  await db
+    .prepare(
+      `INSERT INTO goals
+         (id, member, category, title, target_value, current_value, unit, deadline, notes, sort_order)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+    )
+    .bind(
+      newId(),
+      String(formData.get("member")) as Member,
+      String(formData.get("category")) as Category,
+      title,
+      nullable(formData.get("target_value")),
+      nullable(formData.get("current_value")),
+      nullable(formData.get("unit")),
+      nullable(formData.get("deadline")),
+      nullable(formData.get("notes")),
+      Number(formData.get("sort_order") ?? 0)
+    )
+    .run();
 
   revalidatePath("/goals");
   revalidatePath("/goals/admin");
@@ -55,22 +61,31 @@ export async function updateGoalAction(formData: FormData) {
   await requireAdmin();
   const id = String(formData.get("id") ?? "");
   if (!id) throw new Error("id 必須");
-  const supabase = getAdminClient();
+  const db = await getDB();
 
-  const payload = {
-    member: String(formData.get("member")) as Member,
-    category: String(formData.get("category")) as Category,
-    title: String(formData.get("title") ?? "").trim(),
-    target_value: nullable(formData.get("target_value")),
-    current_value: nullable(formData.get("current_value")),
-    unit: nullable(formData.get("unit")),
-    deadline: nullable(formData.get("deadline")),
-    notes: nullable(formData.get("notes")),
-    sort_order: Number(formData.get("sort_order") ?? 0),
-  };
+  const title = String(formData.get("title") ?? "").trim();
+  if (!title) throw new Error("タイトル必須");
 
-  const { error } = await supabase.from("goals").update(payload).eq("id", id);
-  if (error) throw error;
+  await db
+    .prepare(
+      `UPDATE goals SET
+         member = ?, category = ?, title = ?, target_value = ?, current_value = ?,
+         unit = ?, deadline = ?, notes = ?, sort_order = ?
+       WHERE id = ?`
+    )
+    .bind(
+      String(formData.get("member")) as Member,
+      String(formData.get("category")) as Category,
+      title,
+      nullable(formData.get("target_value")),
+      nullable(formData.get("current_value")),
+      nullable(formData.get("unit")),
+      nullable(formData.get("deadline")),
+      nullable(formData.get("notes")),
+      Number(formData.get("sort_order") ?? 0),
+      id
+    )
+    .run();
 
   revalidatePath("/goals");
   revalidatePath(`/goals/${id}`);
@@ -81,30 +96,38 @@ export async function deleteGoalAction(formData: FormData) {
   await requireAdmin();
   const id = String(formData.get("id") ?? "");
   if (!id) throw new Error("id 必須");
-  const supabase = getAdminClient();
-  const { error } = await supabase.from("goals").delete().eq("id", id);
-  if (error) throw error;
+  const db = await getDB();
+
+  // tasks は ON DELETE CASCADE で一緒に消える
+  await db.prepare("DELETE FROM goals WHERE id = ?").bind(id).run();
+
   revalidatePath("/goals");
   revalidatePath("/goals/admin");
 }
 
 export async function createTaskAction(formData: FormData) {
   await requireAdmin();
-  const supabase = getAdminClient();
+  const db = await getDB();
   const goal_id = String(formData.get("goal_id") ?? "");
   if (!goal_id) throw new Error("goal_id 必須");
 
-  const payload = {
-    goal_id,
-    title: String(formData.get("title") ?? "").trim(),
-    status: (String(formData.get("status") ?? "todo") as TaskStatus),
-    due_date: nullable(formData.get("due_date")),
-    sort_order: Number(formData.get("sort_order") ?? 0),
-  };
-  if (!payload.title) throw new Error("タイトル必須");
+  const title = String(formData.get("title") ?? "").trim();
+  if (!title) throw new Error("タイトル必須");
 
-  const { error } = await supabase.from("tasks").insert(payload);
-  if (error) throw error;
+  await db
+    .prepare(
+      `INSERT INTO tasks (id, goal_id, title, status, due_date, sort_order)
+       VALUES (?, ?, ?, ?, ?, ?)`
+    )
+    .bind(
+      newId(),
+      goal_id,
+      title,
+      String(formData.get("status") ?? "todo") as TaskStatus,
+      nullable(formData.get("due_date")),
+      Number(formData.get("sort_order") ?? 0)
+    )
+    .run();
 
   revalidatePath("/goals");
   revalidatePath(`/goals/${goal_id}`);
@@ -112,14 +135,16 @@ export async function createTaskAction(formData: FormData) {
 
 export async function updateTaskStatusAction(formData: FormData) {
   await requireAdmin();
-  const supabase = getAdminClient();
+  const db = await getDB();
   const id = String(formData.get("id") ?? "");
   const status = String(formData.get("status") ?? "todo") as TaskStatus;
   const goal_id = String(formData.get("goal_id") ?? "");
   if (!id) throw new Error("id 必須");
 
-  const { error } = await supabase.from("tasks").update({ status }).eq("id", id);
-  if (error) throw error;
+  await db
+    .prepare("UPDATE tasks SET status = ? WHERE id = ?")
+    .bind(status, id)
+    .run();
 
   revalidatePath("/goals");
   if (goal_id) revalidatePath(`/goals/${goal_id}`);
@@ -127,20 +152,25 @@ export async function updateTaskStatusAction(formData: FormData) {
 
 export async function updateTaskAction(formData: FormData) {
   await requireAdmin();
-  const supabase = getAdminClient();
+  const db = await getDB();
   const id = String(formData.get("id") ?? "");
   if (!id) throw new Error("id 必須");
 
-  const payload = {
-    title: String(formData.get("title") ?? "").trim(),
-    status: String(formData.get("status") ?? "todo") as TaskStatus,
-    due_date: nullable(formData.get("due_date")),
-    sort_order: Number(formData.get("sort_order") ?? 0),
-  };
-  if (!payload.title) throw new Error("タイトル必須");
+  const title = String(formData.get("title") ?? "").trim();
+  if (!title) throw new Error("タイトル必須");
 
-  const { error } = await supabase.from("tasks").update(payload).eq("id", id);
-  if (error) throw error;
+  await db
+    .prepare(
+      "UPDATE tasks SET title = ?, status = ?, due_date = ?, sort_order = ? WHERE id = ?"
+    )
+    .bind(
+      title,
+      String(formData.get("status") ?? "todo") as TaskStatus,
+      nullable(formData.get("due_date")),
+      Number(formData.get("sort_order") ?? 0),
+      id
+    )
+    .run();
 
   const goal_id = String(formData.get("goal_id") ?? "");
   revalidatePath("/goals");
@@ -149,13 +179,12 @@ export async function updateTaskAction(formData: FormData) {
 
 export async function deleteTaskAction(formData: FormData) {
   await requireAdmin();
-  const supabase = getAdminClient();
+  const db = await getDB();
   const id = String(formData.get("id") ?? "");
   const goal_id = String(formData.get("goal_id") ?? "");
   if (!id) throw new Error("id 必須");
 
-  const { error } = await supabase.from("tasks").delete().eq("id", id);
-  if (error) throw error;
+  await db.prepare("DELETE FROM tasks WHERE id = ?").bind(id).run();
 
   revalidatePath("/goals");
   if (goal_id) revalidatePath(`/goals/${goal_id}`);

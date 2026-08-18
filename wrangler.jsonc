@@ -1,0 +1,42 @@
+{
+  // ============================================================
+  // 矢上家ライフセービング HP（Next.js 15）を Cloudflare Workers で動かす
+  //
+  //   ビルド : npm run build:cf     （next build → OpenNext変換）
+  //   確認   : npm run preview      （ローカルWorkerで本番同等の動作確認）
+  //   公開   : npm run deploy       （本番へ反映）
+  //
+  // Vercel から移設。理由は /goals が依存していた Supabase プロジェクトが
+  // 休眠削除で消滅したため（apps/elife-textbook/RECOVERY.md と同じ事故）。
+  // DBを Cloudflare アカウント配下の D1 に置くことで同じ事故を防ぐ。
+  // ============================================================
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "yagami-family",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-06-01",
+  // OpenNext は Node.js API を使うため必須
+  "compatibility_flags": ["nodejs_compat"],
+
+  // next build の出力（public/ と .next/static）をそのまま配信する
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+
+  "observability": {
+    "enabled": true
+  },
+
+  // /goals の目標・タスク（旧 Supabase Postgres の置き換え）
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "yagami-family",
+      "database_id": "4b213732-478a-4c79-b80c-9d5f782502ed"
+    }
+  ]
+
+  // secrets は wrangler secret put で登録する（ここには書かない）
+  //   GOALS_ADMIN_PASSWORD … /goals/admin のログインパスワード
+  //   GOALS_SESSION_SECRET … 管理Cookieの署名鍵（32文字以上のランダム文字列）
+}

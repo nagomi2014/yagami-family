@@ -71,7 +71,10 @@ export default function BeachClean20260405Page() {
             <h2 className="section-title mt-2 text-ocean-dark">ビーチクリーン動画</h2>
             <p className="text-text-light text-sm mt-2">全12本</p>
           </AnimateIn>
-          <VideoGrid path="/videos/20260405beachclean" count={12} />
+          {/* 08.mp4 は 25.7MB で Cloudflare の1ファイル上限(25MB)を超えるため一旦外している。
+              圧縮して public/videos/20260405beachclean/08.mp4 に戻したら skip を消す。
+              元ファイルは media-source/ に退避済み。 */}
+          <VideoGrid path="/videos/20260405beachclean" count={12} skip={[8]} />
         </div>
       </section>
 

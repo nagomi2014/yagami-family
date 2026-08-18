@@ -52,3 +52,12 @@ scripts/compress.log
 # - YuGothB.ttc / YuGothR.ttc はMicrosoft製フォントでライセンス上の再配布不可
 # - BGM/効果音/文字起こし/レンダリングスクリプトも公開不要
 public/images/activity/*/work/
+
+# Cloudflare Workers のローカル用シークレット（本番は wrangler secret put）
+.dev.vars
+
+# OpenNext のビルド成果物
+/.open-next/
+
+# wrangler のローカル状態（ローカルD1の実体など）
+/.wrangler/
