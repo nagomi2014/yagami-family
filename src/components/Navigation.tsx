@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/about", label: "ABOUT", labelJa: "私たちについて" },
   { href: "/activity", label: "ACTIVITY", labelJa: "活動記録" },
   { href: "/records", label: "RECORDS", labelJa: "大会記録" },
+  { href: "/goals", label: "GOALS", labelJa: "目標" },
   { href: "/support", label: "SUPPORT", labelJa: "サポーター募集" },
 ];
 
