@@ -47,3 +47,8 @@ next-env.d.ts
 
 .vercel
 scripts/compress.log
+
+# 動画制作の中間物（public/配下に置かれているが公開配信すべきでない）
+# - YuGothB.ttc / YuGothR.ttc はMicrosoft製フォントでライセンス上の再配布不可
+# - BGM/効果音/文字起こし/レンダリングスクリプトも公開不要
+public/images/activity/*/work/
